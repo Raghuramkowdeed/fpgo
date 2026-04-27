@@ -1,0 +1,19 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+
+# results / caches / data (kept out of repo)
+results_*/
+cache/
+data/
+*.pkl
+*.pt
+*.bin
+
+# editor / OS
+.vscode/
+.idea/
+.DS_Store

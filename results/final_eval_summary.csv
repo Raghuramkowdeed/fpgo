@@ -1,0 +1,5 @@
+variant,hint_generator,sees_rewards,sees_oracle_errors,n_batches_done,final_greedy_400_test,time_s
+baseline_T1.0,"(no hints, pure RLOO)",n/a,n/a,10,0.5257,7551
+FGPO_v1,Claude (frontier API),yes,yes,12,0.5192,1439
+FGPO_v2,Claude (frontier API),no,no,12,0.5494,1674
+FGPO_v3,local Qwen (the trainee),no,no,12,0.5434,1392

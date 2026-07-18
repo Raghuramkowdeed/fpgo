@@ -89,6 +89,38 @@ to code correctness).
 
 ---
 
+## Benchmark 3 — StreamBench Spider (2147 problems, text-to-SQL, 1 oracle/q)
+
+| Method | EX (exec acc) | final cumreg | vs base |
+|---|---:|---:|---:|
+| REINFORCE++ (RL, no ICL)        | 0.587 | 886 | −342 (collapsed) |
+| Base model (no ICL, no train)   | 0.747 | 544 | — |
+| ICL k=3 (Self-StreamICL)        | 0.778 | 476 | +68 |
+| **SDFT + fwd ICL (fwd4, ours)** | **0.808** | **412** | **+132** ← winner |
+
+- Plot: `plots/spider_cumreg.png`. SDFT beats ICL by **+64** (largest ICL margin yet:
+  LCB +24, DS-1000 +54, Spider +64); lead opens through the back half.
+- REINFORCE++ collapses hard on Spider — the strong base (0.75) gives whitened
+  advantages little signal, KL drifts, back-half accuracy craters (0.587 final).
+
+## Benchmark 4 — StreamBench DDXPlus (1764 problems, medical diagnosis, 1 oracle/q)
+
+49-way single-turn classification (pick 1 of 49 pathologies from a patient profile).
+
+| Method | accuracy | final cumreg | vs base |
+|---|---:|---:|---:|
+| REINFORCE++ (RL, no ICL)        | 0.404 | 1051 | −56 (collapsed below base) |
+| Base model (no ICL, no train)   | 0.436 | 995 | — |
+| ICL k=3 (Self-StreamICL)        | 0.647 | 622 | +373 |
+| **SDFT + fwd ICL (fwd4, ours)** | **0.664** | **592** | **+403** ← winner |
+
+- Plot: `plots/ddxplus_cumreg.png`. SDFT beats ICL by **+30**, base by **+403** (biggest
+  base margin — weak 44% base leaves huge headroom; ICL alone nearly doubles accuracy).
+- REINFORCE++ climbs mid-run then collapses in the back half (KL drift), ending
+  *below* base. So R++ collapses on BOTH a strong-base (Spider) and weak-base
+  (DDXPlus) task — naive online RL (1 greedy sample/q, offline replay) is unstable
+  regardless of base strength, while SDFT reliably wins on all 4 benchmarks.
+
 ## File locations (raw data — safe on disk)
 
 ### LiveCodeBench (repo: `fpgo`, git@github.com:Raghuramkowdeed/fpgo.git)

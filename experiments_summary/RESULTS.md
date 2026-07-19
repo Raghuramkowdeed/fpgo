@@ -121,6 +121,44 @@ to code correctness).
   (DDXPlus) task — naive online RL (1 greedy sample/q, offline replay) is unstable
   regardless of base strength, while SDFT reliably wins on all 4 benchmarks.
 
+
+## Benchmark 5 — StreamBench BIRD (1534 problems, hard text-to-SQL, 1 oracle/q)
+
+Harder than Spider (messy real-world DBs). All methods stuck ~33-35% (low base headroom).
+
+| Method | EX | final cumreg | vs base |
+|---|---:|---:|---:|
+| REINFORCE++ | 0.270 | 1119 | -91 (collapsed) |
+| Base model | 0.330 | 1028 | - |
+| ICL k=3 | 0.346 | 1003 | +25 |
+| **SDFT + fwd ICL (ours)** | **0.354** | **991** | **+37** <- winner |
+
+- Plot: `plots/bird_cumreg.png`. The marginal case: SDFT wins but margins are thinnest
+  of any benchmark (+12 vs ICL) — sparse correct answers + poor cross-DB transfer limit
+  both ICL and SDFT. R++ collapses again.
+
+## Benchmark 6 — StreamBench HotpotQA (1500 problems, multi-hop QA, EM oracle, 1/q)
+
+| Method | acc | final cumreg | vs base |
+|---|---:|---:|---:|
+| ICL k=3 (Self-StreamICL) | 0.509 | 736 | **-17 (ICL HURTS)** |
+| Base model | 0.521 | 719 | - |
+| REINFORCE++ | 0.537 | 695 | +24 |
+| **SDFT + fwd ICL (ours)** | **0.562** | **657** | **+62** <- winner |
+
+- Plot: `plots/hotpotqa_cumreg.png`. **HEADLINE RESULT:** ICL is WORSE than base
+  (multi-hop QA answers need each question's own context, not transferable demos), yet
+  SDFT wins by +62 vs base and **+79 vs ICL** — the weight-update axis delivers precisely
+  where retrieval-only fails. Strongest evidence SDFT+fwd is not merely "better ICL".
+  (Notably R++ also beats base here (+24) — weak base + short answers give RL signal.)
+
+## Summary across all 6 benchmarks
+
+SDFT+fwd (fwd4) wins ALL SIX (LiveCodeBench, DS-1000, Spider, DDXPlus, BIRD, HotpotQA),
+beating base, ICL (Self-StreamICL), and a faithful REINFORCE++ on every one. R++ collapses
+below base on 4/6 (Spider, DDXPlus, BIRD, LCB-ish). SDFT vs ICL margin: LCB +24, DS-1000
++54, Spider +64, DDX +30, BIRD +12, HotpotQA +79.
+
 ## File locations (raw data — safe on disk)
 
 ### LiveCodeBench (repo: `fpgo`, git@github.com:Raghuramkowdeed/fpgo.git)

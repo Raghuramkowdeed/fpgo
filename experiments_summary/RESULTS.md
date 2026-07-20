@@ -22,7 +22,7 @@ back half of the stream as the distilled model compounds.
 | Method | avg reward | final cumreg |
 |---|---:|---:|
 | Base model (no ICL, no train)   | 0.338 | 698.77 |
-| REINFORCE++ (RL, no ICL)        | —     | 647.52 |
+| REINFORCE++ (RL, no ICL)        | 0.386 | 647.52 |
 | ICL k=3 (no train)              | 0.424 | 607.50 |
 | **SDFT + fwd ICL (fwd4, ours)** | **0.448** | **582.57** ← golden |
 

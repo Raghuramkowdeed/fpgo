@@ -159,6 +159,45 @@ beating base, ICL (Self-StreamICL), and a faithful REINFORCE++ on every one. R++
 below base on 4/6 (Spider, DDXPlus, BIRD, LCB-ish). SDFT vs ICL margin: LCB +24, DS-1000
 +54, Spider +64, DDX +30, BIRD +12, HotpotQA +79.
 
+
+## Benchmark 7 — StreamBench ToolBench (750 problems, single-turn function calling, 1/q)
+
+Given a query + 50-API catalog, emit ONE {"action","action_input"} JSON. Oracle =
+STRICT exact-match (api_name + normalized args); deterministic, no LLM judge in the
+reward loop. (Optional post-hoc NVIDIA-49b semantic judge validated but NOT the headline.)
+
+| Method | strict acc | final cumreg | vs base |
+|---|---:|---:|---:|
+| Base model | 0.549 | 338 | - |
+| ICL k=3 (Self-StreamICL) | 0.593 | 305 | +33 |
+| REINFORCE++ | 0.607 | 295 | +43 |
+| **SDFT + fwd ICL (ours)** | **0.615** | **289** | **+49** <- winner |
+
+- Plot: `plots/toolbench_cumreg.png`. Tightest race of the campaign: R++ was the
+  STRONGEST baseline here (0.607, an exception to its collapse elsewhere), yet SDFT
+  still wins (+6 vs R++, +16 vs ICL) with the usual back-half pull-away.
+- ToolBench-specific memory note: the 50-API catalog is ~7k tokens, so SDFT training
+  needed (a) a compact teacher re-ask instead of repeating the catalog, (b)
+  steps_per_generation=2 (teacher generates 2 prompts/call not ~50), (c) gradient
+  checkpointing. All memory-only except (a); grad_accum, reward, cumreg, eval unchanged.
+  Needs 12-14h walltime (heaviest job; GC + 7k prompts).
+
+## FINAL: SDFT+fwd wins ALL 7 benchmarks
+
+| Bench | base | ICL | R++ | SDFT | SDFT vs ICL |
+|---|---|---|---|---|---|
+| LiveCodeBench | 699 | 607 | 648 | 583 | +24 |
+| DS-1000 | 645 | 605 | 603 | 551 | +54 |
+| Spider | 544 | 476 | 886 | 412 | +64 |
+| DDXPlus | 995 | 622 | 1051 | 592 | +30 |
+| BIRD | 1028 | 1003 | 1119 | 991 | +12 |
+| HotpotQA | 719 | 736 | 695 | 657 | +79 |
+| ToolBench | 338 | 305 | 295 | 289 | +16 |
+
+SDFT+fwd beats base, ICL (Self-StreamICL), and REINFORCE++ on all 7 (code, Python,
+SQL x2, medical, QA, tool-use). R++ collapses below base on 4/7. HotpotQA: SDFT wins
+where ICL HURTS. ToolBench: SDFT beats an unusually-strong R++.
+
 ## File locations (raw data — safe on disk)
 
 ### LiveCodeBench (repo: `fpgo`, git@github.com:Raghuramkowdeed/fpgo.git)

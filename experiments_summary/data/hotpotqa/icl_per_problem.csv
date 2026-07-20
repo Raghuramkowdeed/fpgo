@@ -1,0 +1,1501 @@
+step,pred,label,n_icl,correct,cumulative_regret,mem_size
+0,Karachi,"Karachi, Pakistan",0,0,1.0000,0
+1,Paper,Paper,0,1,1.0000,1
+2,Yes,yes,1,1,1.0000,2
+3,No,yes,2,0,2.0000,2
+4,seasonal television specials,"seasonal television specials, particularly its work in stop motion animation",2,0,3.0000,2
+5,Spin Out,Mr. Church,2,0,4.0000,2
+6,August,August 2011,2,0,5.0000,2
+7,"Edmonton, Alberta","Edmonton, Alberta",2,1,5.0000,3
+8,Unbreakable,Unbreakable,3,1,5.0000,4
+9,35 people,35 people,3,1,5.0000,5
+10,Hearts,Scottish Premiership club Hearts,3,0,6.0000,5
+11,Nebo Zovyot,Nebo Zovyot,3,1,6.0000,6
+12,Marvel Comics,Marvel,3,0,7.0000,6
+13,New Journalism,the growing literary style called New Journalism,3,0,8.0000,6
+14,Chelsea Lately,Chelsea Does,3,0,9.0000,6
+15,Pedro Rodríguez,Pedro Rodríguez,3,1,9.0000,7
+16,Australia,Australian,3,0,10.0000,7
+17,Burl Ives,Yarrow and Stookey,3,0,11.0000,7
+18,Friends,Friends,3,1,11.0000,8
+19,Wale,Wale,3,1,11.0000,9
+20,The Four Seasons,The Four Seasons,3,1,11.0000,10
+21,Compliance,Compliance,3,1,11.0000,11
+22,Maria von Trapp,Maria von Trapp,3,1,11.0000,12
+23,Figaro,Figaro,3,1,11.0000,13
+24,Yellowcraigs,Yellowcraig,3,0,12.0000,13
+25,PPG Paints Arena,PPG Paints Arena,3,1,12.0000,14
+26,drafting,Conscription,3,0,13.0000,14
+27,Autopia,Autopia,3,1,13.0000,15
+28,gull-wing doors,gull-wing doors,3,1,13.0000,16
+29,Captain John Underhill,Captain John Underhill,3,1,13.0000,17
+30,The Go-Go's,"The Go-Go's,",3,1,13.0000,18
+31,No,no,3,1,13.0000,19
+32,one,33,3,0,14.0000,19
+33,Distaghil Sar,Distaghil Sar,3,1,14.0000,20
+34,"1,462","1,462",3,1,14.0000,21
+35,Papa John's Cardinal Stadium,Mercedes-Benz Superdome,3,0,15.0000,21
+36,Prince George's County,Prince George's County,3,1,15.0000,22
+37,RTN,VH1,3,0,16.0000,22
+38,1866,1866,3,1,16.0000,23
+39,José Echegaray y Eizaguirre,José Echegaray y Eizaguirre,3,1,16.0000,24
+40,Hidden America with Jonah Ray,Hidden America with Jonah Ray,3,1,16.0000,25
+41,North African,North African Arab,3,0,17.0000,25
+42,7°56',7°56',3,1,17.0000,26
+43,Worcester County,Worcester County,3,1,17.0000,27
+44,None,"""Walk Like an Egyptian""",3,0,18.0000,27
+45,Lord High Treasurer,Chief of Protocol,3,0,19.0000,27
+46,Penélope Cruz,Salma Hayek Pinault,3,0,20.0000,27
+47,AMC Theatres,AMC Theatres,3,1,20.0000,28
+48,No,no,3,1,20.0000,29
+49,Alberto Taquini,Dr. Alberto Taquini,3,0,21.0000,29
+50,Yes,yes,3,1,21.0000,30
+51,Bishop's Stortford,Bishop's Stortford,3,1,21.0000,31
+52,Jeffrey Meldrum,"Don Jeffrey ""Jeff"" Meldrum (born May 24, 1958) is a Professor of Anatomy and Anthropology",3,0,22.0000,31
+53,VNO,"IATA: VNO, ICAO: EYVI",3,0,23.0000,31
+54,Usher,Usher,3,1,23.0000,32
+55,one,three million copies worldwide,3,0,24.0000,32
+56,1838,1838,3,1,24.0000,33
+57,author,author,3,1,24.0000,34
+58,William Blake Herron,"musician, editor and composer.",3,0,25.0000,34
+59,Mako,Mako,3,1,25.0000,35
+60,1736,1736,3,1,25.0000,36
+61,Lempster,Newport,3,0,26.0000,36
+62,Oxford University,Oxford,3,0,27.0000,36
+63,Harsh Times,Suicide Squad,3,0,28.0000,36
+64,"Doniphan County, Kansas",the U.S. state of Kansas,3,0,29.0000,36
+65,John Morgan,John Morgan,3,1,29.0000,37
+66,Romeo,Tybalt,3,0,30.0000,37
+67,4.4 mi,2844 km,3,0,31.0000,37
+68,No,no,3,1,31.0000,38
+69,"graffiti, breakdancing, rapping, hip hop production, DJing",Graffiti,3,0,32.0000,38
+70,Quantrill's Raiders,pro-Confederate,3,0,33.0000,38
+71,writing,"American educator, writer,",3,0,34.0000,38
+72,Dan Schneider,Helen Elizabeth Hunt,3,0,35.0000,38
+73,Old Dogs,Old Dogs,3,1,35.0000,39
+74,Bergen,Hordaland,3,0,36.0000,39
+75,Big 12 Conference,the Big 12 Conference,3,1,36.0000,40
+76,Big 12 Conference,Big 12,3,0,37.0000,40
+77,Rockstar Games,Rockstar San Diego,3,0,38.0000,40
+78,Greg Puciato,"Gregory John ""Greg"" Puciato",3,0,39.0000,40
+79,New York City,yes,3,0,40.0000,40
+80,Buffalo,no,3,0,41.0000,40
+81,Shannon Brook,Richmond,3,0,42.0000,40
+82,"26,000","about 26,000.",3,0,43.0000,40
+83,Ian Watkins,Lostprophets disbanded in 2013 after Watkins was charged with sexual offences in late 2012.,3,0,44.0000,40
+84,Augustus,Caligula,3,0,45.0000,40
+85,Thomas Friedman,Thomas Loren Friedman,3,0,46.0000,40
+86,The Drop-In,Comedy Film Nerds,3,0,47.0000,40
+87,John D Rockefeller,John D Rockefeller's Standard Oil Company,3,0,48.0000,40
+88,rapper,"professional wrestler, actor, and hip hop musician",3,0,49.0000,40
+89,Orange County,Orange County,3,1,49.0000,41
+90,"June 11, 1986","June 11, 1986",3,1,49.0000,42
+91,Chicago Bears,the Bears,3,0,50.0000,42
+92,"February 20, 1978","February 20, 1978",3,1,50.0000,43
+93,Queen In-hyun's Man,Queen In-hyun's Man,3,1,50.0000,44
+94,2009,2009,3,1,50.0000,45
+95,University of Maryland University College,"Prince George's County, Maryland",3,0,51.0000,45
+96,Red Dead Redemption,Red Dead Redemption,3,1,51.0000,46
+97,Love Streams,Love Streams,3,1,51.0000,47
+98,Peer,Peer,3,1,51.0000,48
+99,Pirates of the Caribbean,Constantine,3,0,52.0000,48
+100,Hacking Democracy,The Memory of Justice,3,0,53.0000,48
+101,St Andrews,"St Andrews, Fife, Scotland",3,0,54.0000,48
+102,Nicktoon Blast,Ghostbusters Spooktacular,3,0,55.0000,48
+103,Dzūkija Alytus,BC Dzūkija,3,0,56.0000,48
+104,Chicago,Germany,3,0,57.0000,48
+105,Jennifer Aniston,Jennifer Aniston,3,1,57.0000,49
+106,New York City,"New York City, New York",3,0,58.0000,49
+107,yes,yes,3,1,58.0000,50
+108,Renaissance Technologies,Renaissance Technologies,3,1,58.0000,51
+109,Melbourne,Melbourne,3,1,58.0000,52
+110,1953,1953,3,1,58.0000,53
+111,girls,girls aged 11 to 18,3,0,59.0000,53
+112,Henry J. Kaiser,Henry J. Kaiser,3,1,59.0000,54
+113,Denmark,Prince of Denmark,3,0,60.0000,54
+114,Saul Metzstein,"Douglas Eric ""Doug"" Liman",3,0,61.0000,54
+115,Yes,yes,3,1,61.0000,55
+116,Yes,yes,3,1,61.0000,56
+117,Yes,no,3,0,62.0000,56
+118,Sacred Planet,Sacred Planet,3,1,62.0000,57
+119,French,no,3,0,63.0000,57
+120,"Brooklyn, New York","Brooklyn, New York",3,1,63.0000,58
+121,Waiting to Exhale,The Chamber,3,0,64.0000,58
+122,NA-16,North American Aviation T-6 Texan,3,0,65.0000,58
+123,Arthur Conan Doyle,Arthur Ignatius Conan Doyle,3,0,66.0000,58
+124,No,no,3,1,66.0000,59
+125,head coach for the WNBA team Charlotte Sting,shortest player ever to play in the National Basketball Association,3,0,67.0000,59
+126,Italian English,English-language,3,0,68.0000,59
+127,87 parish churches,87,3,0,69.0000,59
+128,Battle of Belleau Wood,The Battle of Belleau Wood,3,1,69.0000,60
+129,St James's Palace,Mark Masons' Hall,3,0,70.0000,60
+130,Mondelez International,"Mondelez International, Inc.",3,0,71.0000,60
+131,filmmaker,director,3,0,72.0000,60
+132,Coca-Cola FEMSA,Fomento Económico Mexicano,3,0,73.0000,60
+133,American,American,3,1,73.0000,61
+134,Delaware River,Delaware River,3,1,73.0000,62
+135,Stanley Kramer,Kramer's caddy Stan,3,0,74.0000,62
+136,Yes,no,3,0,75.0000,62
+137,"37,776","37,776",3,1,75.0000,63
+138,Nusretiye Mosque,Nusretiye Mosque,3,1,75.0000,64
+139,Football League,Championship,3,0,76.0000,64
+140,February,February,3,1,76.0000,65
+141,East Lancashire Railway,East Lancashire Railway,3,1,76.0000,66
+142,mountain ranges,mountain ranges,3,1,76.0000,67
+143,2002,"(foaled February 1, 1999)",3,0,77.0000,67
+144,The Secret World,massively multiplayer online role-playing video game,3,0,78.0000,67
+145,best cities to live in,50 best cities to live in,3,0,79.0000,67
+146,Saoirse Ronan,Saoirse Ronan,3,1,79.0000,68
+147,live EP album,extensive use of segues,3,0,80.0000,68
+148,Hong Kong,Hong Kong,3,1,80.0000,69
+149,Yes,yes,3,1,80.0000,70
+150,Lewis lamp,Argand lamp,3,0,81.0000,70
+151,15,15,3,1,81.0000,71
+152,"March 14, 2000",2000,3,0,82.0000,71
+153,1952,1952,3,1,82.0000,72
+154,1980-10-20,20 October 1980,3,0,83.0000,72
+155,"Indianapolis, Indiana, USA","Indianapolis, Indiana",3,0,84.0000,72
+156,Lotion play,video game,3,0,85.0000,72
+157,Yes,yes,3,1,85.0000,73
+158,Yes,yes,3,1,85.0000,74
+159,late 12th Century,the late 12th Century,3,1,85.0000,75
+160,King David I,King George IV,3,0,86.0000,75
+161,Jim Cummings,Sonic,3,0,87.0000,75
+162,lemon juice,no,3,0,88.0000,75
+163,Olathe East High School,"located in Olathe, Kansas",3,0,89.0000,75
+164,Tron,Tron,3,1,89.0000,76
+165,Los Angeles,Los Angeles,3,1,89.0000,77
+166,56 people,32 people,3,0,90.0000,77
+167,three centuries,three centuries,3,1,90.0000,78
+168,executive search,"Executive Search, Board Consulting",3,0,91.0000,78
+169,Yes,no,3,0,92.0000,78
+170,2000,2000,3,1,92.0000,79
+171,1999,1999,3,1,92.0000,80
+172,Youtoo America,WB Television Network,3,0,93.0000,80
+173,LaLee's Kin: The Legacy of Cotton,LaLee's Kin: The Legacy of Cotton,3,1,93.0000,81
+174,Wildwood,Wildwood,3,1,93.0000,82
+175,tennis,tennis,3,1,93.0000,83
+176,UFC 50,The War of '04,3,0,94.0000,83
+177,The Agronomist,The Agronomist,3,1,94.0000,84
+178,575 acres,575 acres (2.08 km²),3,0,95.0000,84
+179,no,no,3,1,95.0000,85
+180,Knowsley United Women,Knowsley United Women,3,1,95.0000,86
+181,Gary Johnson,Gary Earl Johnson,3,0,96.0000,86
+182,Historically has been important to the defence of the Cathedral Close.,defence of the Cathedral,3,0,97.0000,86
+183,Malta,Malta,3,1,97.0000,87
+184,Bay of Fundy,Bay of Fundy,3,1,97.0000,88
+185,Amanda Wyss,"Wesley ""Wes"" Studi",3,0,98.0000,88
+186,German,German,3,1,98.0000,89
+187,Venice,Venice,3,1,98.0000,90
+188,Wolf Alice,Badly Drawn Boy,3,0,99.0000,90
+189,Johnson Press,Johnson Press,3,1,99.0000,91
+190,Carabao Cup,Carabao Cup,3,1,99.0000,92
+191,first and only U.S. born world grand prix champion,American-born,3,0,100.0000,92
+192,Pietro Badoglio,Marshal Pietro Badoglio,3,0,101.0000,92
+193,Wendy's,Dave Thomas,3,0,102.0000,92
+194,The Wachowskis,The Wachowskis,3,1,102.0000,93
+195,Indianapolis,Indianapolis,3,1,102.0000,94
+196,1989,1989,3,1,102.0000,95
+197,Aubrey Posen,Aubrey Posen,3,1,102.0000,96
+198,Preston,Preston,3,1,102.0000,97
+199,The Wings of the Dove,Julius Caesar,3,0,103.0000,97
+200,first,first freshman to finish as the runner-up,3,0,104.0000,97
+201,Eucritta melanolimnetes,Eucritta melanolimnetes,3,1,104.0000,98
+202,Baltimore,Baltimore,3,1,104.0000,99
+203,Arrowhead Stadium,Arrowhead Stadium,3,1,104.0000,100
+204,Anatude,third,3,0,105.0000,100
+205,Levi Weeks,Levi Weeks,3,1,105.0000,101
+206,Honda Vigor,Honda Ballade,3,0,106.0000,101
+207,Madrid,the autonomous community of Madrid,3,0,107.0000,101
+208,Mandalay Entertainment,Mandalay Entertainment,3,1,107.0000,102
+209,Season Three,third,3,0,108.0000,102
+210,Love Drunk,Love Drunk,3,1,108.0000,103
+211,Leslie Knope,Leslie Knope,3,1,108.0000,104
+212,Catholic Church in Ireland,The Catholic Church in Ireland,3,1,108.0000,105
+213,1961,1961,3,1,108.0000,106
+214,Norwegian,Punjabi/Pashtun,3,0,109.0000,106
+215,Still Kicking: Six Artistic Women of Project Arts & Longevity,Still Kicking: Six Artistic Women of Project Arts & Longevity,3,1,109.0000,107
+216,Fortnightly,fortnightly,3,1,109.0000,108
+217,Belladonna,Belladonna,3,1,109.0000,109
+218,worked as a fashion model,fashion model,3,0,110.0000,109
+219,1969,1966,3,0,111.0000,109
+220,The Futureheads,The Futureheads,3,1,111.0000,110
+221,Lord's Resistance Movement,United Holy Salvation Army and Uganda Christian Army/Movement,3,0,112.0000,110
+222,Dirty Pretty Things,Dirty Pretty Things,3,1,112.0000,111
+223,Italian sovereignty,sovereignty,3,0,113.0000,111
+224,Pirate's Cove,Pirate's Cove,3,1,113.0000,112
+225,Bayern Munich,Bayern Munich,3,1,113.0000,113
+226,Agent Carter,Agent Carter,3,1,113.0000,114
+227,Dayton Memorial Hall,First Street,3,0,114.0000,114
+228,Santa Monica,"Santa Monica, California",3,0,115.0000,114
+229,John Whiting,Peter Hall,3,0,116.0000,114
+230,Iceland,Scotland,3,0,117.0000,114
+231,1945 to 1969,from 1986 to 2013,3,0,118.0000,114
+232,Australia,Australian actor and film producer,3,0,119.0000,114
+233,Final Fantasy XII,Final Fantasy XII,3,1,119.0000,115
+234,"Katharine Hepburn, Joan Bennett, Frances Dee, Jean Parker","Katharine Hepburn, Joan Bennett, Frances Dee",3,0,120.0000,115
+235,Rabat,Beijing,3,0,121.0000,115
+236,No,no,3,1,121.0000,116
+237,Arthur Russell,Arthur Russell,3,1,121.0000,117
+238,Wes Archer,Wes Archer,3,1,121.0000,118
+239,Ector County,Ector County,3,1,121.0000,119
+240,Herbert Ross,Herbert Ross,3,1,121.0000,120
+241,United Kingdom,the Netherlands,3,0,122.0000,120
+242,Starlite,Starlite,3,1,122.0000,121
+243,Francisco Rafael Arellano Félix,Francisco Rafael Arellano Félix,3,1,122.0000,122
+244,computer analysis of textual style,linguistic analysis,3,0,123.0000,122
+245,Utne Reader,The New York Enterprise Report,3,0,124.0000,122
+246,World Summit of Nobel Peace Laureates,Organizations could come together to address global issues,3,0,125.0000,122
+247,Teach the Controversy,"""Teach the Controversy"" campaign",3,0,126.0000,122
+248,Central Coast Council local government area,City of Newcastle,3,0,127.0000,122
+249,Waimea Bay,Waimea Bay,3,1,127.0000,123
+250,"Boulder, Colorado",Boulder High School,3,0,128.0000,123
+251,PricewaterhouseCoopers,Ernst & Young,3,0,129.0000,123
+252,Eileen Atkins,Dame Eileen June Atkins,3,0,130.0000,123
+253,TX-2 Tape System,8-track,3,0,131.0000,123
+254,filmmaking,screenwriter,3,0,132.0000,123
+255,Play-by-post role-playing game,play-by-post role-playing game,3,1,132.0000,124
+256,16 girls and 1 boy,nine girls and 10 boys,3,0,133.0000,124
+257,John Waters,John Waters,3,1,133.0000,125
+258,Southaven,"Southaven, Mississippi",3,0,134.0000,125
+259,Mark Neveldine and Brian Taylor,Mark Neveldine and Brian Taylor,3,1,134.0000,126
+260,Sergio Pérez,Esteban Ocon,3,0,135.0000,126
+261,capital of the French Union's colonial army,Viet Minh's base,3,0,136.0000,126
+262,Hibbing,Saint Louis County,3,0,137.0000,126
+263,Orono,Orono,3,1,137.0000,127
+264,Syracuse University,Syracuse University.,3,1,137.0000,128
+265,Dusty Dvoracek,Dusty Dvoracek,3,1,137.0000,129
+266,Andrew Preston,James Taylor,3,0,138.0000,129
+267,Rome,Rome,3,1,138.0000,130
+268,Adam Levine,Matt Flynn,3,0,139.0000,130
+269,John Schneider,Tim Allen,3,0,140.0000,130
+270,Lisa Raymond,Liezel Huber,3,0,141.0000,130
+271,Battleground,"""Talk That Talk""",3,0,142.0000,130
+272,Mezzanine,Mezzanine,3,1,142.0000,131
+273,supervisor of the royal works,supervisor of the royal works,3,1,142.0000,132
+274,Saturday Night Live,"""The Wonder Years""",3,0,143.0000,132
+275,Michael Swango,Michael Swango,3,1,143.0000,133
+276,Rivington,Bolton,3,0,144.0000,133
+277,Tumwater,"Tumwater, Washington",3,0,145.0000,133
+278,Kansai International Airport,Osaka International Airport,3,0,146.0000,133
+279,Myrtus,Eustoma,3,0,147.0000,133
+280,Twin Pines/Lone Pine Mall,Twin Pines/Lone Pine Mall,3,1,147.0000,134
+281,Sean,Sean,3,1,147.0000,135
+282,Premier League Darts,2018 Unibet Premier League Darts,3,0,148.0000,135
+283,No,no,3,1,148.0000,136
+284,Apalachee,Apalachee,3,1,148.0000,137
+285,Howard Fast,Howard Melvin Fast,3,0,149.0000,137
+286,Edmonton,Hanna,3,0,150.0000,137
+287,Jay Van Andel,Jay Van Andel,3,1,150.0000,138
+288,Florida and Oklahoma,"Coahuila, Mexico",3,0,151.0000,138
+289,PBS,aired on PBS stations,3,0,152.0000,138
+290,Lush,Lush Ltd.,3,0,153.0000,138
+291,The Boatniks,"The Boatniks is a 1970 American comedy film starring Robert Morse, Stefanie Powers, Don Ameche and Phil Silvers.",3,0,154.0000,138
+292,The Beatles,The Beatles,3,1,154.0000,139
+293,Keith Bostic,Keith Bostic,3,1,154.0000,140
+294,No,no,3,1,154.0000,141
+295,Country Thuggin,Country Thuggin,3,1,154.0000,142
+296,International Boxing Hall of Fame,International Boxing Hall of Fame,3,1,154.0000,143
+297,Kimmy Schmidt,"Kimberly Couger ""Kimmy"" Schmidt",3,0,155.0000,143
+298,1993,1992,3,0,156.0000,143
+299,"United States presidential election, 2016",United States presidential election of 2016,3,0,157.0000,143
+300,Dubai International Cricket Stadium,Dubai International Stadium,3,0,158.0000,143
+301,Theo Walcott,Theo James Walcott,3,0,159.0000,143
+302,"design, development, manufacture and sale of vehicles","design, development, manufacture",3,0,160.0000,143
+303,Jillian Bell,Jillian Belk,3,0,161.0000,143
+304,American,American,3,1,161.0000,144
+305,"Baa, Baa, Black Sheep","""Baa, Baa, Black Sheep""",3,1,161.0000,145
+306,No,yes,3,0,162.0000,145
+307,Ais,Apalachees,3,0,163.0000,145
+308,Dallas Cowboys,Dallas Cowboys,3,1,163.0000,146
+309,Eric Bana,Eric Banadinović,3,0,164.0000,146
+310,Hanover,Ernestine,3,0,165.0000,146
+311,"income tax, social security, corporate tax","""personal earnings"" (such as salary and wages), ""business income"" and ""capital gains""",3,0,166.0000,146
+312,French Open,French Open,3,1,166.0000,147
+313,19th century,nineteenth,3,0,167.0000,147
+314,2027 Fairmount Avenue,2027 Fairmount Avenue,3,1,167.0000,148
+315,Nevada,Clark County,3,0,168.0000,148
+316,Samoa,Samoa,3,1,168.0000,149
+317,Minneapolis,"Golden Valley, Minnesota,",3,0,169.0000,149
+318,Russian Empire,Russian Empire,3,1,169.0000,150
+319,Bonnie Claire,Beatty,3,0,170.0000,150
+320,Krzysztof Zanussi,Krzysztof Zanussi,3,1,170.0000,151
+321,Point of Entry,Point of Entry,3,1,170.0000,152
+322,Dan Fogelman,David Dobkin,3,0,171.0000,152
+323,right-hand,right-hand,3,1,171.0000,153
+324,Sherwood Cryer,Mickey Gilley,3,0,172.0000,153
+325,writer,poet,3,0,173.0000,153
+326,Blonde Redhead,Blonde Redhead,3,1,173.0000,154
+327,Mitsubishi Motors,Mitsubishi,3,0,174.0000,154
+328,Gallery,"arose on the ""Playboy"" magazine pattern in the 1970s.",3,0,175.0000,154
+329,5,5,3,1,175.0000,155
+330,Trenton–Mercer Airport,Trenton–Mercer Airport,3,1,175.0000,156
+331,13 years,21 years and 154 days,3,0,176.0000,156
+332,glam metal,Glam metal,3,1,176.0000,157
+333,Kohlberg Kravis Roberts,KKR & Co,3,0,177.0000,157
+334,J. G. Farrell,Farrell,3,0,178.0000,157
+335,Blake Shelton,Blake Shelton,3,1,178.0000,158
+336,"It was the world's first multi-purpose, domed sports stadium.",comparable to the seven Wonders of the World,3,0,179.0000,158
+337,Salvie,The Crowned Prince of the Philadelphia Mob,3,0,180.0000,158
+338,"Gardnerville, Nevada",Gardnerville,3,0,181.0000,158
+339,Debbie Harry,Debbie Harry,3,1,181.0000,159
+340,Oryzomyini,Oryzomyini,3,1,181.0000,160
+341,people working in film and the performing arts,people working in film and the performing arts,3,1,181.0000,161
+342,Istanbul,"Istanbul, Turkey",3,0,182.0000,161
+343,four months in jail,four months in jail,3,1,182.0000,162
+344,Teriade,Teriade,3,1,182.0000,163
+345,Ephedrine,Ephedrine,3,1,182.0000,164
+346,Holston River Valley,Holston River,3,0,183.0000,164
+347,1926,1926,3,1,183.0000,165
+348,Jamaica,Ghana,3,0,184.0000,165
+349,Oedipus Rex,Oedipus Rex,3,1,184.0000,166
+350,France,no,3,0,185.0000,166
+351,Israeli Ambassador to the United States,Israeli Ambassador,3,0,186.0000,166
+352,Craig v. Boren,Craig v. Boren,3,1,186.0000,167
+353,Kansas Song,Kansas Song,3,1,186.0000,168
+354,Logan International Airport,Logan International Airport,3,1,186.0000,169
+355,Hey Pa! There's a Goat on the Roof,Hey Pa! There's a Goat on the Roof,3,1,186.0000,170
+356,China,China,3,1,186.0000,171
+357,yes,yes,3,1,186.0000,172
+358,Bedknobs and Broomsticks,Bedknobs and Broomsticks,3,1,186.0000,173
+359,Currer Bell,"""Currer Bell""",3,1,186.0000,174
+360,Mick Jackson,James Burke,3,0,187.0000,174
+361,Bernice Pauahi Bishop,Charles Reed Bishop,3,0,188.0000,174
+362,The Korean War,The Western Allied invasion of Germany,3,0,189.0000,174
+363,None,Red and Assiniboine Rivers,3,0,190.0000,174
+364,Scotland,Scotland,3,1,190.0000,175
+365,Winfred Blevins,Wendell Berry,3,0,191.0000,175
+366,number five,number five,3,1,191.0000,176
+367,United States,American,3,0,192.0000,176
+368,Paige O'Hara,Donna Paige Helmintoller,3,0,193.0000,176
+369,River Welland,65 mi,3,0,194.0000,176
+370,Cocktails,cocktails,3,1,194.0000,177
+371,Parsifal,Parsifal,3,1,194.0000,178
+372,"November 23, 1946",23 November 1946,3,0,195.0000,178
+373,"journalist, editor and playwright",Philosophy professor,3,0,196.0000,178
+374,Geelong Football Club,Geelong Football Club,3,1,196.0000,179
+375,Weezer,The Blue Album,3,0,197.0000,179
+376,"728,000 ft² (67,000 m²)","728,000 ft²",3,0,198.0000,179
+377,Ungdomshuset,Folkets,3,0,199.0000,179
+378,"48,982","48,982",3,1,199.0000,180
+379,model for one of the characters,technical director,3,0,200.0000,180
+380,"September 8, 2017","September 8, 2017",3,1,200.0000,181
+381,Rowan Blanchard,Rowan Blanchard,3,1,200.0000,182
+382,250 million,250 million,3,1,200.0000,183
+383,yes,no,3,0,201.0000,183
+384,Eminem,Eminem,3,1,201.0000,184
+385,The Marshall Mathers LP 2,"""The Marshall Mathers LP 2""",3,1,201.0000,185
+386,Medal of Honor,25,3,0,202.0000,185
+387,Warsaw,"Warsaw, Poland",3,0,203.0000,185
+388,1944,1944,3,1,203.0000,186
+389,No,no,3,1,203.0000,187
+390,Umina Beach,"Umina Beach, New South Wales",3,0,204.0000,187
+391,David Naughton,"David Naughton, Jenny Agutter and Griffin Dunne",3,0,205.0000,187
+392,Adelaide,"Marion, South Australia",3,0,206.0000,187
+393,Daviesia,Daviesia,3,1,206.0000,188
+394,Kansas–Nebraska Act,Kansas–Nebraska Act,3,1,206.0000,189
+395,Hotpoint,GE Appliances,3,0,207.0000,189
+396,Lee Hazlewood,Barton Lee Hazlewood,3,0,208.0000,189
+397,American,yes,3,0,209.0000,189
+398,4,four,3,0,210.0000,189
+399,country,largest country,3,0,211.0000,189
+400,genus of flowering plants,flowering plants,3,0,212.0000,189
+401,"5,124","5,124 rooms",3,0,213.0000,189
+402,Campbell Soup Company,The Campbell Soup Company,3,1,213.0000,190
+403,"Springfield, Massachusetts","city of Springfield, Massachusetts",3,0,214.0000,190
+404,1961,1961,3,1,214.0000,191
+405,American football,American football,3,1,214.0000,192
+406,film production,director,3,0,215.0000,192
+407,Vic Chesnutt,Vic Chesnutt,3,1,215.0000,193
+408,Mirosław Hermaszewski,Ulf Dietrich Merbold,3,0,216.0000,193
+409,First Family of Competitive Eating,"the ""First Family of Competitive Eating""",3,1,216.0000,194
+410,Western Europe,Western Europe,3,1,216.0000,195
+411,papermaking,papermaking industry,3,0,217.0000,195
+412,Beaver and Erie Canal,The Beaver and Erie Canal,3,1,217.0000,196
+413,Zurna,an organ,3,0,218.0000,196
+414,Battle of Manila,Battle of Guam,3,0,219.0000,196
+415,Stephen King,Stephen King,3,1,219.0000,197
+416,Yes,no,3,0,220.0000,197
+417,"12,272","12,272",3,1,220.0000,198
+418,500th episode,show's 500th episode,3,0,221.0000,198
+419,Caesars Palace Grand Prix,Caesars Palace Grand Prix,3,1,221.0000,199
+420,Benj Pasek and Justin Paul,Pasek & Paul,3,0,222.0000,199
+421,an album,an album,3,1,222.0000,200
+422,Yes,yes,3,1,222.0000,201
+423,Bank of China Tower,Hong Kong,3,0,223.0000,201
+424,Hawaii House of Representatives,"Robert ""Bobby"" Bunda",3,0,224.0000,201
+425,World War II and American Civil War,yes,3,0,225.0000,201
+426,Spam,Spam,3,1,225.0000,202
+427,DTM,DTM,3,1,225.0000,203
+428,Jessica Lange,Jessica Lange,3,1,225.0000,204
+429,"86,112","86,112",3,1,225.0000,205
+430,Mayfair,Mayfair,3,1,225.0000,206
+431,Paper Trail,Paper Trail,3,1,225.0000,207
+432,Russell Humphreys,Russell Humphreys,3,1,225.0000,208
+433,Yes,yes,3,1,225.0000,209
+434,documentary,documentary,3,1,225.0000,210
+435,"Atlanta, Georgia",North Avenue at Techwood Drive,3,0,226.0000,210
+436,EN World RPG Awards,EN World web site,3,0,227.0000,210
+437,Ursula K. Le Guin,Ursula Kroeber Le Guin,3,0,228.0000,210
+438,Battle of Hürtgen Forest,Battle of Hürtgen Forest,3,1,228.0000,211
+439,Max Mosley,Max Rufus Mosley,3,0,229.0000,211
+440,Volta Region,Volta,3,0,230.0000,211
+441,Private Secretary and Treasurer,Private Secretary and Treasurer,3,1,230.0000,212
+442,seven,seven,3,1,230.0000,213
+443,$10.5 million,$10.5 million,3,1,230.0000,214
+444,No,no,3,1,230.0000,215
+445,"Louis Mountbatten, 1st Earl Mountbatten of Burma",second cousin once removed,3,0,231.0000,215
+446,Kitchens of Distinction,Kitchens of Distinction,3,1,231.0000,216
+447,Free Range Films,Free Range Films,3,1,231.0000,217
+448,Autonomous administrative division,the flags,3,0,232.0000,217
+449,Merovech,Merovech,3,1,232.0000,218
+450,Guardians of the Galaxy Vol. 2,Guardians of the Galaxy Vol. 2,3,1,232.0000,219
+451,Phyllocnistis liquidambarisella,moth,3,0,233.0000,219
+452,no,no,3,1,233.0000,220
+453,David Weissman,David Weissman,3,1,233.0000,221
+454,McLaren Vale,McLaren Vale,3,1,233.0000,222
+455,Personal History,Personal History,3,1,233.0000,223
+456,England,England,3,1,233.0000,224
+457,Lev Yilmaz,Levni Yilmaz,3,0,234.0000,224
+458,Brooklyn,"Bay Ridge, Brooklyn",3,0,235.0000,224
+459,Copenhagen,Copenhagen,3,1,235.0000,225
+460,Planet Terror,Planet Terror,3,1,235.0000,226
+461,Manchester United F.C.,Manchester United,3,0,236.0000,226
+462,"Franconia, New Hampshire","Franconia, New Hampshire",3,1,236.0000,227
+463,Nicolas Vanier,Nicolas Vanier,3,1,236.0000,228
+464,"Kings Point, New York","Kings Point, New York",3,1,236.0000,229
+465,George Atzerodt,Andrew Johnson,3,0,237.0000,229
+466,Brian Doyle-Murray,Bill Murray,3,0,238.0000,229
+467,"1,800","1,800",3,1,238.0000,230
+468,cranberries,acidic,3,0,239.0000,230
+469,Eddie Collins,Edward Trowbridge Collins Sr.,3,0,240.0000,230
+470,Video games,video game,3,0,241.0000,230
+471,Oklahoma,Sacramento Kings,3,0,242.0000,230
+472,Sharman Joshi,Soha Ali Khan,3,0,243.0000,230
+473,Shifty Shellshock,Shifty Shellshock,3,1,243.0000,231
+474,Nandrolone,anabolic–androgenic steroid (AAS),3,0,244.0000,231
+475,Gordon Carroll,Ronald Shusett,3,0,245.0000,231
+476,Texas Tech University,Texas Tech University,3,1,245.0000,232
+477,FBS,NCAA Division I FBS football,3,0,246.0000,232
+478,publisher,American schoolteacher and publisher,3,0,247.0000,232
+479,Robert Mulligan,Robert Patrick Mulligan,3,0,248.0000,232
+480,"November 15, 1903","November 15, 1903",3,1,248.0000,233
+481,"Ordos City China Science Flying Universe Science and Technology Co., Ltd.",Ordos City,3,0,249.0000,233
+482,EA-18G Growler,Boeing EA-18G Growler,3,0,250.0000,233
+483,"San Luis Obispo, California","San Luis Obispo, California",3,1,250.0000,234
+484,Mexico City,Mexico City,3,1,250.0000,235
+485,multiple awards,multiple awards,3,1,250.0000,236
+486,Choral song,played,3,0,251.0000,236
+487,Arena of Khazan,Arena of Khazan,3,1,251.0000,237
+488,Pierre Womé,Pierre Nlend Womé,3,0,252.0000,237
+489,The Big Bang Theory,"""The Big Bang Theory""",3,1,252.0000,238
+490,Dave Bautista,David Michael Bautista Jr.,3,0,253.0000,238
+491,United States,the world,3,0,254.0000,238
+492,England,England,3,1,254.0000,239
+493,Animorphs,Animorphs,3,1,254.0000,240
+494,"Samuel M ""Sam"" Raimi",Sam Raimi,3,0,255.0000,240
+495,Yes,yes,3,1,255.0000,241
+496,1901,1901,3,1,255.0000,242
+497,John Lasseter,John Alan Lasseter,3,0,256.0000,242
+498,Progressive Congress,UDC,3,0,257.0000,242
+499,Thon Maker,Thon Marial Maker,3,0,258.0000,242
+500,Seven Days Battles,The Seven Days Battles,3,1,258.0000,243
+501,romantic comedy,romantic comedy,3,1,258.0000,244
+502,0,five times,3,0,259.0000,244
+503,Gerard Butler,Terry Crews,3,0,260.0000,244
+504,Restoration Hardware,Restoration Hardware,3,1,260.0000,245
+505,1959,"June 6, 1959",3,0,261.0000,245
+506,Easter Rising,Easter Rising of 1916,3,0,262.0000,245
+507,St. George,St.George,3,0,263.0000,245
+508,"51,271","51,271",3,1,263.0000,246
+509,Sir George Cayley,George Cayley,3,0,264.0000,246
+510,Connie,Melanie Owen,3,0,265.0000,246
+511,"tales of various deities, beings, and heroes","various deities, beings, and heroes",3,0,266.0000,246
+512,Reinhard Heydrich,Reinhard Heydrich,3,1,266.0000,247
+513,Ed Martin,Edward Robert Martin Jr.,3,0,267.0000,247
+514,two,second,3,0,268.0000,247
+515,orchids,flowering plants,3,0,269.0000,247
+516,2008,1996,3,0,270.0000,247
+517,Viacom International Media Networks,Prof Media,3,0,271.0000,247
+518,Felicity Jones,Felicity Rose Hadley Jones,3,0,272.0000,247
+519,Tea Moderna,Tea Moderna,3,1,272.0000,248
+520,Marsilea,Marsilea,3,1,272.0000,249
+521,Exeter College,Exeter College,3,1,272.0000,250
+522,Tom Warburton,Thomas Warburton,3,0,273.0000,250
+523,Ride a Wild Pony,Ride a Wild Pony,3,1,273.0000,251
+524,Video game,video game,3,1,273.0000,252
+525,Albert Park,Albert Park,3,1,273.0000,253
+526,Hero,Hero,3,1,273.0000,254
+527,minor basilica,a minor basilica,3,1,273.0000,255
+528,Musicians,drummer,3,0,274.0000,255
+529,"La Gomera, Canary Islands, Spain","Canary Islands, Spain",3,0,275.0000,255
+530,Rihanna,Stargate,3,0,276.0000,255
+531,Paris,1926 Paris,3,0,277.0000,255
+532,CableACE Award for Best Actress in a Dramatic Series,BAFTA TV Award Best Actor,3,0,278.0000,255
+533,Karen O,Karen O,3,1,278.0000,256
+534,Humphrey Goodman,DI Humphrey Goodman,3,0,279.0000,256
+535,Bismarck,Bismarck,3,1,279.0000,257
+536,Crystal Dynamics,Crystal Dynamics,3,1,279.0000,258
+537,William Allen White,middle America,3,0,280.0000,258
+538,1987,1987,3,1,280.0000,259
+539,photojournalist,Armenian–American,3,0,281.0000,259
+540,Grand Forks International Airport,El Paso International Airport,3,0,282.0000,259
+541,Ethan Coen,Joel David Coen,3,0,283.0000,259
+542,Kathleen O'Brien,Kathleen O'Brien,3,1,283.0000,260
+543,Chaplain to the Forces,Chaplain,3,0,284.0000,260
+544,203 people per square kilometer / 526 people per square mile,526,3,0,285.0000,260
+545,Southern State Parkway,Southern State Parkway,3,1,285.0000,261
+546,Alain Resnais,Scott Sidney,3,0,286.0000,261
+547,Naked Soldier,"""Naked Killer""",3,0,287.0000,261
+548,1901,1901,3,1,287.0000,262
+549,Lismore,Lismore,3,1,287.0000,263
+550,Hee Haw,Hee Haw,3,1,287.0000,264
+551,Christopher 'Chris' Tarbell,"Christopher ""Chris"" Tarbell",3,1,287.0000,265
+552,Último Dragón,Mossad,3,0,288.0000,265
+553,Vanarama,Vanarama,3,1,288.0000,266
+554,director,director and producer,3,0,289.0000,266
+555,Alberto de Agostini National Park,Isla de Xativa,3,0,290.0000,266
+556,45,45th,3,0,291.0000,266
+557,March and April,March and April,3,1,291.0000,267
+558,"Alice Springs, Northern Territory, Australia","Alice Springs, Northern Territory",3,0,292.0000,267
+559,Thomas Mawson,Thomas Mawson,3,1,292.0000,268
+560,Jesper Myrfors,Jesper Myrfors,3,1,292.0000,269
+561,grandson,great-grandfather,3,0,293.0000,269
+562,American,Canadian,3,0,294.0000,269
+563,Mrs. Eastwood & Company,Mrs. Eastwood & Company,3,1,294.0000,270
+564,Erinsborough,Erinsborough,3,1,294.0000,271
+565,Mille Lacs County,Douglas,3,0,295.0000,271
+566,filmmaker,"film director, film producer, writer",3,0,296.0000,271
+567,Brad Silberling,Brad Silberling,3,1,296.0000,272
+568,Kate,"Kairi in the video game series ""Kingdom Hearts"".",3,0,297.0000,272
+569,Lakeland Square Mall,Winter Haven Mall,3,0,298.0000,272
+570,World War II,World War II,3,1,298.0000,273
+571,15,fifteen,3,0,299.0000,273
+572,British,British,3,1,299.0000,274
+573,Asante Traditional Buildings,Gulangyu,3,0,300.0000,274
+574,Hebrides,Kingdom of the Isles,3,0,301.0000,274
+575,James Packer,James Packer,3,1,301.0000,275
+576,Argentine Americans,Argentine Americans,3,1,301.0000,276
+577,Kal Ho Naa Ho,Kal Ho Naa Ho,3,1,301.0000,277
+578,"NCAA's all-time leader in total passing yards, touchdowns, and completions",most total touchdowns in NCAA history,3,0,302.0000,277
+579,"4,613","4,613",3,1,302.0000,278
+580,2011,2011,3,1,302.0000,279
+581,Nagapattinam District,Tharangambadi,3,0,303.0000,279
+582,Perfect Strangers,Perfect Strangers,3,1,303.0000,280
+583,2006,2006,3,1,303.0000,281
+584,death metal,death metal band,3,0,304.0000,281
+585,Dissection,Dissection,3,1,304.0000,282
+586,German Spitz,German Spitz,3,1,304.0000,283
+587,Sarod,strings,3,0,305.0000,283
+588,Yes,yes,3,1,305.0000,284
+589,Polypodium,Polypodium,3,1,305.0000,285
+590,tigers,Javan leopard,3,0,306.0000,285
+591,Steeles Avenue,Steeles Avenue,3,1,306.0000,286
+592,Joe Scarborough,Charles Joseph,3,0,307.0000,286
+593,7 miles,7 miles,3,1,307.0000,287
+594,Richard Gasquet,Jim Pugh,3,0,308.0000,287
+595,Pakistan,Pakistani,3,0,309.0000,287
+596,New Jersey,Province of New York,3,0,310.0000,287
+597,Sudan,Republic of Chad,3,0,311.0000,287
+598,Peter Schmeichel,World's Best Goalkeeper,3,0,312.0000,287
+599,Ogallala Aquifer,Ogallala Aquifer,3,1,312.0000,288
+600,Giuseppe Verdi,Giuseppe Verdi,3,1,312.0000,289
+601,Las Vegas Sands,Las Vegas Sands company.,3,0,313.0000,289
+602,Květa Peschke,Květa Peschke,3,1,313.0000,290
+603,Marktown,Marktown,3,1,313.0000,291
+604,West Point Iron and Cannon Foundry,West Point Iron and Cannon Foundry,3,1,313.0000,292
+605,Yes,yes,3,1,313.0000,293
+606,"4,000","3,677 seated",3,0,314.0000,293
+607,Soaps In Depth,Macworld,3,0,315.0000,293
+608,Owsley Stanley,Owsley Stanley,3,1,315.0000,294
+609,Keeper of the Great Seal of Scotland,Keeper of the Privy Seal of Scotland,3,0,316.0000,294
+610,28 January 1864,28 January 1864,3,1,316.0000,295
+611,Ed O'Neill,"Edward Leonard ""Ed"" O'Neill",3,0,317.0000,295
+612,Yes,yes,3,1,317.0000,296
+613,October 1922,October 1922,3,1,317.0000,297
+614,Caligula,Gaius Julius Caesar Augustus Germanicus,3,0,318.0000,297
+615,FIFA Women's World Cup,international football competition,3,0,319.0000,297
+616,Sinclair Hill,Sinclair Hill,3,1,319.0000,298
+617,T. R. M. Howard,T. R. M. Howard,3,1,319.0000,299
+618,Benedict of Nursia,Benedict of Nursia,3,1,319.0000,300
+619,"Battle Creek, Michigan","Battle Creek, Michigan",3,1,319.0000,301
+620,Battle Beyond the Sun,The Big Lebowski,3,0,320.0000,301
+621,2015,2013,3,0,321.0000,301
+622,Walt Disney Productions,Walt Disney Productions,3,1,321.0000,302
+623,Yes,yes,3,1,321.0000,303
+624,Treaty of Gandamak,Treaty of Gandamak,3,1,321.0000,304
+625,Oplismenus,Oplismenus,3,1,321.0000,305
+626,over 600,over 600 stores,3,0,322.0000,305
+627,Sasanian Empire,the Parthian Empire,3,0,323.0000,305
+628,Eddie Izzard,Eddie Izzard,3,1,323.0000,306
+629,Green Chair,Green Chair,3,1,323.0000,307
+630,Kang,Kodos,3,0,324.0000,307
+631,Chloë Agnew,Chloë Alexandra Adele Emily Agnew,3,0,325.0000,307
+632,Raise Your Voice,Na Na,3,0,326.0000,307
+633,Koyaanisqatsi,Mad Hot Ballroom,3,0,327.0000,307
+634,2017,2017,3,1,327.0000,308
+635,Queen Elizabeth II,Princess Elizabeth,3,0,328.0000,308
+636,1916,1916,3,1,328.0000,309
+637,Phoenix Television,Phoenix Television,3,1,328.0000,310
+638,Larnelle Harris,Larnelle Harris,3,1,328.0000,311
+639,NYPD's 83rd Precinct,NYPD's 83rd Precinct,3,1,328.0000,312
+640,Christina Ricci,Christina Ricci,3,1,328.0000,313
+641,150 million,150 million copies,3,0,329.0000,313
+642,Flashback: The Quest for Identity,Fade to Black,3,0,330.0000,313
+643,Salmita Mine,Kanichee Mine,3,0,331.0000,313
+644,Warner Bros. Records,Warner Bros,3,0,332.0000,313
+645,Garajonay National Park,Sierra de Guadarrama National Park,3,0,333.0000,313
+646,Ian Schneider,Frederick King Keller,3,0,334.0000,313
+647,Political correctness,political correctness,3,1,334.0000,314
+648,16th Street and Georgetown Road,16th Street and Georgetown Road,3,1,334.0000,315
+649,Brooklyn,"Brooklyn, New York",3,0,335.0000,315
+650,Chief of the Operations Staff of the Armed Forces High Command,Oberkommando der Wehrmacht,3,0,336.0000,315
+651,Awake,Awake,3,1,336.0000,316
+652,Dead Poets Society,Dead Poets Society,3,1,336.0000,317
+653,Sandia National Laboratory,Manhattan Project,3,0,337.0000,317
+654,yes,yes,3,1,337.0000,318
+655,"Washington, D.C.","Cleveland, Ohio",3,0,338.0000,318
+656,Chicago Bulls,Orlando Magic,3,0,339.0000,318
+657,Oklahoma City,Norman,3,0,340.0000,318
+658,"July 26, 1959","July 26, 1959",3,1,340.0000,319
+659,"3,384,569","3,384,569",3,1,340.0000,320
+660,Yes,no,3,0,341.0000,320
+661,Maurice Ravel,Maurice Ravel,3,1,341.0000,321
+662,Lever Zeepfabrieken N.V.,Margarine Unie,3,0,342.0000,321
+663,1977,1977,3,1,342.0000,322
+664,Old Dominion,Charles Kelley,3,0,343.0000,322
+665,Bangor,"""Queen City""",3,0,344.0000,322
+666,In These Times,Multinational Monitor,3,0,345.0000,322
+667,Limerick,Limerick,3,1,345.0000,323
+668,X Ambassadors,X Ambassadors,3,1,345.0000,324
+669,Michael Graves,architect Michael Graves,3,0,346.0000,324
+670,Buckingham Palace,reigning monarch of the United Kingdom,3,0,347.0000,324
+671,Margaret Landon,Margaret Landon,3,1,347.0000,325
+672,Luca Parmitano,Luca Parmitano,3,1,347.0000,326
+673,"McFarland, USA",Dinosaur,3,0,348.0000,326
+674,Stephen Christian,and lead guitarist,3,0,349.0000,326
+675,MGM Resorts International,MGM Resorts International,3,1,349.0000,327
+676,Graduation,My Beautiful Dark Twisted Fantasy,3,0,350.0000,327
+677,eastern shore,Firth of Clyde,3,0,351.0000,327
+678,Wembley Stadium,Stadio Olimpico,3,0,352.0000,327
+679,Boston Celtics,Boston Celtics,3,1,352.0000,328
+680,Ronald Reagan,Ronald Wilson Reagan,3,0,353.0000,328
+681,Daron Malakian,Daron Vartan Malakian,3,0,354.0000,328
+682,magazine,magazine,3,1,354.0000,329
+683,Zachary Levi,Zachary Levi,3,1,354.0000,330
+684,IT products and services,IT products and services,3,1,354.0000,331
+685,1865,1865,3,1,354.0000,332
+686,Fagaceae,trees,3,0,355.0000,332
+687,Ehretia,Ehretia,3,1,355.0000,333
+688,Vince Guaraldi,Vincent Anthony Guaraldi,3,0,356.0000,333
+689,Yes,no,3,0,357.0000,333
+690,Ferdi Taygan,Ferdi Taygan,3,1,357.0000,334
+691,Bedknobs and Broomsticks,Bedknobs and Broomsticks,3,1,357.0000,335
+692,Finding Nemo,Finding Nemo,3,1,357.0000,336
+693,Toshi Ichiyanagi,Toshi Ichiyanagi,3,1,357.0000,337
+694,Roy Scheider,Roy Richard Scheider,3,0,358.0000,337
+695,George Archainbaud,George Archainbaud,3,1,358.0000,338
+696,Boston,Boston,3,1,358.0000,339
+697,Regional Rural Bank,Regional Rural Bank,3,1,358.0000,340
+698,Pennacook,the Pennacook people,3,0,359.0000,340
+699,orange,orange,3,1,359.0000,341
+700,Fort Worth,Fort Worth,3,1,359.0000,342
+701,Ready to Die,"September 13, 1994",3,0,360.0000,342
+702,Musician,musician,3,1,360.0000,343
+703,Murray Hill,Murray Hill,3,1,360.0000,344
+704,more than 70,more than 70 countries,3,0,361.0000,344
+705,Teen Titans,Teen Titans Go!,3,0,362.0000,344
+706,Xcel Energy,Xcel Energy Inc.,3,0,363.0000,344
+707,1,three singles titles,3,0,364.0000,344
+708,Slaughterhouse-Five,Slaughterhouse-Five,3,1,364.0000,345
+709,Anandji Virji Shah,Anandji Virji Shah,3,1,364.0000,346
+710,"1,267 feet","5,112 feet",3,0,365.0000,346
+711,Yes,yes,3,1,365.0000,347
+712,Royal Australian Navy,Australian Defence Force,3,0,366.0000,347
+713,Jack Ryan,Jack Ryan,3,1,366.0000,348
+714,Miller Brewing,Miller Brewing,3,1,366.0000,349
+715,"Great Neck, New York","New York, United States",3,0,367.0000,349
+716,Michael Seater,Michael Seater,3,1,367.0000,350
+717,Anthony Hopkins,Anthony Hopkins,3,1,367.0000,351
+718,D. Ross Lederman,David Ross Lederman,3,0,368.0000,351
+719,3 June 2016,3 December,3,0,369.0000,351
+720,1990,28th,3,0,370.0000,351
+721,hunting,hunting,3,1,370.0000,352
+722,Black Swan,Swan Lake,3,0,371.0000,352
+723,No,no,3,1,371.0000,353
+724,business process outsourcing (BPO) services,IT,3,0,372.0000,353
+725,Phoenix Suns,the Phoenix Suns,3,1,372.0000,354
+726,"322,550","9,984",3,0,373.0000,354
+727,No,no,3,1,373.0000,355
+728,Man Booker Prize for Fiction,Man Booker Prize for Fiction,3,1,373.0000,356
+729,Eenasul Fateh,Eenasul Fateh,3,1,373.0000,357
+730,"3,384,569",more than 10 million,3,0,374.0000,357
+731,New York Giants,New York Giants,3,1,374.0000,358
+732,Gonu,1999 Odisha cyclone,3,0,375.0000,358
+733,Martha Coolidge,Martha Coolidge,3,1,375.0000,359
+734,early 1970s,early 1970s,3,1,375.0000,360
+735,North Carolina,North Carolina,3,1,375.0000,361
+736,1868,The High Sheriff changes every March.,3,0,376.0000,361
+737,Chauncey Billups,signing free agent Chauncey Billups,3,0,377.0000,361
+738,Daniel Boone,Wilderness Road,3,0,378.0000,361
+739,Fantastic Voyage,Gangsta's Paradise,3,0,379.0000,361
+740,Ken Flach,Kenneth Eliot Flach,3,0,380.0000,361
+741,9,9 venues,3,0,381.0000,361
+742,Gerry Adams,"Gerard ""Gerry"" Adams",3,0,382.0000,361
+743,Tom Hiddleston,Tom Hiddleston,3,1,382.0000,362
+744,Don Hahn,Don Hahn,3,1,382.0000,363
+745,Anna Clyne,Anna Clyne,3,1,382.0000,364
+746,New York Yankees,New York Yankees,3,1,382.0000,365
+747,Circus Diablo,Magic Dirt,3,0,383.0000,365
+748,Lepidozamia,Eucryphia,3,0,384.0000,365
+749,Pasvalys,Götene in Sweden,3,0,385.0000,365
+750,"John Vereker, 6th Viscount Gort",Lord Gort,3,0,386.0000,365
+751,Philip K. Dick,Philip K. Dick,3,1,386.0000,366
+752,Horror,South Korean horror film,3,0,387.0000,366
+753,Distillery,Distillery,3,1,387.0000,367
+754,Texas,Maryland,3,0,388.0000,367
+755,1936,7 January 1936,3,0,389.0000,367
+756,religion,belief in many deities and spirits,3,0,390.0000,367
+757,Cuyler Reynolds,Cuyler Reynolds,3,1,390.0000,368
+758,"Fujioka, Gunma","Fujioka, Gunma",3,1,390.0000,369
+759,Umaro Sissoco Embaló,Umaro Mokhtar Sissoco Embaló,3,0,391.0000,369
+760,The Saturdays,The Saturdays,3,1,391.0000,370
+761,Scandinavian design,Scandinavian design,3,1,391.0000,371
+762,Awolnation,Foo Fighters,3,0,392.0000,371
+763,yes,yes,3,1,392.0000,372
+764,documentary,documentary,3,1,392.0000,373
+765,A5117 road,The A41,3,0,393.0000,373
+766,more than 230,230,3,0,394.0000,373
+767,"teacher, teachers teacher, speaker and writer",member of the Executive Council of the General Anthroposophical Society,3,0,395.0000,373
+768,Happy Death Day,Happy Death Day,3,1,395.0000,374
+769,Liriodendron,Laurus,3,0,396.0000,374
+770,Sponsorgate,The sponsorship scandal,3,0,397.0000,374
+771,1830,6 April 1830,3,0,398.0000,374
+772,Oceans,The Bears and I,3,0,399.0000,374
+773,Oakland County,Oakland County,3,1,399.0000,375
+774,"1,267 feet",867,3,0,400.0000,375
+775,2015,2015,3,1,400.0000,376
+776,Iceland,no,3,0,401.0000,376
+777,Yes,yes,3,1,401.0000,377
+778,The Life of Larry and Larry & Steve,The Life of Larry and Larry & Steve,3,1,401.0000,378
+779,John John Florence,John John Florence,3,1,401.0000,379
+780,Pensacola,Warrington,3,0,402.0000,379
+781,Johan Leysen,Johan Leysen,3,1,402.0000,380
+782,1991's 'The Changing Scottish Landscape',The Changing Scottish Landscape,3,0,403.0000,380
+783,219,219,3,1,403.0000,381
+784,U.S. Bancorp,U.S. Bancorp,3,1,403.0000,382
+785,Crystal Palace F.C. Player of the Year,Player of the Year,3,0,404.0000,382
+786,Jim Davis,Jim Davis,3,1,404.0000,383
+787,Taylor Swift,Taylor Swift,3,1,404.0000,384
+788,Liberty,Liberty,3,1,404.0000,385
+789,Jan Hoffman,Maria Szraiber,3,0,405.0000,385
+790,Apsley Cherry-Garrard,Apsley George Benet Cherry-Garrard,3,0,406.0000,385
+791,Michael Edwards,"Eddie ""The Eagle"" Edwards",3,0,407.0000,385
+792,2010,2008,3,0,408.0000,385
+793,Victor Reinier,Ryan Guno Babel,3,0,409.0000,385
+794,1851,1851,3,1,409.0000,386
+795,August 1914,26–30 August 1914,3,0,410.0000,386
+796,CBS Corporation,CBS Corporation,3,1,410.0000,387
+797,Selle v. Gibb,1964,3,0,411.0000,387
+798,Salford City,Salford City Football Club,3,0,412.0000,387
+799,Tetrapolis,northeastern,3,0,413.0000,387
+800,Peter 'Drago' Sell,Peter 'Drago' Sell,3,1,413.0000,388
+801,valuation method,business,3,0,414.0000,388
+802,Kew Gardens,Kew Gardens,3,1,414.0000,389
+803,Austrian,American,3,0,415.0000,389
+804,family member,a family member,3,1,415.0000,390
+805,"Sun Valley, Idaho","Sun Valley, Idaho",3,1,415.0000,391
+806,Filthy Rich & Catflap,"""The Comic Strip Presents...""",3,0,416.0000,391
+807,Roman Empire,Roman,3,0,417.0000,391
+808,John Faso,John Faso,3,1,417.0000,392
+809,"pioneer in watch design, manufacturing and distribution",Swiss made,3,0,418.0000,392
+810,No,no,3,1,418.0000,393
+811,Tufts University,Tufts College,3,0,419.0000,393
+812,rock,punk rock,3,0,420.0000,393
+813,Presbyterian Church (USA),Presbyterian Church,3,0,421.0000,393
+814,fictional character,fictional character,3,1,421.0000,394
+815,1964 to 1974,1964 to 1974,3,1,421.0000,395
+816,Yes,yes,3,1,421.0000,396
+817,orange,orange,3,1,421.0000,397
+818,Philadelphia,Philadelphia,3,1,421.0000,398
+819,John Lennon,John Lennon,3,1,421.0000,399
+820,"8,211","8,211 at the 2010 census",3,0,422.0000,399
+821,"5,042","5,042",3,1,422.0000,400
+822,Vikram Bhatt,Tinu Suresh Desai,3,0,423.0000,400
+823,Pyotr Ilyich Tchaikovsky,Pyotr Ilyich Tchaikovsky,3,1,423.0000,401
+824,Yes,no,3,0,424.0000,401
+825,American,American,3,1,424.0000,402
+826,Rocky Boy's Indian Reservation,Rocky Boy's Indian Reservation,3,1,424.0000,403
+827,1986,1986,3,1,424.0000,404
+828,Armada,Ready Player One,3,0,425.0000,404
+829,Hugo Award for Best Series,Hugo Award,3,0,426.0000,404
+830,Seoul,Korea,3,0,427.0000,404
+831,4,4 albums,3,0,428.0000,404
+832,Carrefour,Carrefour,3,1,428.0000,405
+833,Nikolai Morozov,Nikolai Morozov,3,1,428.0000,406
+834,No,no,3,1,428.0000,407
+835,Pavel Alexandrov,Pavel Sergeyevich Alexandrov,3,0,429.0000,407
+836,May Revolution,May Revolution,3,1,429.0000,408
+837,No,no,3,1,429.0000,409
+838,stunt performer,stunt performances,3,0,430.0000,409
+839,Archbishop of Canterbury,Archbishop of Canterbury,3,1,430.0000,410
+840,Gloria Trevi,Gloria Trevi,3,1,430.0000,411
+841,Robert Smigel,"Robert Smigel, Michael Koman and David Feldman",3,0,431.0000,411
+842,Frank Thomas' Big Hurt,a pinball machine,3,0,432.0000,411
+843,Princess Jessica,Princess Jessica,3,1,432.0000,412
+844,Justin Spitzer,Justin Spitzer,3,1,432.0000,413
+845,Apium,Apium,3,1,432.0000,414
+846,Bill Clinton,William Jefferson Clinton,3,0,433.0000,414
+847,2005,2005,3,1,433.0000,415
+848,Fazoli's,Fazoli's,3,1,433.0000,416
+849,Future,The Bomb Factory,3,0,434.0000,416
+850,Christian,evangelical Christian,3,0,435.0000,416
+851,Laura Osnes,Laura Ann Osnes,3,0,436.0000,416
+852,impresario,impresario,3,1,436.0000,417
+853,fifth-largest,fifth-largest,3,1,436.0000,418
+854,Bhabananda Deka,Prof Bhabananda Deka,3,0,437.0000,418
+855,ZZ Top,ZZ Top,3,1,437.0000,419
+856,"276,170","276,170 inhabitants",3,0,438.0000,419
+857,Leo Varadkar,Leo Varadkar,3,1,438.0000,420
+858,Violin Sonata No. 4,Symphony No. 7,3,0,439.0000,420
+859,Pepper Keenan,"Robert ""Rob"" Parissi",3,0,440.0000,420
+860,Boston and Maine Railroad's Southern Division,Boston and Maine Railroad's Southern Division,3,1,440.0000,421
+861,Yes,no,3,0,441.0000,421
+862,1946,1945,3,0,442.0000,421
+863,Kurt Russell,Kurt Russell,3,1,442.0000,422
+864,Australian Supercars Championship,Australian Supercars Championship,3,1,442.0000,423
+865,Urijah Faber,Urijah Christopher Faber,3,0,443.0000,423
+866,Nuptse,It lies two kilometres WSW of Mount Everest.,3,0,444.0000,423
+867,Las Vegas,Las Vegas Strip in Paradise,3,0,445.0000,423
+868,Vespa,Piaggio,3,0,446.0000,423
+869,"Hotel, Airport, Wheels","Hotel"" (1965), ""Airport"" (1968), ""Wheels"" (1971)",3,0,447.0000,423
+870,John F. Kelly,John Francis Kelly,3,0,448.0000,423
+871,Charlie Albright,Atsushi Ogata,3,0,449.0000,423
+872,Greenwich Village,"Greenwich Village, New York City",3,0,450.0000,423
+873,Sean Yseult,Sean Yseult.,3,1,450.0000,424
+874,"46 Albert Square, Walford, London E20","46 Albert Square, Walford, London E20",3,1,450.0000,425
+875,AngloGold Ashanti,AngloGold Ashanti,3,1,450.0000,426
+876,Dennis Hull,"Dennis Hull, as well as painter Manley MacDonald.",3,0,451.0000,426
+877,Blue,Blue,3,1,451.0000,427
+878,Front Row media program,keyboard function keys,3,0,452.0000,427
+879,"April 29, 2005, $129.95","April 29, 2005 for US$129.95",3,0,453.0000,427
+880,Yes,yes,3,1,453.0000,428
+881,1968,1614,3,0,454.0000,428
+882,more than two decades,more than two decades,3,1,454.0000,429
+883,Ratatat,Ratatat,3,1,454.0000,430
+884,Alceste,"""Alceste""",3,1,454.0000,431
+885,Emma Bull,Adeline Virginia Woolf,3,0,455.0000,431
+886,Babylon,Babylon,3,1,455.0000,432
+887,Berea College,Berea College,3,1,455.0000,433
+888,Severe acute respiratory syndrome,severe acute respiratory syndrome,3,1,455.0000,434
+889,Hamlet,Hamlet,3,1,455.0000,435
+890,January,January 2001,3,0,456.0000,435
+891,"Royce da 5'9"" and Eminem","Royce da 5'9"" (Bad) and Eminem (Evil)",3,0,457.0000,435
+892,Nelson Rockefeller,Nelson Rockefeller,3,1,457.0000,436
+893,Kelly Osbourne,Kelly Lee Osbourne,3,0,458.0000,436
+894,Peabody Ducks,Ducks,3,0,459.0000,436
+895,Yes,yes,3,1,459.0000,437
+896,seven,seven,3,1,459.0000,438
+897,Mathieu Kassovitz,Mathieu Kassovitz,3,1,459.0000,439
+898,Viaport Rotterdam,Viaport Rotterdam,3,1,459.0000,440
+899,Schutzstaffel,Schutzstaffel,3,1,459.0000,441
+900,Norse mythology,Norse,3,0,460.0000,441
+901,Caistor,Caistor is a town,3,0,461.0000,441
+902,drifting,Drifting,3,1,461.0000,442
+903,November,November 2017,3,0,462.0000,442
+904,Canadian comedian,Canadian comedian,3,1,462.0000,443
+905,Monthly,Girlfriends,3,0,463.0000,443
+906,director,film director,3,0,464.0000,443
+907,New Jewel Movement,New Jewel Movement,3,1,464.0000,444
+908,An All-Colored Vaudeville Show,"""An All-Colored Vaudeville Show""",3,1,464.0000,445
+909,Dutch,Dutch,3,1,464.0000,446
+910,pastels and oil paintings,portrait,3,0,465.0000,446
+911,Suicide Kings,Suicide Kings,3,1,465.0000,447
+912,Leonid Khachiyan,Nikolai Ivanovich Lobachevsky,3,0,466.0000,447
+913,French Canadians,French Canadians,3,1,466.0000,448
+914,artist's lofts and art galleries,artists' lofts,3,0,467.0000,448
+915,"London, England","London, England",3,1,467.0000,449
+916,Carondelet Canal,Carondelet Canal,3,1,467.0000,450
+917,The Conversation,The Conversation,3,1,467.0000,451
+918,Heavyweights,Heavyweights,3,1,467.0000,452
+919,Brothers Quay,Brothers Quay,3,1,467.0000,453
+920,No,no,3,1,467.0000,454
+921,January 2004,January 2004,3,1,467.0000,455
+922,Scotch Collie,Scotch Collie,3,1,467.0000,456
+923,Every Rose Has Its Thorn,Every Rose Has Its Thorn,3,1,467.0000,457
+924,1961,1961,3,1,467.0000,458
+925,"Warrnambool, Victoria","Warrnambool, Victoria",3,1,467.0000,459
+926,Yorgos Lanthimos,Yorgos Lanthimos,3,1,467.0000,460
+927,Picric acid,picric acid,3,1,467.0000,461
+928,Ogier the Dane,Ogier the Dane,3,1,467.0000,462
+929,Burwash Mine,Burwash Mine,3,1,467.0000,463
+930,A Bug's Life,A Bug's Life,3,1,467.0000,464
+931,Obafemi Martins,Obafemi Martins,3,1,467.0000,465
+932,Rockland,Rockland,3,1,467.0000,466
+933,Live,Live,3,1,467.0000,467
+934,punk,rock,3,0,468.0000,467
+935,orange juice,orange juice,3,1,468.0000,468
+936,1932,1932,3,1,468.0000,469
+937,Kevin Spacey,Kevin Spacey,3,1,468.0000,470
+938,Philip Labonte,Philip Steven Labonte,3,0,469.0000,470
+939,Nobel Prize,Nobel Prize,3,1,469.0000,471
+940,Ivan Foster,Ian Paisley,3,0,470.0000,471
+941,London,London,3,1,470.0000,472
+942,Wokingham,lower Manhattan,3,0,471.0000,472
+943,Yes,yes,3,1,471.0000,473
+944,Gainesville,"Gainesville, Florida",3,0,472.0000,473
+945,1999,1999,3,1,472.0000,474
+946,Hinduism,Hindi,3,0,473.0000,474
+947,Philip Livingston,Philip Livingston,3,1,473.0000,475
+948,Dodge Park,Dodge Memorial Park,3,0,474.0000,475
+949,"March 30, 2025","March 30, 2025",3,1,474.0000,476
+950,drawings,drawings,3,1,474.0000,477
+951,building,building,3,1,474.0000,478
+952,Jimmy Page,Eric Clapton,3,0,475.0000,478
+953,George Washington Bridge,the George Washington Bridge,3,1,475.0000,479
+954,Coyote Ugly,Coyote Ugly,3,1,475.0000,480
+955,"April 1, 1949","April 1, 1949",3,1,475.0000,481
+956,Feel the Wind,"""Discover Pure Energy""",3,0,476.0000,481
+957,Donnie Yen,world wushu tournament,3,0,477.0000,481
+958,Ireland,Ireland,3,1,477.0000,482
+959,1989,1989,3,1,477.0000,483
+960,Dallas,Dallas,3,1,477.0000,484
+961,Daniel Patrick Moynihan,"Daniel Patrick ""Pat"" Moynihan",3,0,478.0000,484
+962,2009 Big 12 Conference football season,2009 Big 12 Conference,3,0,479.0000,484
+963,Steve McGarrett,Steve McGarrett,3,1,479.0000,485
+964,hot toddy,Hot toddy,3,1,479.0000,486
+965,Mississippi,"Laurel, Mississippi",3,0,480.0000,486
+966,Annie Morton,Terry Richardson,3,0,481.0000,486
+967,Rahoneen,Casement's Fort,3,0,482.0000,486
+968,Philip K. Dick,Philip K. Dick,3,1,482.0000,487
+969,Soil,Drowning Pool,3,0,483.0000,487
+970,Oregon,Oregon,3,1,483.0000,488
+971,Illusion optics,theory of direct scattering and inverse scattering,3,0,484.0000,488
+972,Adam Silver,Adam Silver,3,1,484.0000,489
+973,Gabrielle-Suzanne Barbot de Villeneuve,Margery Williams,3,0,485.0000,489
+974,"score 1,000 points with two different teams","score 1,000 points with two different teams",3,1,485.0000,490
+975,silver medal,a silver medal,3,1,485.0000,491
+976,1992,1992,3,1,485.0000,492
+977,Cyndi Lauper,"Cynthia Ann Stephanie ""Cyndi"" Lauper",3,0,486.0000,492
+978,thermal energy,electromagnetic field,3,0,487.0000,492
+979,Rawhide,Rawhide,3,1,487.0000,493
+980,Bryce Courtenay,Juan Carlos Onetti,3,0,488.0000,493
+981,Big Mamie,Big Mamie,3,1,488.0000,494
+982,The Royal Family,"""The Royal Family""",3,1,488.0000,495
+983,No other actors are listed,Gene Serdena,3,0,489.0000,495
+984,5,44,3,0,490.0000,495
+985,Big 12 Conference,Big 12 Conference,3,1,490.0000,496
+986,No,no,3,1,490.0000,497
+987,2.1 million,2.1 million,3,1,490.0000,498
+988,Allerdale,"the Borough of Allerdale in Cumbria, England",3,0,491.0000,498
+989,Yes,yes,3,1,491.0000,499
+990,"September 30, 2017","September 30, 2017",3,1,491.0000,500
+991,2014 FIFA World Cup,Brazil,3,0,492.0000,500
+992,Brad Wilk,Brad Wilk,3,1,492.0000,501
+993,Bob Iger,Robert A. Iger,3,0,493.0000,501
+994,yes,yes,3,1,493.0000,502
+995,Pasek and Paul,Pasek and Paul,3,1,493.0000,503
+996,New York City,"Queens, New York",3,0,494.0000,503
+997,Scribner,Scribner,3,1,494.0000,504
+998,1969-1974,1969 until 1974,3,0,495.0000,504
+999,Third and Indiana,The Soloist,3,0,496.0000,504
+1000,Epigaea,Bactris,3,0,497.0000,504
+1001,center,Canadian professional ice hockey centre,3,0,498.0000,504
+1002,Mother goddess,Greek mythology,3,0,499.0000,504
+1003,Arlo,Apatosaurus,3,0,500.0000,504
+1004,Armenian,Armenian,3,1,500.0000,505
+1005,1.95 m,1.95 m,3,1,500.0000,506
+1006,Dorset,Essex,3,0,501.0000,506
+1007,Paula Patton,Paula Maxine Patton,3,0,502.0000,506
+1008,State University of New York Upstate Medical University,University of New York Upstate,3,0,503.0000,506
+1009,"June 28, 1945",28 June 1945,3,0,504.0000,506
+1010,Bottom of the World,The Bye Bye Man,3,0,505.0000,506
+1011,Catwoman,Catwoman,3,1,505.0000,507
+1012,yes,no,3,0,506.0000,507
+1013,military officer,officer,3,0,507.0000,507
+1014,119 minutes,119 minutes,3,1,507.0000,508
+1015,No,no,3,1,507.0000,509
+1016,Academy Award for Best Animated Feature,Academy Award for Best Animated Feature,3,1,507.0000,510
+1017,lifestyle and women's magazine,fortnightly women interest magazine,3,0,508.0000,510
+1018,Her translation of and commentary on Isaac Newton's book 'Principia' contained a profound contribution to Newtonian mechanics—the postulate of an additional conservation law for total energy.,"commentary on Isaac Newton's book ""Principia""",3,0,509.0000,510
+1019,Katherine Harris,Katherine Harris,3,1,509.0000,511
+1020,Hessians,Hessians,3,1,509.0000,512
+1021,Tori Amos,Tori Amos,3,1,509.0000,513
+1022,Gal Gadot,Gal Gadot,3,1,509.0000,514
+1023,"March 13, 2013","March 13, 2013",3,1,509.0000,515
+1024,Rich Girl,"""Rich Girl""",3,1,509.0000,516
+1025,Philip Glass,Philip Morris Glass,3,0,510.0000,516
+1026,Bolshoi Theatre,Bolshoi Theatre,3,1,510.0000,517
+1027,1957,1957,3,1,510.0000,518
+1028,racehorse breeder and owner,racehorse breeder and owner,3,1,510.0000,519
+1029,Ajax Amsterdam,Tel Aviv,3,0,511.0000,519
+1030,2009,1976,3,0,512.0000,519
+1031,personal care products,natural-ingredients-only personal care products,3,0,513.0000,519
+1032,musical,musical,3,1,513.0000,520
+1033,13,13,3,1,513.0000,521
+1034,1968,1968,3,1,513.0000,522
+1035,Phil Spector,Phil Spector,3,1,513.0000,523
+1036,musicians,"musician, singer, and songwriter",3,0,514.0000,523
+1037,Sir Syed University of Engineering and Technology,Sir Syed University of Engineering and Technology,3,1,514.0000,524
+1038,young superheroes,focus on young superheroes,3,0,515.0000,524
+1039,2006,2006,3,1,515.0000,525
+1040,Portal A Interactive,Portal A Interactive,3,1,515.0000,526
+1041,Cyclic Defrost,Cyclic Defrost,3,1,515.0000,527
+1042,2006,2006,3,1,515.0000,528
+1043,British Army,British Army,3,1,515.0000,529
+1044,Hard Rock Stadium,"Miami Gardens, Florida,",3,0,516.0000,529
+1045,Polka,Polka,3,1,516.0000,530
+1046,Lithuanian-born French,Lithuanian-born French,3,1,516.0000,531
+1047,Tampa,Tampa,3,1,516.0000,532
+1048,Yes,no,3,0,517.0000,532
+1049,"Stapleton Cotton, 1st Viscount Combermere",Lord Combermere,3,0,518.0000,532
+1050,Citizens for a Sound Economy,Citizens for a Sound Economy,3,1,518.0000,533
+1051,Lakers,Los Angeles Lakers,3,0,519.0000,533
+1052,Eliot Cutler,Eliot Cutler,3,1,519.0000,534
+1053,American,American,3,1,519.0000,535
+1054,British,German,3,0,520.0000,535
+1055,anabolic-androgenic steroids,Anabolic steroids,3,0,521.0000,535
+1056,Roland R-8,The R-8 Human Rhythm Composer,3,0,522.0000,535
+1057,J. M. Barrie,Edward Franklin Albee III,3,0,523.0000,535
+1058,Transporter 3,Transporter 3,3,1,523.0000,536
+1059,Royal Navy,Navy,3,0,524.0000,536
+1060,Strange Synergy,Strange Synergy,3,1,524.0000,537
+1061,"Port Moresby, Papua New Guinea","Port Moresby, Papua New Guinea",3,1,524.0000,538
+1062,Jean-Loup Chrétien,Jean-Loup Jacques Marie Chrétien,3,0,525.0000,538
+1063,Mike,Jackson Storm,3,0,526.0000,538
+1064,My Cat from Hell,My Cat from Hell,3,1,526.0000,539
+1065,Ortaköy,no,3,0,527.0000,539
+1066,Northrop F-15 Reporter,The Northrop P-61 Black Widow,3,0,528.0000,539
+1067,Gauteng,Gauteng province,3,0,529.0000,539
+1068,1944,1944,3,1,529.0000,540
+1069,Garth Jennings,Garth Jennings,3,1,529.0000,541
+1070,yes,yes,3,1,529.0000,542
+1071,Salvia,Salvia,3,1,529.0000,543
+1072,Bratislava,"about 450,000",3,0,530.0000,543
+1073,Rosie O'Donnell,Rosie O'Donnell,3,1,530.0000,544
+1074,215th,215th,3,1,530.0000,545
+1075,Erika Jayne,Erika Jayne,3,1,530.0000,546
+1076,Plato,Plato,3,1,530.0000,547
+1077,board games,board game,3,0,531.0000,547
+1078,AARP The Magazine,aging issues,3,0,532.0000,547
+1079,aldosterone,zona glomerulosa,3,0,533.0000,547
+1080,Europe,Europe,3,1,533.0000,548
+1081,Yes,yes,3,1,533.0000,549
+1082,Guthred,Guthred or Guthfrith,3,0,534.0000,549
+1083,1978,7 October 1978,3,0,535.0000,549
+1084,1963 to 1991,1963 to 1991,3,1,535.0000,550
+1085,South African,South African-born,3,0,536.0000,550
+1086,David Dunn,David Dunn,3,1,536.0000,551
+1087,action films,martial arts action films,3,0,537.0000,551
+1088,Yes,yes,3,1,537.0000,552
+1089,Western Athletic Conference,Arizona State Sun Devils,3,0,538.0000,552
+1090,Daniel Sturridge,Daniel Sturridge,3,1,538.0000,553
+1091,Long Island Sound,110 miles,3,0,539.0000,553
+1092,Bill McCutcheon,Bill McCutcheon,3,1,539.0000,554
+1093,VH1's '100 Greatest Artists of Hard Rock',100 Greatest Artists of Hard Rock,3,0,540.0000,554
+1094,"Nebula Award, Philip K. Dick Award, Hugo Award","Nebula Award, the Philip K. Dick Award, and the Hugo Award",3,0,541.0000,554
+1095,I.O.U.S.A.,I.O.U.S.A.,3,1,541.0000,555
+1096,Bronwyn Bishop,Kathryn Jean Martin,3,0,542.0000,555
+1097,Yes,yes,3,1,542.0000,556
+1098,Yes,yes,3,1,542.0000,557
+1099,The Process,The Process,3,1,542.0000,558
+1100,Game of Thrones,Game of Thrones,3,1,542.0000,559
+1101,"1,146","35,124",3,0,543.0000,559
+1102,2003,in 1896,3,0,544.0000,559
+1103,Boyd Gaming,Boyd Gaming,3,1,544.0000,560
+1104,Leinster,the east of Ireland,3,0,545.0000,560
+1105,Ubisoft,Massive Entertainment,3,0,546.0000,560
+1106,Walt Disney Productions,Disney,3,0,547.0000,560
+1107,Oregon Ducks,Oregon Ducks football,3,0,548.0000,560
+1108,town meeting,town meeting legislative body,3,0,549.0000,560
+1109,Vib Gyor,"Vib Gyor was a band that was formed in Leeds, England.",3,0,550.0000,560
+1110,Start,IK Start,3,0,551.0000,560
+1111,Prime Minister,Viscount Cranborne,3,0,552.0000,560
+1112,No,no,3,1,552.0000,561
+1113,Las Vegas,Las Vegas,3,1,552.0000,562
+1114,"New Orleans, Louisiana",Louisiana.,3,0,553.0000,562
+1115,University of Vienna,University of Vienna,3,1,553.0000,563
+1116,Paleo-Indians,Paleo-Indians,3,1,553.0000,564
+1117,22 November 1761,22 November,3,0,554.0000,564
+1118,No,no,3,1,554.0000,565
+1119,James Franco,James Franco,3,1,554.0000,566
+1120,Alexander Borodin,Alexander Porfiryevich Borodin,3,0,555.0000,566
+1121,film critic,author,3,0,556.0000,566
+1122,no,no,3,1,556.0000,567
+1123,Dana Fox,Dana Fox,3,1,556.0000,568
+1124,"Frida, en trotjänarinna","Frida, en trotjänarinna",3,1,556.0000,569
+1125,Jordan Peele and Alex Rubens,Jordan Peele,3,0,557.0000,569
+1126,WAMC,WAMC,3,1,557.0000,570
+1127,William Bonfield,Alistair Grant,3,0,558.0000,570
+1128,genus,genus,3,1,558.0000,571
+1129,Lowe's,Lowe's,3,1,558.0000,572
+1130,Mean Girls,Mean Girls,3,1,558.0000,573
+1131,Monica Lewinsky,Monica Lewinsky,3,1,558.0000,574
+1132,New York,New York,3,1,558.0000,575
+1133,Yes,yes,3,1,558.0000,576
+1134,James G. Kiernan,James G. Kiernan,3,1,558.0000,577
+1135,SNH48,Dragon TV,3,0,559.0000,577
+1136,hamburgers,hamburgers,3,1,559.0000,578
+1137,"Phil Lord, Christopher Miller","Dan Lin, Roy Lee, Phil Lord and Christopher Miller",3,0,560.0000,578
+1138,Chelmsford City,Chelmsford,3,0,561.0000,578
+1139,Sigmund Freud,Sigmund Freud,3,1,561.0000,579
+1140,media for the 65.8 million,media for the 65.8 million,3,1,561.0000,580
+1141,1909,1909,3,1,561.0000,581
+1142,1970s,1970s,3,1,561.0000,582
+1143,Alexander Hamilton,"January 11, 1755 or 1757July",3,0,562.0000,582
+1144,Crackle,Crackle,3,1,562.0000,583
+1145,House of Windsor,Mountbatten family,3,0,563.0000,583
+1146,Shep Meyers,Shep Meyers,3,1,563.0000,584
+1147,1988,1988,3,1,563.0000,585
+1148,Continental Army,Continental Army,3,1,563.0000,586
+1149,James Tinling,James Tinling,3,1,563.0000,587
+1150,defensive coordinator,defensive coordinator,3,1,563.0000,588
+1151,Yes,no,3,0,564.0000,588
+1152,rock,rock,3,1,564.0000,589
+1153,Birmingham,"Birmingham, Alabama",3,0,565.0000,589
+1154,number five,number 5,3,0,566.0000,589
+1155,"Max Martin, Savan Kotecha, Ilya Salmanzadeh","Max Martin, Savan Kotecha and Ilya Salmanzadeh",3,0,567.0000,589
+1156,yes,Drunter und Drüber is a multiplayer board game invented by Klaus Teuber,3,0,568.0000,589
+1157,Darkroom,Darkroom,3,1,568.0000,590
+1158,Nicol Williamson,John Gielgud,3,0,569.0000,590
+1159,American,American,3,1,569.0000,591
+1160,The Late Late Show,The Late Late Show,3,1,569.0000,592
+1161,Comeng,Comeng and Clyde Engineering,3,0,570.0000,592
+1162,2007,2014,3,0,571.0000,592
+1163,SBS,SBS,3,1,571.0000,593
+1164,Manchester United,Premier League club Manchester United and the England national team,3,0,572.0000,593
+1165,Bearno's,Bearno's Pizza,3,0,573.0000,593
+1166,Serri,Serri,3,1,573.0000,594
+1167,25,25 laps,3,0,574.0000,594
+1168,Cuban,Cuban,3,1,574.0000,595
+1169,NBC,National Broadcasting Company,3,0,575.0000,595
+1170,SKUM,SKUM,3,1,575.0000,596
+1171,Duke Cunningham,Duke Cunningham,3,1,575.0000,597
+1172,BraveStarr,BraveStarr,3,1,575.0000,598
+1173,400 MW,400 MW,3,1,575.0000,599
+1174,Best Alternative Music Album,Best Alternative Music Album,3,1,575.0000,600
+1175,actress,Steve Jobs,3,0,576.0000,600
+1176,Motörhead,Motörhead,3,1,576.0000,601
+1177,one,Over forty,3,0,577.0000,601
+1178,Charlie Murphy,Charlie Murphy,3,1,577.0000,602
+1179,dirt track racing,Dirt track racing,3,1,577.0000,603
+1180,Reggie Jackson,"Reginald Martinez ""Reggie"" Jackson",3,0,578.0000,603
+1181,SS-Oberst-Gruppenführer,Reichsführer-SS,3,0,579.0000,603
+1182,Hermione Baddeley,Hermione Baddeley,3,1,579.0000,604
+1183,Kannada,Hindi,3,0,580.0000,604
+1184,Frank Fielding,Scott Paul Carson,3,0,581.0000,604
+1185,Dublin,Dublin,3,1,581.0000,605
+1186,Bristol Olympus,British Bristol Olympus turbojet,3,0,582.0000,605
+1187,Bea Arthur,Bea Arthur,3,1,582.0000,606
+1188,Masatoshi Gündüz Ikeda,Abū Bakr ibn Muḥammad ibn al Ḥusayn al-Karajī,3,0,583.0000,606
+1189,Douglas Jackson,Douglas Jackson,3,1,583.0000,607
+1190,rural Orissa,Orissa,3,0,584.0000,607
+1191,Sam Wood,Tim Whelan,3,0,585.0000,607
+1192,Thorgan Hazard,Thorgan Ganael Francis Hazard,3,0,586.0000,607
+1193,1963,1963,3,1,586.0000,608
+1194,Forbes,"Forbes in the Central West region of New South Wales, Australia",3,0,587.0000,608
+1195,Larry Drake,Larry Richard Drake,3,0,588.0000,608
+1196,J. Edward Snyder,Rear Adm. J. Edward Snyder,3,0,589.0000,608
+1197,Nobel Prize,Nobel Prize,3,1,589.0000,609
+1198,no value premium exists,The Vanguard Group,3,0,590.0000,609
+1199,Derek Draper,Matthew Vaughn,3,0,591.0000,609
+1200,Cold Spring Historic District,Valhalla Highlands Historic District,3,0,592.0000,609
+1201,The Country Bears,The Country Bears,3,1,592.0000,610
+1202,Alan Young,Alan Young,3,1,592.0000,611
+1203,"September 30, 2009","September 30, 2009",3,1,592.0000,612
+1204,1907,1907,3,1,592.0000,613
+1205,No,no,3,1,592.0000,614
+1206,1959,1959,3,1,592.0000,615
+1207,In Pursuit,In Pursuit,3,1,592.0000,616
+1208,LBK,Operation Neptune,3,0,593.0000,616
+1209,Graduation,My Beautiful Dark Twisted Fantasy,3,0,594.0000,616
+1210,Kansas City crime family,Kansas City crime family,3,1,594.0000,617
+1211,Montreal,Montreal,3,1,594.0000,618
+1212,Robert Erskine Childers,Robert Erskine Childers DSC,3,0,595.0000,618
+1213,Ravalli County,"Ravalli County, Montana",3,0,596.0000,618
+1214,North Atlantic Conference,the North Atlantic Conference,3,1,596.0000,619
+1215,Bridesmaids,The Future,3,0,597.0000,619
+1216,Leonberger,The Leonberger is a giant dog breed.,3,0,598.0000,619
+1217,Tromeo and Juliet,Tromeo and Juliet,3,1,598.0000,620
+1218,Gary Cole's character is not based on any specific person or real-life entity.,"the Hanna-Barbera show ""Birdman and the Galaxy Trio.""",3,0,599.0000,620
+1219,Indianapolis Motor Speedway,Indianapolis Motor Speedway,3,1,599.0000,621
+1220,Argentinean,Argentinian,3,0,600.0000,621
+1221,Sam the Sham,"Domingo ""Sam"" Samudio",3,0,601.0000,621
+1222,Bergen County,Bergen,3,0,602.0000,621
+1223,"September 25, 2015","October 16, 2015",3,0,603.0000,621
+1224,Los Angeles Dance Theater,The Los Angeles Dance Theater,3,1,603.0000,622
+1225,McG,McG,3,1,603.0000,623
+1226,Giotto,Giotto,3,1,603.0000,624
+1227,Ibn Arabi,ibnʿArabī,3,0,604.0000,624
+1228,no,no,3,1,604.0000,625
+1229,Gaja in Sanskrit means Elephant.,Sanskrit,3,0,605.0000,625
+1230,Beauty and the Beast,Beauty and the Beast,3,1,605.0000,626
+1231,Tennis,tennis,3,1,605.0000,627
+1232,yes,yes,3,1,605.0000,628
+1233,Taylor Swift,Taylor Swift,3,1,605.0000,629
+1234,The Cosmopolitan,Cosmopolitan of Las Vegas,3,0,606.0000,629
+1235,Patricia Veryan,Eva Ibbotson,3,0,607.0000,629
+1236,8 km,8 km,3,1,607.0000,630
+1237,no,yes,3,0,608.0000,630
+1238,Montejo v. Louisiana,Montejo v. Louisiana,3,1,608.0000,631
+1239,Panther,The Panther,3,1,608.0000,632
+1240,Melanie Amaro,Leona Lewis,3,0,609.0000,632
+1241,C. W. Grafton,C. W. Grafton,3,1,609.0000,633
+1242,Janet Jackson,Janet Damita Jo Jackson,3,0,610.0000,633
+1243,Alan Turing,Alan Mathison Turing,3,0,611.0000,633
+1244,1869,11 November 1869,3,0,612.0000,633
+1245,journalist,journalist,3,1,612.0000,634
+1246,director,director,3,1,612.0000,635
+1247,MiMA,MiMA,3,1,612.0000,636
+1248,Circus Circus Las Vegas,Excalibur Hotel and Casino,3,0,613.0000,636
+1249,Imagine,John Lennon/Plastic Ono Band,3,0,614.0000,636
+1250,Jeremy Renner,Jeremy Renner,3,1,614.0000,637
+1251,Calgary,"Calgary, Alberta",3,0,615.0000,637
+1252,Nobel Prize in Literature,Nobel Prize in Literature,3,1,615.0000,638
+1253,B-17 Flying Fortress,B-17 Flying Fortress bomber,3,0,616.0000,638
+1254,Shut Up,Shut Up,3,1,616.0000,639
+1255,2002,2002,3,1,616.0000,640
+1256,"season six, episode 5","season six, episode 5, ""Invasion""",3,0,617.0000,640
+1257,2017,137th,3,0,618.0000,640
+1258,Brett Scallions,Brett Allen Scallions,3,0,619.0000,640
+1259,Key West,Key West,3,1,619.0000,641
+1260,Lawson,Lawson,3,1,619.0000,642
+1261,Lord Chancellor,Lord Chancellor of England,3,0,620.0000,642
+1262,Kenny Young,Kenny Young,3,1,620.0000,643
+1263,15th season,"""The Simpsons""' thirteenth season",3,0,621.0000,643
+1264,500 meters,500 metres,3,0,622.0000,643
+1265,Mississippi State,Campbellsville University,3,0,623.0000,643
+1266,New York City,modern-day New York City,3,0,624.0000,643
+1267,Yes,yes,3,1,624.0000,644
+1268,his most brilliant student,his most brilliant student,3,1,624.0000,645
+1269,American Beauty,Pineapple Express,3,0,625.0000,645
+1270,Oklahoma,Oklahoma,3,1,625.0000,646
+1271,Las Vegas,Summerlin,3,0,626.0000,646
+1272,10 July 1873,1 September 1864,3,0,627.0000,646
+1273,The Spiderwick Chronicles,The Spiderwick Chronicles,3,1,627.0000,647
+1274,romantic crime comedy,Hindi,3,0,628.0000,647
+1275,Alyson Stoner,Lucas Stephen Grabeel,3,0,629.0000,647
+1276,pharmaceutical companies,Prescription Drug User Fee Act,3,0,630.0000,647
+1277,Peshwa,"""Peshwa"" (Prime Minister)",3,0,631.0000,647
+1278,75 mi,75 mi,3,1,631.0000,648
+1279,The Catcher in the Rye,The Catcher in the Rye,3,1,631.0000,649
+1280,Icehouse pieces,Icehouse pieces,3,1,631.0000,650
+1281,Chattahoochee,"""We'll Burn That Bridge""",3,0,632.0000,650
+1282,Chairman and Chief Executive Officer,a governor,3,0,633.0000,650
+1283,Rose Coghlan,Dylan O'Brien,3,0,634.0000,650
+1284,1925,"June 24, 1935",3,0,635.0000,650
+1285,Adam Dawes,Adam Dawes,3,1,635.0000,651
+1286,World War II,World War II,3,1,635.0000,652
+1287,Conservative Party,British Conservative Party,3,0,636.0000,652
+1288,C. S. Lewis,Clive Staples Lewis,3,0,637.0000,652
+1289,"September 25, 2017","September 25, 2017",3,1,637.0000,653
+1290,Voices of Iraq,Voices of Iraq,3,1,637.0000,654
+1291,Tatton Park,Tatton Park,3,1,637.0000,655
+1292,no,no,3,1,637.0000,656
+1293,Royal Navy,Royal Navy,3,1,637.0000,657
+1294,Tampa Bay Lightning,Tampa Bay Lightning,3,1,637.0000,658
+1295,no,no,3,1,637.0000,659
+1296,Fairfax County,Fairfax County,3,1,637.0000,660
+1297,Speaker of the House,former Speaker of the U.S. House of Representatives,3,0,638.0000,660
+1298,wheat,tomato,3,0,639.0000,660
+1299,Portal,Gateways,3,0,640.0000,660
+1300,Buddha's delight,Buddha's delight,3,1,640.0000,661
+1301,Big Machine Records,Big Machine Records,3,1,640.0000,662
+1302,Fionnula Flanagan,Nicole Kidman,3,0,641.0000,662
+1303,Forbidden Quest,a scholar,3,0,642.0000,662
+1304,no,yes,3,0,643.0000,662
+1305,Double Crossed,Double Crossed,3,1,643.0000,663
+1306,Terry Gilliam,Terry Gilliam,3,1,643.0000,664
+1307,2011,2011,3,1,643.0000,665
+1308,Battle of Leipzig,Battle of Dresden,3,0,644.0000,665
+1309,Northumbrian dialect,Northumbrian,3,0,645.0000,665
+1310,super-regional shopping mall,super-regional shopping mall,3,1,645.0000,666
+1311,Aamir Khan,Tariq Khan,3,0,646.0000,666
+1312,The Ninth Gate,The Ninth Gate,3,1,646.0000,667
+1313,2nd Armored Division,2nd Armored Division,3,1,646.0000,668
+1314,Texas Highways,Texas Highways,3,1,646.0000,669
+1315,Agent Vinod,Agent Vinod,3,1,646.0000,670
+1316,The Highwayman,Highwayman,3,1,646.0000,671
+1317,Columbus,Columbus,3,1,646.0000,672
+1318,Hudson Bay Mining and Smelting Company,Hudson Bay Mining and Smelting Company,3,1,646.0000,673
+1319,1919,1895,3,0,647.0000,673
+1320,WWE 2K18,"October 17, 2017",3,0,648.0000,673
+1321,USS Essex (CV-9),USS Essex,3,0,649.0000,673
+1322,A united Ireland,united Ireland,3,1,649.0000,674
+1323,2007,since 2007,3,0,650.0000,674
+1324,Reinis Sējāns,Jānis Strazdiņš,3,0,651.0000,674
+1325,Frank Lowy,Frank Lowy,3,1,651.0000,675
+1326,Rings,American supernatural psychological horror film,3,0,652.0000,675
+1327,a homeward bounder,sailor,3,0,653.0000,675
+1328,Charles Hastings Judd,Colonel Charles Hastings Judd,3,0,654.0000,675
+1329,every aspect of public and private life,every aspect of public and private life,3,1,654.0000,676
+1330,Magdalen College,Magdalen College,3,1,654.0000,677
+1331,Stedelijk Museum Amsterdam,Stedelijk Museum Amsterdam,3,1,654.0000,678
+1332,1939,1974,3,0,655.0000,678
+1333,Mount Everest,Mount Everest,3,1,655.0000,679
+1334,1994,1994,3,1,655.0000,680
+1335,Valtellina,Lombardy,3,0,656.0000,680
+1336,Randy Jackson,Ryan Seacrest,3,0,657.0000,680
+1337,CBS,CBS,3,1,657.0000,681
+1338,1984 South Asian Games,1984 South Asian Games,3,1,657.0000,682
+1339,animation,Animation,3,1,657.0000,683
+1340,Sela,Ann,3,0,658.0000,683
+1341,Phil Collins,Phil Collins,3,1,658.0000,684
+1342,Chuck E. Cheese's,Chuck E. Cheese's,3,1,658.0000,685
+1343,"Boston, Providence, Hartford, New York City, Philadelphia, Wilmington, Baltimore, and Washington, D.C.","Boston, Providence, Hartford, New York City, Philadelphia, Wilmington, Baltimore, and Washington, D.C.",3,1,658.0000,686
+1344,Ian McEwan,Langston Hughes,3,0,659.0000,686
+1345,The View,the fourth hour of the TODAY Show,3,0,660.0000,686
+1346,2006,2006 season,3,0,661.0000,686
+1347,"Montreal, Quebec, Canada",Montreal,3,0,662.0000,686
+1348,Barbara Windsor,Tamzin Outhwaite,3,0,663.0000,686
+1349,Clinton Administration,Clinton,3,0,664.0000,686
+1350,documentary,documentary,3,1,664.0000,687
+1351,Chicago,Wilmette,3,0,665.0000,687
+1352,yes,no,3,0,666.0000,687
+1353,Beijing Dance Academy,Beijing Dance Academy,3,1,666.0000,688
+1354,Where Sinners Meet,Revengers Tragedy,3,0,667.0000,688
+1355,Enterprise Rent-A-Car,Budget Rent a Car,3,0,668.0000,688
+1356,Traverse City,"143,372",3,0,669.0000,688
+1357,Madge Ryan,Euripides,3,0,670.0000,688
+1358,Charles Nungesser and François Coli,Charles Eugène,3,0,671.0000,688
+1359,Cambridge University,Cambridge University,3,1,671.0000,689
+1360,Wikimedia Foundation,Wikimedia Foundation,3,1,671.0000,690
+1361,President of the United States,President of the United States,3,1,671.0000,691
+1362,Ballarat Bitter,Ballarat Bitter is a 4.9% (abv) Australian beer,3,0,672.0000,691
+1363,Shane Meadows,directed by Shane Meadows,3,0,673.0000,691
+1364,American,Irish,3,0,674.0000,691
+1365,The Itchy & Scratchy Show,The Itchy & Scratchy Show,3,1,674.0000,692
+1366,Graduados,Graduados,3,1,674.0000,693
+1367,Bob Seger,Bob Seger,3,1,674.0000,694
+1368,BCS National Championship Game,2004 Nokia Sugar Bowl,3,0,675.0000,694
+1369,McLean,"McLean, Virginia",3,0,676.0000,694
+1370,Daisy Chainsaw,Daisy Chainsaw,3,1,676.0000,695
+1371,Rolling Stone,Rolling Stone,3,1,676.0000,696
+1372,Sex Drive,Sex Drive,3,1,676.0000,697
+1373,Donald John Trump Jr.,Donald Trump Jr.,3,0,677.0000,697
+1374,No,no,3,1,677.0000,698
+1375,Ub Iwerks and Walt Disney,Ub Iwerks,3,0,678.0000,698
+1376,Private,private,3,1,678.0000,699
+1377,Todd Phillips,Todd Phillips,3,1,678.0000,700
+1378,1967,1887,3,0,679.0000,700
+1379,"Hoffman Estates, Illinois","Hoffman Estates, Illinois",3,1,679.0000,701
+1380,United States,The United States of America,3,0,680.0000,701
+1381,Wiz Khalifa,Wiz Khalifa,3,1,680.0000,702
+1382,Edge,Randy Orton,3,0,681.0000,702
+1383,George Raft,George Raft,3,1,681.0000,703
+1384,Don S. Davis,Don S. Davis,3,1,681.0000,704
+1385,Emad Hashim,Emad Hashim,3,1,681.0000,705
+1386,Harper's Bazaar,Harper's Bazaar,3,1,681.0000,706
+1387,Monticello,Monticello,3,1,681.0000,707
+1388,Scott Adkins,Scott Adkins,3,1,681.0000,708
+1389,mastering recordings,mastered recordings,3,0,682.0000,708
+1390,New York City,New York City,3,1,682.0000,709
+1391,"76,416","76,416",3,1,682.0000,710
+1392,1639,1599,3,0,683.0000,710
+1393,No,no,3,1,683.0000,711
+1394,Yes,yes,3,1,683.0000,712
+1395,1943,1943,3,1,683.0000,713
+1396,1933,last seen in 1933,3,0,684.0000,713
+1397,mixed martial arts,mixed martial arts,3,1,684.0000,714
+1398,YG Entertainment,YG Entertainment,3,1,684.0000,715
+1399,Patterns of Sexual Behavior,Patterns of Sexual Behavior,3,1,684.0000,716
+1400,Melbourne,"Melbourne, Australia",3,0,685.0000,716
+1401,Ringo Starr,Ringo Starr,3,1,685.0000,717
+1402,Anglo-Saxon saints,saint,3,0,686.0000,717
+1403,singer,musician,3,0,687.0000,717
+1404,Azeroth,Azeroth,3,1,687.0000,718
+1405,yes,yes,3,1,687.0000,719
+1406,Shakespeare performances,Shakespeare performances,3,1,687.0000,720
+1407,University of Texas at Austin,University of Texas at Austin,3,1,687.0000,721
+1408,writer,writer,3,1,687.0000,722
+1409,All Nippon Airways,All Nippon,3,0,688.0000,722
+1410,Hirsch index rating,Hirsch index rating,3,1,688.0000,723
+1411,18,early 20s,3,0,689.0000,723
+1412,281,281,3,1,689.0000,724
+1413,political party,Albanian political party in Montenegro,3,0,690.0000,724
+1414,"human blood, platelets, and plasma","blood, platelets, and plasma",3,0,691.0000,724
+1415,No,no,3,1,691.0000,725
+1416,Dundee Canal,Dundee Canal,3,1,691.0000,726
+1417,Jeff Sheehy,Ed Lee,3,0,692.0000,726
+1418,Spring City,Spring city,3,1,692.0000,727
+1419,Christianity Today,evangelical Christian periodical,3,0,693.0000,727
+1420,Venice,Venice,3,1,693.0000,728
+1421,Father Jack Hackett,Father Dougal McGuire,3,0,694.0000,728
+1422,1995,2009,3,0,695.0000,728
+1423,Hibernian,Scottish Premiership club Hibernian,3,0,696.0000,728
+1424,20,20 assists,3,0,697.0000,728
+1425,Charmed,Charmed,3,1,697.0000,729
+1426,Vera Cruz,The Longest Yard,3,0,698.0000,729
+1427,Magnus Carlsen,Sven Magnus,3,0,699.0000,729
+1428,Shanghai,Shanghai,3,1,699.0000,730
+1429,Wendigo,Wendigo,3,1,699.0000,731
+1430,Old Saxon,between the 8th and 16th centuries,3,0,700.0000,731
+1431,2016,2016,3,1,700.0000,732
+1432,U.S. Representative,United States Senator,3,0,701.0000,732
+1433,Yunho,Jung Yun-ho,3,0,702.0000,732
+1434,1813,"January 18, 1813",3,0,703.0000,732
+1435,1950,1950,3,1,703.0000,733
+1436,6,250,3,0,704.0000,733
+1437,tennis players,former tennis player,3,0,705.0000,733
+1438,821,821,3,1,705.0000,734
+1439,No,no,3,1,705.0000,735
+1440,1925,June 1925,3,0,706.0000,735
+1441,Bryan White,Bryan Shelton White,3,0,707.0000,735
+1442,1962,1962,3,1,707.0000,736
+1443,Wichita,Wichita,3,1,707.0000,737
+1444,Carnatic music,Carnatic music,3,1,707.0000,738
+1445,Golden Globe Award,superhero roles as the Marvel Comics,3,0,708.0000,738
+1446,Am Rong,Am Rong,3,1,708.0000,739
+1447,Canary Islands,Macaronesia,3,0,709.0000,739
+1448,Mississippi University for Women v. Hogan,Mississippi University for Women,3,0,710.0000,739
+1449,high school diploma or GED,high school diploma or GED,3,1,710.0000,740
+1450,Michael Crawford,Michael Patrick Smith,3,0,711.0000,740
+1451,13–3,a record of 13–3,3,0,712.0000,740
+1452,approximately 650 locations,650 locations,3,0,713.0000,740
+1453,one of Lithuania's most talented actors,one of Lithuania's most talented actors,3,1,713.0000,741
+1454,Bourbon County,Bourbon County,3,1,713.0000,742
+1455,"Johann Sebastian Bach, Karlheinz Stockhausen, Terry Riley, Philip Glass and Moondog",hardcore,3,0,714.0000,742
+1456,712 Fifth Avenue,712 5th Avenue,3,0,715.0000,742
+1457,Aleksandr Ivanovsky,Aleksandr Ivanovsky,3,1,715.0000,743
+1458,Nikhil Banerjee,Nikhil Banerjee,3,1,715.0000,744
+1459,remix,Remix,3,1,715.0000,745
+1460,Orson Welles,Orson Welles,3,1,715.0000,746
+1461,Oldham County,Oldham County,3,1,715.0000,747
+1462,MGM Grand fire,Dupont Plaza Hotel,3,0,716.0000,747
+1463,Motion City Soundtrack,Motion City Soundtrack,3,1,716.0000,748
+1464,"Prince Robert, Duke of Chartres",Otto Eduard Leopold,3,0,717.0000,748
+1465,Marmakhel Tribe,grand assembly,3,0,718.0000,748
+1466,Delmer Daves,Delmer Lawrence Daves,3,0,719.0000,748
+1467,Martha Wainwright,Gary Lightbody,3,0,720.0000,748
+1468,Wyandot,Odawa,3,0,721.0000,748
+1469,Louisville Bats,Louisville RiverBats,3,0,722.0000,748
+1470,"Peterhouse, Cambridge",The Dragon School in Oxford,3,0,723.0000,748
+1471,Lord Dunmore,Royal Governor Lord Dunmore,3,0,724.0000,748
+1472,Thomas Mann,Paul Thomas Mann,3,0,725.0000,748
+1473,Wavves,Social Code,3,0,726.0000,748
+1474,"Bury St Edmunds, Suffolk, England","Bury St Edmunds,",3,0,727.0000,748
+1475,No,no,3,1,727.0000,749
+1476,Louis XIV,Louis XIV,3,1,727.0000,750
+1477,William Shakespeare,William Shakespeare,3,1,727.0000,751
+1478,Yes,yes,3,1,727.0000,752
+1479,Letters to Cleo,Letters to Cleo,3,1,727.0000,753
+1480,paracycling,paracyclist,3,0,728.0000,753
+1481,29 days,29,3,0,729.0000,753
+1482,Aqua,Aqua,3,1,729.0000,754
+1483,George Harrison,George Harrison,3,1,729.0000,755
+1484,English Electric Canberra,English Electric Canberra,3,1,729.0000,756
+1485,2003,2003,3,1,729.0000,757
+1486,Bigg Boss 10,the tenth season,3,0,730.0000,757
+1487,Kochi,Mumbai,3,0,731.0000,757
+1488,Seldom Jackson,Seldom Jackson,3,1,731.0000,758
+1489,more than 20,20,3,0,732.0000,758
+1490,National Society of Daughters of the American Revolution (NSDAR),the National Society of Daughters of the American Revolution,3,0,733.0000,758
+1491,Central Avenue,State Street,3,0,734.0000,758
+1492,HBO World Championship Boxing,HBO World Championship Boxing,3,1,734.0000,759
+1493,Oklahoma City,Oklahoma City,3,1,734.0000,760
+1494,Adorable,Adorable,3,1,734.0000,761
+1495,BoxRec,"""The Ring"" magazine",3,0,735.0000,761
+1496,Stacey Kent,Stacey Kent,3,1,735.0000,762
+1497,Roberta Vinci,Roberta Vinci,3,1,735.0000,763
+1498,Robert Digges Wimberly Connor,Robert Digges Wimberly Connor,3,1,735.0000,764
+1499,340,"1,925 yards",3,0,736.0000,764

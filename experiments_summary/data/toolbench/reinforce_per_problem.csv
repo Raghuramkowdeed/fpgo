@@ -1,0 +1,751 @@
+step,pred_api,gold_api,correct,cumulative_regret
+0,Car database%%Models,Car database%%Makes,0,1.0000
+1,JAK_API%%Genshin Impact,JAK_API%%Genshin Impact,1,1.0000
+2,GamerPower%%Live giveaways by type,GamerPower%%Live giveaways by type,0,2.0000
+3,GamerPower%%Live giveaways by type,GamerPower%%Live giveaways by type,1,2.0000
+4,CatchLoc%%[Group Management] API access for modifying group information,PTL%%update,0,3.0000
+5,siteDomain%%language list,siteDomain%%language list,1,3.0000
+6,BART%%Advisory information,BART%%Advisory information,0,4.0000
+7,NumbersTranslator,NumbersToLetters%%Convertir cantidad a letra Moneda MXN Ingles,0,5.0000
+8,search,search,0,6.0000
+9,search,search_general,0,7.0000
+10,colegiosantaana%%Disciplina-1,colegiosantaana%%Disciplina-1,1,7.0000
+11,Football Dolphin%%Head to head statistics,Football Dolphin%%Head to head statistics,0,8.0000
+12,Fake Brightcove%%Temp Upload URLs,Fake Brightcove%%Temp Upload URLs,0,9.0000
+13,pizzaallapala%%Get Producto Promo,pizzaallapala%%Get Producto Promo,1,9.0000
+14,Marvel Vs Capcom 2%%Show Character,Marvel Vs Capcom 2%%Show Character,1,9.0000
+15,forecast_weather,Weather_dataSet%%Weather_dataSet,0,10.0000
+16,JAK_API%%Genshin Impact,JAK_API%%Genshin Impact,1,10.0000
+17,colegiosantaana%%Disciplina-1,colegiosantaana%%Disciplina-1,1,10.0000
+18,search,getWolframAlphaResults,0,11.0000
+19,JAK_API%%Genshin Impact,JAK_API%%Genshin Impact,1,11.0000
+20,Marvel Vs Capcom 2%%All Characters,Marvel Vs Capcom 2%%All Characters,1,11.0000
+21,NumbersTranslator,Numbers Translator%%Numbers Translator,0,12.0000
+22,JAK_API%%Ben 10,JAK_API%%Ben 10,1,12.0000
+23,MikuAPI%%getRandomImage,MikuAPI%%getRandomImage,1,12.0000
+24,forecast_weather,forecast_weather,1,12.0000
+25,Fake Brightcove%%Temp Upload URLs,Fake Brightcove%%Temp Upload URLs,0,13.0000
+26,search,English Talking%%Get an answer,0,14.0000
+27,CatchLoc%%[Group Management] API access for modifying group information,CatchLoc%%[Group Management] API access for modifying group information,1,14.0000
+28,search,search_places,0,15.0000
+29,Token API%%generate,Token API%%generate,1,15.0000
+30,JAK_API%%Ben 10,JAK_API%%Ben 10,1,15.0000
+31,CatchLoc%%[Group Management] API access for modifying group information,CatchLoc%%[Group Management] API access for modifying group information,0,16.0000
+32,search,Places%%Geographic coordinates by placename,0,17.0000
+33,NumbersTranslator,NumbersToLetters%%Convertir cantidad a letra Moneda MXN Ingles,0,18.0000
+34,Football Dolphin%%Head to head statistics,Football Dolphin%%Head to head statistics,0,19.0000
+35,Soccer Data%%Tournament List,Soccer Data%%Tournament List,1,19.0000
+36,get_weather_today,get_weather_today,1,19.0000
+37,Marvel Vs Capcom 2%%Show Character,Marvel Vs Capcom 2%%All Characters,0,20.0000
+38,Marvel Vs Capcom 2%%Show Character,Marvel Vs Capcom 2%%Show Character,1,20.0000
+39,JAK_API%%Brawl Stars,JAK_API%%Brawl Stars,1,20.0000
+40,Grup Terbuka%%Kirim Pesan,Grup Terbuka%%Kirim Pesan,0,21.0000
+41,thailand%%thai4,thailand%%thai4,1,21.0000
+42,CatchLoc%%[Group Management] API access for modifying group information,PTL%%update,0,22.0000
+43,siteDomain%%industry list,siteDomain%%industry list,1,22.0000
+44,search_places,search_places,1,22.0000
+45,thailand%%thai4,thailand%%thai4,1,22.0000
+46,thailand%%thai4,thailand%%thai4,1,22.0000
+47,colegiosantaana%%Mensajes-1,colegiosantaana%%Mensajes-1,1,22.0000
+48,Places%%Geographic coordinates by placename,Places%%Geographic coordinates by placename,0,23.0000
+49,Marvel Vs Capcom 2%%Show Character,Marvel Vs Capcom 2%%Show Character,1,23.0000
+50,Grup Terbuka%%Kirim Pesan,colegiosantaana%%Mensajes-1,0,24.0000
+51,add_date,add_date,1,24.0000
+52,get_today_date,get_today_date,1,24.0000
+53,Global Email V4,Global Email V4%%Global Email V4,0,25.0000
+54,siteDomain%%industry list,siteDomain%%industry list,1,25.0000
+55,BART%%Advisory information,BART%%Advisory information,0,26.0000
+56,Password Generator API%%Password of length 50,Password Generator API%%Password of length 50,1,26.0000
+57,getWolframAlphaResults,getWolframAlphaResults,0,27.0000
+58,colegiosantaana%%Evaluaciones-1,colegiosantaana%%Evaluaciones-1,1,27.0000
+59,Grup Terbuka%%Kirim Pesan,Grup Terbuka%%Kirim Pesan,0,28.0000
+60,siteDomain%%language list,siteDomain%%language list,1,28.0000
+61,get_weather_today,Weather_dataSet%%Weather_dataSet,0,29.0000
+62,colegiosantaana%%Mensajes-1,colegiosantaana%%Mensajes-1,1,29.0000
+63,MikuAPI%%getRandomImage,MikuAPI%%getRandomImage,1,29.0000
+64,NumbersToLetters%%Convertir cantidad a letra Moneda MXN Español,NumbersToLetters%%Convertir cantidad a letra Moneda MXN Ingles,0,30.0000
+65,Marvel Vs Capcom 2%%All Characters,Marvel Vs Capcom 2%%All Characters,1,30.0000
+66,search,disambiguation,0,31.0000
+67,Password Generator API%%Password of length 50,Password Generator API%%Base,0,32.0000
+68,Soccer Data%%Tournament List,Soccer Data%%Tournament List,1,32.0000
+69,GamerPower%%Live giveaways by type,GamerPower%%Live giveaways by type,0,33.0000
+70,F1 Latest News%%GET recent F1 news from all sources,F1 Latest News%%GET recent F1 news from all sources,1,33.0000
+71,Handball Data%%Daily Match List-Scheduled,Handball Data%%Daily Match List-Scheduled,1,33.0000
+72,Handball Data%%Daily Match List-Scheduled,Handball Data%%Daily Match List-Scheduled,0,34.0000
+73,Fake Brightcove%%Temp Upload URLs,Fake Brightcove%%Temp Upload URLs,0,35.0000
+74,Fluximmo%%get_portail_api,Fluximmo%%get_portail_api,1,35.0000
+75,NumbersTranslator,NumbersToLetters%%Convertir cantidad a letra Moneda MXN Ingles,0,36.0000
+76,forecast_weather,forecast_weather,1,36.0000
+77,NumbersToLetters%%Convertir cantidad a letra Moneda MXN Español,NumbersToLetters%%Convertir cantidad a letra Moneda MXN Español,0,37.0000
+78,GamerPower%%Filter & Group Giveaways,GamerPower%%Filter & Group Giveaways,0,38.0000
+79,Soccer Data%%Tournament List,Soccer Data%%Tournament List,1,38.0000
+80,search,Places%%Geographic coordinates by placename,0,39.0000
+81,Stadia Maps Time Zone API%%TZ Lookup by Location,Stadia Maps Time Zone API%%TZ Lookup by Location,1,39.0000
+82,Token API%%generate,Token API%%generate,1,39.0000
+83,get_weather_today,Weather_dataSet%%Weather_dataSet,0,40.0000
+84,disambiguation,disambiguation,1,40.0000
+85,get_weather_today,Weather_dataSet%%Weather_dataSet,0,41.0000
+86,disambiguation,PTL%%update,0,42.0000
+87,Grup Terbuka%%Kirim Pesan,Grup Terbuka%%Kirim Pesan,0,43.0000
+88,Global Email V4%%Global Email V4,Global Email V4%%Global Email V4,0,44.0000
+89,NumbersTranslator%%Numbers Translator,NumbersToLetters%%Convertir cantidad a letra Moneda MXN Ingles,0,45.0000
+90,Fake Brightcove%%Temp Upload URLs,Fake Brightcove%%Temp Upload URLs,0,46.0000
+91,siteDomain%%industry list,siteDomain%%industry list,1,46.0000
+92,JAK_API%%Ben 10,JAK_API%%Ben 10,1,46.0000
+93,MikuAPI%%getRandomImage,MikuAPI%%getRandomImage,1,46.0000
+94,Grup Terbuka%%Kirim Pesan,colegiosantaana%%Mensajes-1,0,47.0000
+95,NumbersTranslator%%Numbers Translator,NumbersToLetters%%Convertir cantidad a letra Moneda MXN Ingles,0,48.0000
+96,Car database%%Makes,Car database%%Makes,1,48.0000
+97,disambiguation,PTL%%update,0,49.0000
+98,siteDomain%%industry list,Fluximmo%%get_portail_api,0,50.0000
+99,get_weather_today,get_weather_today,1,50.0000
+100,JAK_API%%Miraculous,JAK_API%%Miraculous,1,50.0000
+101,search_places,search_places,1,50.0000
+102,Handball Data%%Daily Match List-Scheduled,Handball Data%%Daily Match List-Live,0,51.0000
+103,get_today_date,get_today_date,1,51.0000
+104,NumbersToLetters%%Convertir cantidad a letra Moneda MXN Español,NumbersToLetters%%Convertir cantidad a letra Moneda MXN Español,1,51.0000
+105,Password Generator API%%Password of length 50,Password Generator API%%Base,0,52.0000
+106,JAK_API%%Genshin Impact,JAK_API%%Genshin Impact,1,52.0000
+107,Marvel Vs Capcom 2%%Show Character,Marvel Vs Capcom 2%%Show Character,1,52.0000
+108,colegiosantaana%%Evaluaciones-1,colegiosantaana%%Evaluaciones-1,1,52.0000
+109,Handball Data%%Daily Match List-Live,Handball Data%%Daily Match List-Live,1,52.0000
+110,Handball Data%%Daily Match List-Scheduled,Handball Data%%Daily Match List-Scheduled,1,52.0000
+111,F1 Latest News%%GET recent F1 news from all sources,F1 Latest News%%GET recent F1 news from all sources,1,52.0000
+112,NumbersTranslator%%Numbers Translator,Numbers Translator%%Numbers Translator,0,53.0000
+113,Marvel Vs Capcom 2%%All Characters,Marvel Vs Capcom 2%%All Characters,1,53.0000
+114,colegiosantaana%%Mensajes-1,colegiosantaana%%Mensajes-1,1,53.0000
+115,Stadia Maps Time Zone API%%TZ Lookup by Location,Stadia Maps Time Zone API%%TZ Lookup by Location,1,53.0000
+116,Marvel Vs Capcom 2%%All Characters,Marvel Vs Capcom 2%%All Characters,1,53.0000
+117,search,Places%%Geographic coordinates by placename,0,54.0000
+118,forecast_weather,forecast_weather,1,54.0000
+119,CatchLoc%%[Group Management] API access for modifying group information,CatchLoc%%[Group Management] API access for modifying group information,1,54.0000
+120,get_weather_today,Weather_dataSet%%Weather_dataSet,0,55.0000
+121,Token API%%generate,Token API%%generate,1,55.0000
+122,getWolframAlphaResults,getWolframAlphaResults,0,56.0000
+123,Numbers,getWolframAlphaResults,0,57.0000
+124,disambiguation,disambiguation,1,57.0000
+125,add_date,add_date,1,57.0000
+126,colegiosantaana%%Evaluaciones-1,colegiosantaana%%Evaluaciones-1,1,57.0000
+127,add_date,add_date,1,57.0000
+128,Soccer Data%%Tournament List,Soccer Data%%Tournament List,1,57.0000
+129,JAK_API%%Brawl Stars,JAK_API%%Brawl Stars,1,57.0000
+130,getWolframAlphaResults,getWolframAlphaResults,0,58.0000
+131,get_weather_today,get_weather_today,1,58.0000
+132,thailand%%thai4,thailand%%thai4,1,58.0000
+133,Fluximmo%%get_portail_api,Fluximmo%%get_portail_api,1,58.0000
+134,Marvel Vs Capcom 2%%All Characters,Marvel Vs Capcom 2%%All Characters,1,58.0000
+135,English Talking%%Get an answer,English Talking%%Get an answer,0,59.0000
+136,getWolframAlphaResults,search_general,0,60.0000
+137,Soccer Data%%Tournament List,Soccer Data%%Tournament List,1,60.0000
+138,JAK_API%%Miraculous,JAK_API%%Miraculous,1,60.0000
+139,English Talking%%Get an answer,English Talking%%Get an answer,0,61.0000
+140,F1 Latest News%%GET recent F1 news from all sources,F1 Latest News%%GET recent F1 news from all sources,1,61.0000
+141,disambiguation,PTL%%update,0,62.0000
+142,colegiosantaana%%Disciplina-1,colegiosantaana%%Disciplina-1,1,62.0000
+143,MikuAPI%%getRandomImage,MikuAPI%%getRandomImage,1,62.0000
+144,Football Dolphin%%Head to head statistics,Football Dolphin%%Head to head statistics,0,63.0000
+145,GamerPower%%Filter & Group Giveaways,GamerPower%%Filter & Group Giveaways,0,64.0000
+146,CatchLoc%%[Group Management] API access for modifying group information,PTL%%update,0,65.0000
+147,pizzaallapala%%Get Producto Promo,pizzaallapala%%Get Producto Promo,1,65.0000
+148,NumbersToLetters%%Convertir cantidad a letra Moneda MXN Español,get_today_date,0,66.0000
+149,Grup Terbuka%%Kirim Pesan,Grup Terbuka%%Kirim Pesan,0,67.0000
+150,siteDomain%%industry list,siteDomain%%industry list,1,67.0000
+151,JAK_API%%Ben 10,JAK_API%%Ben 10,1,67.0000
+152,Password Generator API%%Password of length 50,Password Generator API%%Password of length 50,1,67.0000
+153,Numbers Translator%%Numbers Translator,NumbersToLetters%%Convertir cantidad a letra Moneda MXN Ingles,0,68.0000
+154,BART%%Advisory information,BART%%Advisory information,1,68.0000
+155,JAK_API%%Ben 10,JAK_API%%Ben 10,1,68.0000
+156,GamerPower%%Live giveaways by type,GamerPower%%Live giveaways by type,0,69.0000
+157,siteDomain%%language list,siteDomain%%language list,1,69.0000
+158,forecast_weather,get_weather_today,0,70.0000
+159,siteDomain%%language list,Places%%Geographic coordinates by placename,0,71.0000
+160,pizzaallapala%%Get Producto Promo,pizzaallapala%%Get Producto Promo,1,71.0000
+161,Numbers%%Get math fact,Numbers%%Get math fact,1,71.0000
+162,F1 Latest News%%GET recent F1 news from all sources,F1 Latest News%%GET recent F1 news from all sources,1,71.0000
+163,Handball Data%%Daily Match List-Scheduled,Handball Data%%Daily Match List-Scheduled,1,71.0000
+164,Marvel Vs Capcom 2%%All Characters,Marvel Vs Capcom 2%%All Characters,1,71.0000
+165,Stadia Maps Time Zone API%%TZ Lookup by Location,Stadia Maps Time Zone API%%TZ Lookup by Location,1,71.0000
+166,English Talking%%Get an answer,English Talking%%Get an answer,0,72.0000
+167,JAK_API%%Brawl Stars,JAK_API%%Brawl Stars,1,72.0000
+168,CatchLoc%%[Group Management] API access for modifying group information,CatchLoc%%[Group Management] API access for modifying group information,1,72.0000
+169,GamerPower%%Filter & Group Giveaways,GamerPower%%Filter & Group Giveaways,0,73.0000
+170,getWolframAlphaResults,search_general,0,74.0000
+171,JAK_API%%Miraculous,JAK_API%%Miraculous,1,74.0000
+172,Global Email V4%%Global Email V4,Global Email V4%%Global Email V4,0,75.0000
+173,siteDomain%%language list,siteDomain%%language list,1,75.0000
+174,Fluximmo%%get_portail_api,Fluximmo%%get_portail_api,1,75.0000
+175,Car database%%Makes,Car database%%Makes,1,75.0000
+176,F1 Latest News%%GET recent F1 news from all sources,F1 Latest News%%GET recent F1 news from all sources,1,75.0000
+177,GamerPower%%Filter & Group Giveaways,GamerPower%%Filter & Group Giveaways,0,76.0000
+178,Car database%%Makes,Car database%%Makes,1,76.0000
+179,colegiosantaana%%Disciplina-1,colegiosantaana%%Disciplina-1,1,76.0000
+180,Numbers Translator%%Numbers Translator,NumbersToLetters%%Convertir cantidad a letra Moneda MXN Ingles,0,77.0000
+181,get_arxiv_article_information,get_arxiv_article_information,0,78.0000
+182,forecast_weather,Weather_dataSet%%Weather_dataSet,0,79.0000
+183,JAK_API%%Genshin Impact,JAK_API%%Genshin Impact,1,79.0000
+184,English Talking%%Get an answer,English Talking%%Get an answer,0,80.0000
+185,get_today_date,get_today_date,1,80.0000
+186,F1 Latest News%%GET recent F1 news from all sources,F1 Latest News%%GET recent F1 news from all sources,1,80.0000
+187,GamerPower%%Filter & Group Giveaways,GamerPower%%Live giveaways by type,0,81.0000
+188,CatchLoc%%[Group Management] API access for modifying group information,CatchLoc%%[Group Management] API access for modifying group information,0,82.0000
+189,GamerPower%%Filter & Group Giveaways,GamerPower%%Live giveaways by type,0,83.0000
+190,Numbers Translator%%Numbers Translator,Numbers Translator%%Numbers Translator,1,83.0000
+191,NumbersToLetters%%Convertir cantidad a letra Moneda MXN Español,Numbers Translator%%Numbers Translator,0,84.0000
+192,Token API%%generate,Token API%%generate,1,84.0000
+193,Numbers Translator%%Numbers Translator,Numbers Translator%%Numbers Translator,1,84.0000
+194,Numbers%%Get math fact,getWolframAlphaResults,0,85.0000
+195,Stadia Maps Time Zone API%%TZ Lookup by Location,Stadia Maps Time Zone API%%TZ Lookup by Location,0,86.0000
+196,Fake Brightcove%%Temp Upload URLs,Fake Brightcove%%Temp Upload URLs,0,87.0000
+197,get_arxiv_article_information,get_arxiv_article_information,1,87.0000
+198,getWolframAlphaResults,search,0,88.0000
+199,NumbersToLetters%%Convertir cantidad a letra Moneda MXN Ingles,NumbersToLetters%%Convertir cantidad a letra Moneda MXN Ingles,0,89.0000
+200,JAK_API%%Ben 10,JAK_API%%Ben 10,1,89.0000
+201,Password Generator API%%Password of length 50,Password Generator API%%Base,0,90.0000
+202,Places%%Geographic coordinates by placename,Places%%Geographic coordinates by placename,1,90.0000
+203,Fluximmo%%get_portail_api,Fluximmo%%get_portail_api,1,90.0000
+204,Marvel Vs Capcom 2%%Show Character,Marvel Vs Capcom 2%%Show Character,1,90.0000
+205,Numbers Translator%%Numbers Translator,Numbers Translator%%Numbers Translator,1,90.0000
+206,GamerPower%%Live giveaways by type,GamerPower%%Live giveaways by type,0,91.0000
+207,Fluximmo%%get_portail_api,Fluximmo%%get_portail_api,1,91.0000
+208,Numbers%%Get math fact,Numbers%%Get math fact,0,92.0000
+209,disambiguation,disambiguation,1,92.0000
+210,add_date,add_date,1,92.0000
+211,Password Generator API%%Base,Password Generator API%%Base,1,92.0000
+212,CatchLoc%%[Group Management] API access for modifying group information,CatchLoc%%[Group Management] API access for modifying group information,0,93.0000
+213,Car database%%Makes,Car database%%Makes,1,93.0000
+214,getWolframAlphaResults,Places%%Geographic coordinates by placename,0,94.0000
+215,GamerPower%%Filter & Group Giveaways,GamerPower%%Filter & Group Giveaways,0,95.0000
+216,Fake Brightcove%%Temp Upload URLs,Fake Brightcove%%Temp Upload URLs,0,96.0000
+217,JAK_API%%Brawl Stars,JAK_API%%Brawl Stars,1,96.0000
+218,siteDomain%%language list,siteDomain%%language list,1,96.0000
+219,Password Generator API%%Base,Password Generator API%%Password of length 50,0,97.0000
+220,search_places,search_places,0,98.0000
+221,siteDomain%%industry list,siteDomain%%industry list,1,98.0000
+222,Handball Data%%Daily Match List-Scheduled,Handball Data%%Daily Match List-Scheduled,1,98.0000
+223,disambiguation,disambiguation,1,98.0000
+224,thailand%%thai4,thailand%%thai4,1,98.0000
+225,add_date,add_date,1,98.0000
+226,Stadia Maps Time Zone API%%TZ Lookup by Location,Stadia Maps Time Zone API%%TZ Lookup by Location,0,99.0000
+227,Stadia Maps Time Zone API%%TZ Lookup by Location,Stadia Maps Time Zone API%%TZ Lookup by Location,1,99.0000
+228,pizzaallapala%%Get Producto Promo,pizzaallapala%%Get Producto Promo,1,99.0000
+229,Password Generator API%%Base,Password Generator API%%Base,1,99.0000
+230,thailand%%thai4,thailand%%thai4,1,99.0000
+231,English Talking%%Get an answer,English Talking%%Get an answer,0,100.0000
+232,siteDomain%%industry list,siteDomain%%industry list,0,101.0000
+233,Fluximmo%%get_portail_api,Fluximmo%%get_portail_api,1,101.0000
+234,siteDomain%%industry list,Places%%Geographic coordinates by placename,0,102.0000
+235,Marvel Vs Capcom 2%%All Characters,Marvel Vs Capcom 2%%All Characters,1,102.0000
+236,MikuAPI%%getRandomImage,MikuAPI%%getRandomImage,1,102.0000
+237,getWolframAlphaResults,getWolframAlphaResults,0,103.0000
+238,Football Dolphin%%Head to head statistics,Football Dolphin%%Head to head statistics,1,103.0000
+239,Handball Data%%Daily Match List-Scheduled,Handball Data%%Daily Match List-Scheduled,1,103.0000
+240,Grup Terbuka%%Kirim Pesan,Grup Terbuka%%Kirim Pesan,0,104.0000
+241,CatchLoc%%[Group Management] API access for modifying group information,PTL%%update,0,105.0000
+242,F1 Latest News%%GET recent F1 news from all sources,F1 Latest News%%GET recent F1 news from all sources,1,105.0000
+243,colegiosantaana%%Mensajes-1,colegiosantaana%%Mensajes-1,1,105.0000
+244,forecast_weather,Weather_dataSet%%Weather_dataSet,0,106.0000
+245,pizzaallapala%%Get Producto Promo,pizzaallapala%%Get Producto Promo,1,106.0000
+246,GamerPower%%Filter & Group Giveaways,GamerPower%%Filter & Group Giveaways,0,107.0000
+247,CatchLoc%%[Group Management] API access for modifying group information,CatchLoc%%[Group Management] API access for modifying group information,0,108.0000
+248,Numbers Translator%%Numbers Translator,Numbers Translator%%Numbers Translator,1,108.0000
+249,Handball Data%%Daily Match List-Scheduled,Handball Data%%Daily Match List-Live,0,109.0000
+250,Stadia Maps Time Zone API%%TZ Lookup by Location,Places%%Geographic coordinates by placename,0,110.0000
+251,Global Email V4%%Global Email V4,Global Email V4%%Global Email V4,0,111.0000
+252,Car database%%Makes,Car database%%Makes,1,111.0000
+253,Football Dolphin%%Head to head statistics,Football Dolphin%%Head to head statistics,1,111.0000
+254,Fake Brightcove%%Temp Upload URLs,Fake Brightcove%%Temp Upload URLs,0,112.0000
+255,colegiosantaana%%Disciplina-1,colegiosantaana%%Disciplina-1,1,112.0000
+256,colegiosantaana%%Evaluaciones-1,colegiosantaana%%Evaluaciones-1,1,112.0000
+257,Password Generator API%%Base,Password Generator API%%Base,1,112.0000
+258,CatchLoc%%[Group Management] API access for modifying group information,PTL%%update,0,113.0000
+259,getWolframAlphaResults,search,0,114.0000
+260,forecast_weather,forecast_weather,1,114.0000
+261,get_arxiv_article_information,get_arxiv_article_information,0,115.0000
+262,JAK_API%%Brawl Stars,JAK_API%%Brawl Stars,1,115.0000
+263,F1 Latest News%%GET recent F1 news from all sources,F1 Latest News%%GET recent F1 news from all sources,1,115.0000
+264,JAK_API%%Genshin Impact,JAK_API%%Genshin Impact,1,115.0000
+265,disambiguation,search,0,116.0000
+266,JAK_API%%Ben 10,JAK_API%%Ben 10,1,116.0000
+267,CatchLoc%%[Group Management] API access for modifying group information,CatchLoc%%[Group Management] API access for modifying group information,1,116.0000
+268,colegiosantaana%%Mensajes-1,colegiosantaana%%Mensajes-1,1,116.0000
+269,Marvel Vs Capcom 2%%Show Character,Marvel Vs Capcom 2%%Show Character,1,116.0000
+270,NumbersToLetters%%Convertir cantidad a letra Moneda MXN Español,NumbersToLetters%%Convertir cantidad a letra Moneda MXN Español,1,116.0000
+271,colegiosantaana%%Disciplina-1,colegiosantaana%%Disciplina-1,1,116.0000
+272,disambiguation,disambiguation,1,116.0000
+273,colegiosantaana%%Disciplina-1,colegiosantaana%%Disciplina-1,1,116.0000
+274,Handball Data%%Daily Match List-Live,Handball Data%%Daily Match List-Live,0,117.0000
+275,MikuAPI%%getRandomImage,MikuAPI%%getRandomImage,1,117.0000
+276,Password Generator API%%Password of length 50,Password Generator API%%Password of length 50,1,117.0000
+277,Handball Data%%Daily Match List-Scheduled,Handball Data%%Daily Match List-Live,0,118.0000
+278,Marvel Vs Capcom 2%%All Characters,Marvel Vs Capcom 2%%All Characters,1,118.0000
+279,search_places,search_places,1,118.0000
+280,Fake Brightcove%%Temp Upload URLs,Fake Brightcove%%Temp Upload URLs,0,119.0000
+281,Global Email V4%%Global Email V4,Global Email V4%%Global Email V4,0,120.0000
+282,English Talking%%Get an answer,English Talking%%Get an answer,0,121.0000
+283,GamerPower%%Filter & Group Giveaways,GamerPower%%Filter & Group Giveaways,0,122.0000
+284,Password Generator API%%Base,Password Generator API%%Password of length 50,0,123.0000
+285,Car database%%Makes,Car database%%Makes,1,123.0000
+286,Football Dolphin%%Head to head statistics,Football Dolphin%%Head to head statistics,0,124.0000
+287,Stadia Maps Time Zone API%%TZ Lookup by Location,Stadia Maps Time Zone API%%TZ Lookup by Location,1,124.0000
+288,Token API%%generate,Token API%%generate,1,124.0000
+289,getWolframAlphaResults,search,0,125.0000
+290,Numbers Translator%%Numbers Translator,Numbers Translator%%Numbers Translator,1,125.0000
+291,Fluximmo%%get_portail_api,search_places,0,126.0000
+292,CatchLoc%%[Group Management] API access for modifying group information,CatchLoc%%[Group Management] API access for modifying group information,1,126.0000
+293,get_weather_today,Weather_dataSet%%Weather_dataSet,0,127.0000
+294,Marvel Vs Capcom 2%%All Characters,Marvel Vs Capcom 2%%All Characters,1,127.0000
+295,Car database%%Makes,Car database%%Makes,1,127.0000
+296,get_arxiv_article_information,get_arxiv_article_information,0,128.0000
+297,Password Generator API%%Password of length 50,Password Generator API%%Password of length 50,1,128.0000
+298,siteDomain%%language list,siteDomain%%language list,1,128.0000
+299,NumbersToLetters%%Convertir cantidad a letra Moneda MXN Español,getWolframAlphaResults,0,129.0000
+300,get_weather_today,Weather_dataSet%%Weather_dataSet,0,130.0000
+301,pizzaallapala%%Get Producto Promo,pizzaallapala%%Get Producto Promo,1,130.0000
+302,Token API%%generate,Token API%%generate,1,130.0000
+303,Marvel Vs Capcom 2%%All Characters,Marvel Vs Capcom 2%%All Characters,1,130.0000
+304,GamerPower%%Filter & Group Giveaways,GamerPower%%Filter & Group Giveaways,1,130.0000
+305,Global Email V4%%Global Email V4,Global Email V4%%Global Email V4,0,131.0000
+306,English Talking%%Get an answer,English Talking%%Get an answer,0,132.0000
+307,GamerPower%%Filter & Group Giveaways,GamerPower%%Live giveaways by type,0,133.0000
+308,get_today_date,get_today_date,1,133.0000
+309,Fake Brightcove%%Temp Upload URLs,Fake Brightcove%%Temp Upload URLs,0,134.0000
+310,Soccer Data%%Tournament List,Soccer Data%%Tournament List,1,134.0000
+311,JAK_API%%Ben 10,JAK_API%%Ben 10,1,134.0000
+312,Handball Data%%Daily Match List-Live,Handball Data%%Daily Match List-Live,1,134.0000
+313,BART%%Advisory information,BART%%Advisory information,0,135.0000
+314,Fluximmo%%get_portail_api,Fluximmo%%get_portail_api,1,135.0000
+315,CatchLoc%%[Group Management] API access for modifying group information,PTL%%update,0,136.0000
+316,getWolframAlphaResults,get_today_date,0,137.0000
+317,Numbers Translator%%Numbers Translator,Numbers Translator%%Numbers Translator,1,137.0000
+318,NumbersToLetters%%Convertir cantidad a letra Moneda MXN Español,NumbersToLetters%%Convertir cantidad a letra Moneda MXN Español,1,137.0000
+319,Numbers%%Get math fact,Numbers%%Get math fact,1,137.0000
+320,Token API%%generate,Token API%%generate,1,137.0000
+321,siteDomain%%industry list,siteDomain%%industry list,1,137.0000
+322,colegiosantaana%%Evaluaciones-1,colegiosantaana%%Evaluaciones-1,1,137.0000
+323,MikuAPI%%getRandomImage,MikuAPI%%getRandomImage,1,137.0000
+324,colegiosantaana%%Evaluaciones-1,colegiosantaana%%Evaluaciones-1,1,137.0000
+325,Numbers Translator%%Numbers Translator,Numbers Translator%%Numbers Translator,1,137.0000
+326,CatchLoc%%[Group Management] API access for modifying group information,CatchLoc%%[Group Management] API access for modifying group information,1,137.0000
+327,Fake Brightcove%%Temp Upload URLs,Fake Brightcove%%Temp Upload URLs,0,138.0000
+328,Numbers%%Get math fact,Numbers%%Get math fact,1,138.0000
+329,JAK_API%%Genshin Impact,JAK_API%%Genshin Impact,1,138.0000
+330,get_today_date,get_today_date,1,138.0000
+331,Soccer Data%%Tournament List,Soccer Data%%Tournament List,1,138.0000
+332,get_arxiv_article_information,get_arxiv_article_information,1,138.0000
+333,Fake Brightcove%%Temp Upload URLs,Fake Brightcove%%Temp Upload URLs,0,139.0000
+334,colegiosantaana%%Disciplina-1,colegiosantaana%%Disciplina-1,1,139.0000
+335,None,search_places,0,140.0000
+336,Token API%%generate,Token API%%generate,1,140.0000
+337,forecast_weather,forecast_weather,0,141.0000
+338,Password Generator API%%Base,Password Generator API%%Password of length 50,0,142.0000
+339,search_places,search_places,1,142.0000
+340,pizzaallapala%%Get Producto Promo,pizzaallapala%%Get Producto Promo,1,142.0000
+341,English Talking%%Get an answer,English Talking%%Get an answer,0,143.0000
+342,Token API%%generate,Token API%%generate,1,143.0000
+343,get_weather_today,get_weather_today,1,143.0000
+344,get_weather_today,get_weather_today,1,143.0000
+345,GamerPower%%Live giveaways by type,GamerPower%%Live giveaways by type,0,144.0000
+346,forecast_weather,forecast_weather,1,144.0000
+347,disambiguation,disambiguation,1,144.0000
+348,Handball Data%%Daily Match List-Scheduled,Handball Data%%Daily Match List-Live,0,145.0000
+349,Numbers%%Get math fact,Numbers%%Get math fact,1,145.0000
+350,Global Email V4%%Global Email V4,Global Email V4%%Global Email V4,0,146.0000
+351,thailand%%thai4,thailand%%thai4,1,146.0000
+352,Fluximmo%%get_portail_api,Fluximmo%%get_portail_api,1,146.0000
+353,Marvel Vs Capcom 2%%Show Character,Marvel Vs Capcom 2%%Show Character,1,146.0000
+354,JAK_API%%Genshin Impact,JAK_API%%Genshin Impact,1,146.0000
+355,CatchLoc%%[Group Management] API access for modifying group information,CatchLoc%%[Group Management] API access for modifying group information,1,146.0000
+356,siteDomain%%language list,siteDomain%%language list,1,146.0000
+357,Password Generator API%%Base,Password Generator API%%Base,1,146.0000
+358,Soccer Data%%Tournament List,Soccer Data%%Tournament List,1,146.0000
+359,JAK_API%%Miraculous,JAK_API%%Miraculous,1,146.0000
+360,pizzaallapala%%Get Producto Promo,pizzaallapala%%Get Producto Promo,1,146.0000
+361,get_today_date,get_today_date,1,146.0000
+362,get_arxiv_article_information,get_arxiv_article_information,0,147.0000
+363,pizzaallapala%%Get Producto Promo,pizzaallapala%%Get Producto Promo,1,147.0000
+364,Handball Data%%Daily Match List-Scheduled,Handball Data%%Daily Match List-Scheduled,1,147.0000
+365,Grup Terbuka%%Kirim Pesan,colegiosantaana%%Mensajes-1,0,148.0000
+366,F1 Latest News%%GET recent F1 news from all sources,F1 Latest News%%GET recent F1 news from all sources,1,148.0000
+367,None,PTL%%update,0,149.0000
+368,English Talking%%Get an answer,English Talking%%Get an answer,1,149.0000
+369,Grup Terbuka%%Kirim Pesan,Grup Terbuka%%Kirim Pesan,0,150.0000
+370,Numbers Translator%%Numbers Translator,getWolframAlphaResults,0,151.0000
+371,BART%%Advisory information,BART%%Advisory information,0,152.0000
+372,Football Dolphin%%Daily Match List-Scheduled,Football Dolphin%%Head to head statistics,0,153.0000
+373,get_arxiv_article_information,get_arxiv_article_information,1,153.0000
+374,JAK_API%%Miraculous,search,0,154.0000
+375,Places%%Geographic coordinates by placename,Places%%Geographic coordinates by placename,1,154.0000
+376,JAK_API%%Miraculous,JAK_API%%Miraculous,1,154.0000
+377,Numbers Translator%%Numbers Translator,search,0,155.0000
+378,JAK_API%%Miraculous,JAK_API%%Miraculous,1,155.0000
+379,Football Dolphin%%Head to head statistics,Football Dolphin%%Head to head statistics,0,156.0000
+380,Stadia Maps Time Zone API%%TZ Lookup by Location,Stadia Maps Time Zone API%%TZ Lookup by Location,1,156.0000
+381,siteDomain%%language list,siteDomain%%language list,1,156.0000
+382,forecast_weather,forecast_weather,1,156.0000
+383,add_date,add_date,1,156.0000
+384,get_arxiv_article_information,get_arxiv_article_information,0,157.0000
+385,disambiguation,getWolframAlphaResults,0,158.0000
+386,English Talking%%Get an answer,English Talking%%Get an answer,0,159.0000
+387,siteDomain%%language list,siteDomain%%language list,1,159.0000
+388,Numbers Translator%%Numbers Translator,NumbersToLetters%%Convertir cantidad a letra Moneda MXN Español,0,160.0000
+389,get_arxiv_article_information,get_arxiv_article_information,1,160.0000
+390,GamerPower%%Filter & Group Giveaways,GamerPower%%Live giveaways by type,0,161.0000
+391,Marvel Vs Capcom 2%%Show Character,Marvel Vs Capcom 2%%Show Character,1,161.0000
+392,colegiosantaana%%Evaluaciones-1,colegiosantaana%%Evaluaciones-1,1,161.0000
+393,NumbersToLetters%%Convertir cantidad a letra Moneda MXN Español,search_general,0,162.0000
+394,forecast_weather,Weather_dataSet%%Weather_dataSet,0,163.0000
+395,JAK_API%%Genshin Impact,JAK_API%%Genshin Impact,1,163.0000
+396,colegiosantaana%%Mensajes-1,colegiosantaana%%Mensajes-1,1,163.0000
+397,Token API%%generate,Token API%%generate,1,163.0000
+398,Grup Terbuka%%Kirim Pesan,Grup Terbuka%%Kirim Pesan,0,164.0000
+399,colegiosantaana%%Mensajes-1,colegiosantaana%%Mensajes-1,1,164.0000
+400,NumbersToLetters%%Convertir cantidad a letra Moneda MXN Español,search_general,0,165.0000
+401,Stadia Maps Time Zone API%%TZ Lookup by Location,Stadia Maps Time Zone API%%TZ Lookup by Location,0,166.0000
+402,BART%%Advisory information,BART%%Advisory information,1,166.0000
+403,MikuAPI%%getRandomImage,MikuAPI%%getRandomImage,1,166.0000
+404,get_today_date,get_today_date,1,166.0000
+405,Car database%%Makes,Car database%%Makes,1,166.0000
+406,Fluximmo%%get_portail_api,Fluximmo%%get_portail_api,1,166.0000
+407,MikuAPI%%getRandomImage,MikuAPI%%getRandomImage,1,166.0000
+408,JAK_API%%Brawl Stars,JAK_API%%Brawl Stars,1,166.0000
+409,Numbers%%Get math fact,getWolframAlphaResults,0,167.0000
+410,Marvel Vs Capcom 2%%Show Character,Marvel Vs Capcom 2%%Show Character,1,167.0000
+411,BART%%Advisory information,BART%%Advisory information,0,168.0000
+412,BART%%Advisory information,BART%%Advisory information,0,169.0000
+413,JAK_API%%Miraculous,JAK_API%%Miraculous,1,169.0000
+414,Handball Data%%Daily Match List-Scheduled,Handball Data%%Daily Match List-Scheduled,0,170.0000
+415,Handball Data%%Daily Match List-Scheduled,Handball Data%%Daily Match List-Scheduled,1,170.0000
+416,Numbers Translator%%Numbers Translator,Numbers Translator%%Numbers Translator,1,170.0000
+417,JAK_API%%Brawl Stars,JAK_API%%Brawl Stars,1,170.0000
+418,add_date,add_date,1,170.0000
+419,pizzaallapala%%Get Producto Promo,pizzaallapala%%Get Producto Promo,1,170.0000
+420,Grup Terbuka%%Kirim Pesan,Grup Terbuka%%Kirim Pesan,0,171.0000
+421,forecast_weather,forecast_weather,1,171.0000
+422,JAK_API%%Miraculous,JAK_API%%Miraculous,1,171.0000
+423,CatchLoc%%[Group Management] API access for modifying group information,CatchLoc%%[Group Management] API access for modifying group information,0,172.0000
+424,MikuAPI%%getRandomImage,MikuAPI%%getRandomImage,1,172.0000
+425,forecast_weather,forecast_weather,1,172.0000
+426,BART%%Advisory information,BART%%Advisory information,1,172.0000
+427,Fake Brightcove%%Temp Upload URLs,Fake Brightcove%%Temp Upload URLs,0,173.0000
+428,Marvel Vs Capcom 2%%Show Character,Marvel Vs Capcom 2%%Show Character,1,173.0000
+429,Marvel Vs Capcom 2%%Show Character,Marvel Vs Capcom 2%%Show Character,1,173.0000
+430,Global Email V4%%Global Email V4,Global Email V4%%Global Email V4,0,174.0000
+431,Stadia Maps Time Zone API%%TZ Lookup by Location,Stadia Maps Time Zone API%%TZ Lookup by Location,1,174.0000
+432,Password Generator API%%Base,Password Generator API%%Password of length 50,0,175.0000
+433,Grup Terbuka%%Kirim Pesan,Grup Terbuka%%Kirim Pesan,0,176.0000
+434,colegiosantaana%%Disciplina-1,colegiosantaana%%Disciplina-1,1,176.0000
+435,colegiosantaana%%Evaluaciones-1,colegiosantaana%%Evaluaciones-1,1,176.0000
+436,add_date,add_date,1,176.0000
+437,JAK_API%%Miraculous,search,0,177.0000
+438,BART%%Advisory information,BART%%Advisory information,1,177.0000
+439,siteDomain%%language list,siteDomain%%language list,1,177.0000
+440,Soccer Data%%Tournament List,Soccer Data%%Tournament List,1,177.0000
+441,get_weather_today,Weather_dataSet%%Weather_dataSet,0,178.0000
+442,siteDomain%%language list,siteDomain%%language list,1,178.0000
+443,get_today_date,get_today_date,1,178.0000
+444,Numbers Translator%%Numbers Translator,Numbers Translator%%Numbers Translator,1,178.0000
+445,JAK_API%%Ben 10,JAK_API%%Ben 10,1,178.0000
+446,Places%%Geographic coordinates by placename,Places%%Geographic coordinates by placename,1,178.0000
+447,Marvel Vs Capcom 2%%All Characters,Marvel Vs Capcom 2%%All Characters,1,178.0000
+448,GamerPower%%Live giveaways by type,GamerPower%%Filter & Group Giveaways,0,179.0000
+449,JAK_API%%Brawl Stars,JAK_API%%Brawl Stars,1,179.0000
+450,pizzaallapala%%Get Producto Promo,pizzaallapala%%Get Producto Promo,1,179.0000
+451,get_weather_today,Weather_dataSet%%Weather_dataSet,0,180.0000
+452,colegiosantaana%%Disciplina-1,colegiosantaana%%Disciplina-1,1,180.0000
+453,English Talking%%Get an answer,English Talking%%Get an answer,0,181.0000
+454,F1 Latest News%%GET recent F1 news from all sources,F1 Latest News%%GET recent F1 news from all sources,1,181.0000
+455,Numbers Translator%%Numbers Translator,Numbers Translator%%Numbers Translator,1,181.0000
+456,siteDomain%%industry list,siteDomain%%industry list,1,181.0000
+457,BART%%Advisory information,BART%%Advisory information,0,182.0000
+458,getWolframAlphaResults,getWolframAlphaResults,1,182.0000
+459,JAK_API%%Brawl Stars,JAK_API%%Brawl Stars,1,182.0000
+460,Soccer Data%%Tournament List,Soccer Data%%Tournament List,1,182.0000
+461,getWolframAlphaResults,search_general,0,183.0000
+462,get_weather_today,get_weather_today,1,183.0000
+463,get_arxiv_article_information,get_arxiv_article_information,0,184.0000
+464,getWolframAlphaResults,search,0,185.0000
+465,getWolframAlphaResults,getWolframAlphaResults,0,186.0000
+466,Handball Data%%Daily Match List-Live,Handball Data%%Daily Match List-Live,0,187.0000
+467,Token API%%generate,search_general,0,188.0000
+468,search_places,search_places,0,189.0000
+469,GamerPower%%Live giveaways by type,GamerPower%%Live giveaways by type,0,190.0000
+470,Numbers%%Get math fact,Numbers%%Get math fact,1,190.0000
+471,NumbersToLetters%%Convertir cantidad a letra Moneda MXN Español,NumbersToLetters%%Convertir cantidad a letra Moneda MXN Español,0,191.0000
+472,F1 Latest News%%GET recent F1 news from all sources,F1 Latest News%%GET recent F1 news from all sources,1,191.0000
+473,Password Generator API%%Password of length 50,Password Generator API%%Password of length 50,1,191.0000
+474,get_weather_today,get_weather_today,1,191.0000
+475,get_weather_today,get_weather_today,1,191.0000
+476,BART%%Advisory information,BART%%Advisory information,0,192.0000
+477,get_weather_today,get_weather_today,1,192.0000
+478,GamerPower%%Filter & Group Giveaways,GamerPower%%Filter & Group Giveaways,1,192.0000
+479,GamerPower%%Live giveaways by type,GamerPower%%Live giveaways by type,0,193.0000
+480,colegiosantaana%%Evaluaciones-1,colegiosantaana%%Evaluaciones-1,1,193.0000
+481,thailand%%thai4,thailand%%thai4,1,193.0000
+482,Handball Data%%Daily Match List-Scheduled,Handball Data%%Daily Match List-Scheduled,1,193.0000
+483,siteDomain%%industry list,siteDomain%%industry list,1,193.0000
+484,F1 Latest News%%GET recent F1 news from all sources,F1 Latest News%%GET recent F1 news from all sources,1,193.0000
+485,Numbers%%Get math fact,Numbers%%Get math fact,1,193.0000
+486,forecast_weather,forecast_weather,0,194.0000
+487,siteDomain%%industry list,siteDomain%%industry list,1,194.0000
+488,thailand%%thai4,Places%%Geographic coordinates by placename,0,195.0000
+489,English Talking%%Get an answer,English Talking%%Get an answer,0,196.0000
+490,Marvel Vs Capcom 2%%All Characters,Marvel Vs Capcom 2%%All Characters,1,196.0000
+491,add_date,add_date,1,196.0000
+492,Numbers Translator%%Numbers Translator,NumbersToLetters%%Convertir cantidad a letra Moneda MXN Ingles,0,197.0000
+493,colegiosantaana%%Disciplina-1,colegiosantaana%%Disciplina-1,1,197.0000
+494,search_places,search,0,198.0000
+495,Handball Data%%Daily Match List-Scheduled,Handball Data%%Daily Match List-Live,0,199.0000
+496,colegiosantaana%%Evaluaciones-1,colegiosantaana%%Evaluaciones-1,1,199.0000
+497,NumbersToLetters%%Convertir cantidad a letra Moneda MXN Español,NumbersToLetters%%Convertir cantidad a letra Moneda MXN Español,1,199.0000
+498,GamerPower%%Filter & Group Giveaways,GamerPower%%Live giveaways by type,0,200.0000
+499,forecast_weather,forecast_weather,0,201.0000
+500,Soccer Data%%Tournament List,Soccer Data%%Tournament List,1,201.0000
+501,Password Generator API%%Base,Password Generator API%%Base,1,201.0000
+502,Token API%%generate,Token API%%generate,1,201.0000
+503,add_date,add_date,1,201.0000
+504,colegiosantaana%%Evaluaciones-1,colegiosantaana%%Evaluaciones-1,1,201.0000
+505,forecast_weather,Weather_dataSet%%Weather_dataSet,0,202.0000
+506,thailand%%thai4,thailand%%thai4,1,202.0000
+507,BART%%Advisory information,BART%%Advisory information,1,202.0000
+508,colegiosantaana%%Mensajes-1,colegiosantaana%%Mensajes-1,1,202.0000
+509,Global Email V4%%Global Email V4,Global Email V4%%Global Email V4,0,203.0000
+510,Handball Data%%Daily Match List-Scheduled,Handball Data%%Daily Match List-Scheduled,1,203.0000
+511,Numbers Translator%%Numbers Translator,NumbersToLetters%%Convertir cantidad a letra Moneda MXN Ingles,0,204.0000
+512,Numbers%%Get math fact,Numbers%%Get math fact,1,204.0000
+513,GamerPower%%Filter & Group Giveaways,GamerPower%%Live giveaways by type,0,205.0000
+514,disambiguation,disambiguation,0,206.0000
+515,Stadia Maps Time Zone API%%TZ Lookup by Location,Stadia Maps Time Zone API%%TZ Lookup by Location,0,207.0000
+516,JAK_API%%Miraculous,JAK_API%%Miraculous,1,207.0000
+517,get_weather_today,get_weather_today,1,207.0000
+518,Football Dolphin%%Head to head statistics,Football Dolphin%%Head to head statistics,1,207.0000
+519,PizzaAllApala%%Get Producto Promo,search_general,0,208.0000
+520,JAK_API%%Miraculous,JAK_API%%Miraculous,1,208.0000
+521,JAK_API%%Genshin Impact,JAK_API%%Genshin Impact,1,208.0000
+522,Fluximmo%%get_portail_api,Fluximmo%%get_portail_api,1,208.0000
+523,Marvel Vs Capcom 2%%Show Character,Marvel Vs Capcom 2%%Show Character,1,208.0000
+524,Global Email V4%%Global Email V4,search_general,0,209.0000
+525,get_weather_today,forecast_weather,0,210.0000
+526,JAK_API%%Genshin Impact,JAK_API%%Genshin Impact,1,210.0000
+527,Numbers Translator%%Numbers Translator,Numbers Translator%%Numbers Translator,1,210.0000
+528,F1 Latest News%%GET recent F1 news from all sources,F1 Latest News%%GET recent F1 news from all sources,1,210.0000
+529,thailand%%thai4,thailand%%thai4,1,210.0000
+530,colegiosantaana%%Disciplina-1,colegiosantaana%%Disciplina-1,1,210.0000
+531,get_arxiv_article_information,get_arxiv_article_information,0,211.0000
+532,Car database%%Makes,Car database%%Makes,1,211.0000
+533,Marvel Vs Capcom 2%%All Characters,Marvel Vs Capcom 2%%All Characters,1,211.0000
+534,Grup Terbuka%%Kirim Pesan,Grup Terbuka%%Kirim Pesan,0,212.0000
+535,pizzaallapala%%Get Producto Promo,pizzaallapala%%Get Producto Promo,1,212.0000
+536,Grup Terbuka%%Kirim Pesan,Grup Terbuka%%Kirim Pesan,0,213.0000
+537,thailand%%thai4,thailand%%thai4,1,213.0000
+538,Fake Brightcove%%Temp Upload URLs,Fake Brightcove%%Temp Upload URLs,0,214.0000
+539,colegiosantaana%%Mensajes-1,colegiosantaana%%Mensajes-1,1,214.0000
+540,Handball Data%%Daily Match List-Scheduled,Handball Data%%Daily Match List-Scheduled,0,215.0000
+541,Numbers%%Get math fact,Numbers%%Get math fact,1,215.0000
+542,Fluximmo%%get_portail_api,Fluximmo%%get_portail_api,1,215.0000
+543,Handball Data%%Daily Match List-Live,Handball Data%%Daily Match List-Live,1,215.0000
+544,CatchLoc%%[Group Management] API access for modifying group information,PTL%%update,0,216.0000
+545,Football Dolphin%%Head to head statistics,Football Dolphin%%Head to head statistics,0,217.0000
+546,Token API%%generate,Token API%%generate,1,217.0000
+547,get_arxiv_article_information,get_arxiv_article_information,1,217.0000
+548,JAK_API%%Miraculous,JAK_API%%Miraculous,1,217.0000
+549,get_arxiv_article_information,get_arxiv_article_information,1,217.0000
+550,siteDomain%%industry list,siteDomain%%industry list,1,217.0000
+551,Grup Terbuka%%Kirim Pesan,Grup Terbuka%%Kirim Pesan,0,218.0000
+552,thailand%%thai4,getWolframAlphaResults,0,219.0000
+553,Stadia Maps Time Zone API%%TZ Lookup by Location,Stadia Maps Time Zone API%%TZ Lookup by Location,1,219.0000
+554,NumbersToLetters%%Convertir cantidad a letra Moneda MXN Español,NumbersToLetters%%Convertir cantidad a letra Moneda MXN Español,1,219.0000
+555,colegiosantaana%%Evaluaciones-1,colegiosantaana%%Evaluaciones-1,1,219.0000
+556,thailand%%thai4,getWolframAlphaResults,0,220.0000
+557,JAK_API%%Brawl Stars,JAK_API%%Brawl Stars,1,220.0000
+558,GamerPower%%Filter & Group Giveaways,GamerPower%%Filter & Group Giveaways,0,221.0000
+559,Password Generator API%%Base,Password Generator API%%Password of length 50,0,222.0000
+560,JAK_API%%Miraculous,JAK_API%%Miraculous,1,222.0000
+561,siteDomain%%industry list,siteDomain%%industry list,1,222.0000
+562,get_today_date,get_today_date,1,222.0000
+563,add_date,add_date,1,222.0000
+564,Numbers%%Get math fact,Numbers%%Get math fact,1,222.0000
+565,Fake Brightcove%%Temp Upload URLs,Fake Brightcove%%Temp Upload URLs,0,223.0000
+566,JAK_API%%Genshin Impact,JAK_API%%Genshin Impact,1,223.0000
+567,GamerPower%%Filter & Group Giveaways,GamerPower%%Filter & Group Giveaways,0,224.0000
+568,forecast_weather,forecast_weather,1,224.0000
+569,disambiguation,disambiguation,0,225.0000
+570,NumbersToLetters%%Convertir cantidad a letra Moneda MXN Español,NumbersToLetters%%Convertir cantidad a letra Moneda MXN Español,1,225.0000
+571,BART%%Advisory information,BART%%Advisory information,0,226.0000
+572,thailand%%thai4,NumbersToLetters%%Convertir cantidad a letra Moneda MXN Ingles,0,227.0000
+573,Fake Brightcove%%Temp Upload URLs,Fake Brightcove%%Temp Upload URLs,0,228.0000
+574,forecast_weather,forecast_weather,1,228.0000
+575,Handball Data%%Daily Match List-Scheduled,Handball Data%%Daily Match List-Live,0,229.0000
+576,MikuAPI%%getRandomImage,MikuAPI%%getRandomImage,1,229.0000
+577,GamerPower%%Filter & Group Giveaways,GamerPower%%Filter & Group Giveaways,0,230.0000
+578,Stadia Maps Time Zone API%%TZ Lookup by Location,Stadia Maps Time Zone API%%TZ Lookup by Location,1,230.0000
+579,Places%%Geographic coordinates by placename,Places%%Geographic coordinates by placename,0,231.0000
+580,NumbersToLetters%%Numbers Translator,NumbersToLetters%%Convertir cantidad a letra Moneda MXN Ingles,0,232.0000
+581,JAK_API%%Ben 10,JAK_API%%Ben 10,1,232.0000
+582,siteDomain%%language list,siteDomain%%language list,1,232.0000
+583,NumbersToLetters%%Convertir cantidad a letra Moneda MXN Ingles,NumbersToLetters%%Convertir cantidad a letra Moneda MXN Ingles,1,232.0000
+584,Stadia Maps Time Zone API%%TZ Lookup by Location,Places%%Geographic coordinates by placename,0,233.0000
+585,JAK_API%%Miraculous,JAK_API%%Miraculous,1,233.0000
+586,Thailand%%thai4,search,0,234.0000
+587,add_date,add_date,1,234.0000
+588,colegiosantaana%%Mensajes-1,colegiosantaana%%Mensajes-1,1,234.0000
+589,pizzaallapala%%Get Producto Promo,pizzaallapala%%Get Producto Promo,1,234.0000
+590,Numbers%%Get math fact,Numbers%%Get math fact,1,234.0000
+591,NumbersToLetters%%Convertir cantidad a letra Moneda MXN Español,NumbersToLetters%%Convertir cantidad a letra Moneda MXN Español,1,234.0000
+592,Grup Terbuka%%Kirim Pesan,Grup Terbuka%%Kirim Pesan,0,235.0000
+593,colegiosantaana%%Mensajes-1,colegiosantaana%%Mensajes-1,1,235.0000
+594,getWolframAlphaResults,search_general,0,236.0000
+595,search_places,search_places,0,237.0000
+596,JAK_API%%Brawl Stars,JAK_API%%Brawl Stars,1,237.0000
+597,JAK_API%%Genshin Impact,JAK_API%%Genshin Impact,1,237.0000
+598,pizzaallapala%%Get Producto Promo,pizzaallapala%%Get Producto Promo,1,237.0000
+599,Car database%%Makes,Car database%%Makes,1,237.0000
+600,JAK_API%%Brawl Stars,JAK_API%%Brawl Stars,1,237.0000
+601,JAK_API%%Ben 10,JAK_API%%Ben 10,1,237.0000
+602,MikuAPI%%getRandomImage,MikuAPI%%getRandomImage,1,237.0000
+603,Marvel Vs Capcom 2%%Show Character,Marvel Vs Capcom 2%%Show Character,1,237.0000
+604,GamerPower%%Live giveaways by type,GamerPower%%Live giveaways by type,0,238.0000
+605,JAK_API%%Ben 10,JAK_API%%Ben 10,1,238.0000
+606,JAK_API%%Miraculous,JAK_API%%Miraculous,1,238.0000
+607,MikuAPI%%getRandomImage,MikuAPI%%getRandomImage,1,238.0000
+608,colegiosantaana%%Evaluaciones-1,colegiosantaana%%Evaluaciones-1,1,238.0000
+609,getWolframAlphaResults,search,0,239.0000
+610,Stadia Maps Time Zone API%%TZ Lookup by Location,Stadia Maps Time Zone API%%TZ Lookup by Location,1,239.0000
+611,JAK_API%%Ben 10,JAK_API%%Ben 10,1,239.0000
+612,Global Email V4%%Global Email V4,Global Email V4%%Global Email V4,0,240.0000
+613,MikuAPI%%getRandomImage,MikuAPI%%getRandomImage,1,240.0000
+614,CatchLoc%%[Group Management] API access for modifying group information,CatchLoc%%[Group Management] API access for modifying group information,0,241.0000
+615,Soccer Data%%Tournament List,Soccer Data%%Tournament List,1,241.0000
+616,Handball Data%%Daily Match List-Live,Handball Data%%Daily Match List-Live,0,242.0000
+617,Password Generator API%%Password of length 50,Password Generator API%%Password of length 50,1,242.0000
+618,get_arxiv_article_information,get_arxiv_article_information,1,242.0000
+619,disambiguation,disambiguation,1,242.0000
+620,English Talking%%Get an answer,English Talking%%Get an answer,1,242.0000
+621,JAK_API%%Genshin Impact,JAK_API%%Genshin Impact,1,242.0000
+622,Fluximmo%%get_portail_api,Weather_dataSet%%Weather_dataSet,0,243.0000
+623,Password Generator API%%Base,Password Generator API%%Base,1,243.0000
+624,JAK_API%%Brawl Stars,JAK_API%%Brawl Stars,1,243.0000
+625,siteDomain%%language list,disambiguation,0,244.0000
+626,get_arxiv_article_information,get_arxiv_article_information,1,244.0000
+627,Handball Data%%Daily Match List-Scheduled,Handball Data%%Daily Match List-Scheduled,0,245.0000
+628,Football Dolphin%%Head to head statistics,Football Dolphin%%Head to head statistics,0,246.0000
+629,search_places,search_places,0,247.0000
+630,Places%%Geographic coordinates by placename,search_places,0,248.0000
+631,Car database%%Makes,Car database%%Makes,1,248.0000
+632,Handball Data%%Daily Match List-Live,Handball Data%%Daily Match List-Live,0,249.0000
+633,Football Dolphin%%Head to head statistics,Football Dolphin%%Head to head statistics,0,250.0000
+634,JAK_API%%Genshin Impact,JAK_API%%Genshin Impact,1,250.0000
+635,Password Generator API%%Base,Password Generator API%%Base,1,250.0000
+636,Football Dolphin%%Head to head statistics,Football Dolphin%%Head to head statistics,0,251.0000
+637,colegiosantaana%%Evaluaciones-1,colegiosantaana%%Evaluaciones-1,1,251.0000
+638,Numbers%%Get math fact,Numbers%%Get math fact,1,251.0000
+639,add_date,add_date,1,251.0000
+640,PTL%%update,PTL%%update,0,252.0000
+641,thailand%%thai4,thailand%%thai4,1,252.0000
+642,Marvel Vs Capcom 2%%Show Character,Marvel Vs Capcom 2%%Show Character,1,252.0000
+643,siteDomain%%language list,siteDomain%%language list,1,252.0000
+644,JAK_API%%Brawl Stars,JAK_API%%Brawl Stars,1,252.0000
+645,Handball Data%%Daily Match List-Scheduled,Handball Data%%Daily Match List-Live,0,253.0000
+646,Handball Data%%Daily Match List-Scheduled,Handball Data%%Daily Match List-Scheduled,1,253.0000
+647,PTL%%update,PTL%%update,0,254.0000
+648,NumbersToLetters%%Convertir cantidad a letra Moneda MXN Español,NumbersToLetters%%Convertir cantidad a letra Moneda MXN Español,0,255.0000
+649,Token API%%generate,Token API%%generate,1,255.0000
+650,JAK_API%%Brawl Stars,JAK_API%%Brawl Stars,1,255.0000
+651,None,disambiguation,0,256.0000
+652,Fluximmo%%get_portail_api,Fluximmo%%get_portail_api,1,256.0000
+653,English Talking%%Get an answer,English Talking%%Get an answer,0,257.0000
+654,Global Email V4%%Global Email V4,Global Email V4%%Global Email V4,1,257.0000
+655,JAK_API%%Ben 10,search_general,0,258.0000
+656,pizzaallapala%%Get Producto Promo,search,0,259.0000
+657,Soccer Data%%Tournament List,Soccer Data%%Tournament List,1,259.0000
+658,NumbersToLetters%%Convertir cantidad a letra Moneda MXN Español,NumbersToLetters%%Convertir cantidad a letra Moneda MXN Español,0,260.0000
+659,Token API%%generate,PTL%%update,0,261.0000
+660,GamerPower%%Live giveaways by type,GamerPower%%Filter & Group Giveaways,0,262.0000
+661,siteDomain%%industry list,siteDomain%%industry list,1,262.0000
+662,disambiguation,disambiguation,1,262.0000
+663,Numbers Translator%%Numbers Translator,Numbers Translator%%Numbers Translator,1,262.0000
+664,Numbers%%Get math fact,Numbers%%Get math fact,1,262.0000
+665,Grup Terbuka%%Kirim Pesan,Grup Terbuka%%Kirim Pesan,0,263.0000
+666,English Talking%%Get an answer,get_today_date,0,264.0000
+667,English Talking%%Get an answer,get_today_date,0,265.0000
+668,Handball Data%%Daily Match List-Scheduled,Handball Data%%Daily Match List-Scheduled,0,266.0000
+669,thailand%%thai4,thailand%%thai4,1,266.0000
+670,Handball Data%%Daily Match List-Scheduled,Football Dolphin%%Head to head statistics,0,267.0000
+671,colegiosantaana%%Disciplina-1,colegiosantaana%%Disciplina-1,1,267.0000
+672,Token API%%generate,Token API%%generate,1,267.0000
+673,JAK_API%%Ben 10,search,0,268.0000
+674,Places%%Geographic coordinates by placename,Places%%Geographic coordinates by placename,1,268.0000
+675,colegiosantaana%%Disciplina-1,colegiosantaana%%Disciplina-1,1,268.0000
+676,JAK_API%%Miraculous,JAK_API%%Miraculous,1,268.0000
+677,Places%%Geographic coordinates by placename,search_places,0,269.0000
+678,Fluximmo%%get_portail_api,Fluximmo%%get_portail_api,1,269.0000
+679,forecast_weather,Weather_dataSet%%Weather_dataSet,0,270.0000
+680,disambiguation,disambiguation,1,270.0000
+681,PTL%%update,PTL%%update,0,271.0000
+682,JAK_API%%Ben 10,JAK_API%%Ben 10,1,271.0000
+683,add_date,add_date,1,271.0000
+684,English Talking%%Get an answer,search_general,0,272.0000
+685,siteDomain%%language list,siteDomain%%language list,1,272.0000
+686,colegiosantaana%%Disciplina-1,colegiosantaana%%Disciplina-1,1,272.0000
+687,NumbersToLetters%%Convertir cantidad a letra Moneda MXN Español,NumbersToLetters%%Convertir cantidad a letra Moneda MXN Español,1,272.0000
+688,add_date,add_date,1,272.0000
+689,Car database%%Makes,Car database%%Makes,1,272.0000
+690,thailand%%thai4,search_places,0,273.0000
+691,Password Generator API%%Base,Password Generator API%%Base,1,273.0000
+692,Fluximmo%%get_portail_api,Fluximmo%%get_portail_api,1,273.0000
+693,colegiosantaana%%Evaluaciones-1,colegiosantaana%%Evaluaciones-1,1,273.0000
+694,Global Email V4%%Global Email V4,Global Email V4%%Global Email V4,0,274.0000
+695,get_weather_today,get_weather_today,1,274.0000
+696,NumbersToLetters%%Convertir cantidad a letra Moneda MXN Español,NumbersToLetters%%Convertir cantidad a letra Moneda MXN Español,1,274.0000
+697,Numbers%%Get math fact,Numbers%%Get math fact,1,274.0000
+698,Password Generator API%%Password of length 50,Password Generator API%%Password of length 50,1,274.0000
+699,pizzaallapala%%Get Producto Promo,search_places,0,275.0000
+700,thailand%%thai4,thailand%%thai4,1,275.0000
+701,search_general,search_general,0,276.0000
+702,weather_dataSet%%Weather_dataSet,get_weather_today,0,277.0000
+703,GamerPower%%Live giveaways by type,GamerPower%%Filter & Group Giveaways,0,278.0000
+704,pizzaallapala%%Get Producto Promo,pizzaallapala%%Get Producto Promo,1,278.0000
+705,Token API%%generate,Token API%%generate,1,278.0000
+706,siteDomain%%language list,siteDomain%%language list,1,278.0000
+707,Grup Terbuka%%Kirim Pesan,Grup Terbuka%%Kirim Pesan,0,279.0000
+708,Grup Terbuka%%Kirim Pesan,CatchLoc%%[Group Management] API access for modifying group information,0,280.0000
+709,Password Generator API%%Base,Password Generator API%%Base,1,280.0000
+710,get_today_date,get_today_date,1,280.0000
+711,BART%%Advisory information,BART%%Advisory information,0,281.0000
+712,Marvel Vs Capcom 2%%All Characters,Marvel Vs Capcom 2%%All Characters,1,281.0000
+713,NumbersToLetters%%Convertir cantidad a letra Moneda MXN Español,NumbersToLetters%%Convertir cantidad a letra Moneda MXN Español,1,281.0000
+714,siteDomain%%language list,search_general,0,282.0000
+715,F1 Latest News%%GET recent F1 news from all sources,F1 Latest News%%GET recent F1 news from all sources,1,282.0000
+716,Stadia Maps Time Zone API%%TZ Lookup by Location,Stadia Maps Time Zone API%%TZ Lookup by Location,1,282.0000
+717,English Talking%%Get an answer,get_weather_today,0,283.0000
+718,MikuAPI%%getRandomImage,MikuAPI%%getRandomImage,1,283.0000
+719,Password Generator API%%Base,Password Generator API%%Base,1,283.0000
+720,Global Email V4%%Global Email V4,Global Email V4%%Global Email V4,0,284.0000
+721,search,search_general,0,285.0000
+722,forecast_weather,forecast_weather,0,286.0000
+723,Car database%%Makes,Car database%%Makes,1,286.0000
+724,get_weather_today,get_weather_today,1,286.0000
+725,Global Email V4%%Global Email V4,Global Email V4%%Global Email V4,1,286.0000
+726,Password Generator API%%Password of length 50,Password Generator API%%Password of length 50,1,286.0000
+727,Handball Data%%Daily Match List-Scheduled,Handball Data%%Daily Match List-Live,0,287.0000
+728,Handball Data%%Daily Match List-Live,Football Dolphin%%Head to head statistics,0,288.0000
+729,Grup Terbuka%%Kirim Pesan,CatchLoc%%[Group Management] API access for modifying group information,0,289.0000
+730,None,NumbersToLetters%%Convertir cantidad a letra Moneda MXN Ingles,0,290.0000
+731,colegiosantaana%%Mensajes-1,colegiosantaana%%Mensajes-1,1,290.0000
+732,Soccer Data%%Tournament List,Soccer Data%%Tournament List,1,290.0000
+733,siteDomain%%industry list,siteDomain%%industry list,0,291.0000
+734,Car database%%Makes,Car database%%Makes,1,291.0000
+735,Password Generator API%%Password of length 50,Password Generator API%%Password of length 50,1,291.0000
+736,JAK_API%%Ben 10,JAK_API%%Ben 10,1,291.0000
+737,Password Generator API%%Base,Password Generator API%%Base,1,291.0000
+738,NumbersToLetters%%Convertir cantidad a letra Moneda MXN Español,get_today_date,0,292.0000
+739,Soccer Data%%Tournament List,Soccer Data%%Tournament List,1,292.0000
+740,siteDomain%%language list,Global Email V4%%Global Email V4,0,293.0000
+741,search_places,disambiguation,0,294.0000
+742,Marvel Vs Capcom 2%%Show Character,Marvel Vs Capcom 2%%Show Character,1,294.0000
+743,Numbers%%Get math fact,Numbers%%Get math fact,1,294.0000
+744,Password Generator API%%Base,Password Generator API%%Base,1,294.0000
+745,F1 Latest News%%GET recent F1 news from all sources,F1 Latest News%%GET recent F1 news from all sources,1,294.0000
+746,thailand%%thai4,thailand%%thai4,1,294.0000
+747,Password Generator API%%Password of length 50,Password Generator API%%Password of length 50,1,294.0000
+748,Fluximmo%%get_portail_api,search,0,295.0000
+749,siteDomain%%industry list,siteDomain%%industry list,1,295.0000

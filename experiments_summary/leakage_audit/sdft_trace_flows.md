@@ -194,17 +194,7 @@ H = np.random.randn(10, 10)
 # SOLUTION START
 '''
 
-You need to provide your solution in python code to satisfy the user's requirements. Your code will be tested as follows (enclosed in '''):
-'''
-['exec_context = r"""\nimport numpy as np\nimport matplotlib.pyplot as plt\nH = np.random.randn(10, 10)\n[insert]\nplt.savefig(\'output.png\', bbox_inches =\'tight\')\nresult = None\n"""']
-
-code = exec_context.replace("[insert]", <your_code>)
-a_test_case = generate_test_case()
-test_input, expected_result = a_test_case
-test_env = {"test_input": test_input}
-exec(code, test_env)
-assertEqual(test_env["result"], expected_result)
-'''
+[... followed by boilerplate showing how the code will be tested (exec harness) ...]
 
 Now, generate your code directly in the following format:
 ```python

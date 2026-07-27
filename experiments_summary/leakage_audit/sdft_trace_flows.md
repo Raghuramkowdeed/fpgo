@@ -65,10 +65,21 @@ A (model's past answer): 44. Tuberculosis
 **4. Oracle evaluation** — string-match: predicted diagnosis == dataset's diagnosis label -> 1, else 0
 Result: **CORRECT (1)** -> written to the benchmark record. Final.
 
-**5. Stored in mem_bank** (reward filter passed): the answer above becomes this problem's entry —
-available as an ICL demo for future questions, and as the training hint:
-teacher prompt = the exact prompt from steps 1-2 + this answer appended as an assistant turn.
-The student trains to match the teacher's distribution WITHOUT seeing it.
+**5. Stored in mem_bank** (reward filter passed): the answer above becomes this problem's
+entry — available as an ICL demo for future questions, and as the training hint below.
+
+**6. Training prompts** (used for the next ~9 batches):
+
+```text
+STUDENT prompt: exactly the messages from steps 1-2 (system + demos + question). No hint.
+
+TEACHER prompt: the same messages, plus two extra turns:
+  ASSISTANT: <the answer from step 3>     <- hint = the model's own verified answer
+  USER:      <the same question repeated>
+```
+
+The frozen teacher sees the hint; the student does not. Forward KL trains the student
+to match the teacher's hint-informed next-token distribution.
 
 
 ---
@@ -106,10 +117,21 @@ A (model's past answer): {"answer": "Los Angeles Lakers"}
 **4. Oracle evaluation** — exact-match of the answer span vs the dataset's gold span -> 1, else 0
 Result: **CORRECT (1)** -> written to the benchmark record. Final.
 
-**5. Stored in mem_bank** (reward filter passed): the answer above becomes this problem's entry —
-available as an ICL demo for future questions, and as the training hint:
-teacher prompt = the exact prompt from steps 1-2 + this answer appended as an assistant turn.
-The student trains to match the teacher's distribution WITHOUT seeing it.
+**5. Stored in mem_bank** (reward filter passed): the answer above becomes this problem's
+entry — available as an ICL demo for future questions, and as the training hint below.
+
+**6. Training prompts** (used for the next ~9 batches):
+
+```text
+STUDENT prompt: exactly the messages from steps 1-2 (system + demos + question). No hint.
+
+TEACHER prompt: the same messages, plus two extra turns:
+  ASSISTANT: <the answer from step 3>     <- hint = the model's own verified answer
+  USER:      <the same question repeated>
+```
+
+The frozen teacher sees the hint; the student does not. Forward KL trains the student
+to match the teacher's hint-informed next-token distribution.
 
 
 ---
@@ -234,10 +256,21 @@ plt.legend(fontsize=8)
 **4. Oracle evaluation** — EXECUTION: the code is run inside the problem's test harness; all assertions pass -> 1, else 0
 Result: **CORRECT (1)** -> written to the benchmark record. Final.
 
-**5. Stored in mem_bank** (reward filter passed): the answer above becomes this problem's entry —
-available as an ICL demo for future questions, and as the training hint:
-teacher prompt = the exact prompt from steps 1-2 + this answer appended as an assistant turn.
-The student trains to match the teacher's distribution WITHOUT seeing it.
+**5. Stored in mem_bank** (reward filter passed): the answer above becomes this problem's
+entry — available as an ICL demo for future questions, and as the training hint below.
+
+**6. Training prompts** (used for the next ~9 batches):
+
+```text
+STUDENT prompt: exactly the messages from steps 1-2 (system + demos + question). No hint.
+
+TEACHER prompt: the same messages, plus two extra turns:
+  ASSISTANT: <the answer from step 3>     <- hint = the model's own verified answer
+  USER:      <the same question repeated>
+```
+
+The frozen teacher sees the hint; the student does not. Forward KL trains the student
+to match the teacher's hint-informed next-token distribution.
 
 
 ---

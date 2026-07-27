@@ -1,230 +1,250 @@
-# SDFT trajectories — one simple example per dataset
+# SDFT trajectory of a new question — real examples, verbatim
 
-Every prompt below was produced by the **training code itself** (`build_student_messages`,
-`build_teacher_messages`, `MemBank.retrieve` from `run_fused.py`) applied to the run's own
-saved artifacts. Demos are retrieved only from problems seen in **earlier** batches.
-Long option lists / wiki contexts are summarized as `[...]`; the unclipped records are in
-`sdft_traces_sample.jsonl`.
-
-**Flow for every problem:** arrive → retrieve demos from past → answer (student prompt,
-no hint) → oracle grades 0/1 (**this is the recorded score, final**) → if correct, the
-model's own answer is stored → for the next ~9 batches, training uses teacher prompt =
-student prompt + that stored self-answer as hint. Gold labels never leave the oracle.
+Each example below is a problem whose memory entry was **never overwritten**, so the
+stored text is byte-identical to what the model generated when the question arrived.
+Prompts are rebuilt by the training code itself (`build_student_messages`,
+`MemBank.retrieve` from `run_fused.py`), demos restricted to earlier batches.
 
 
-## DDXPlus — medical diagnosis  (`ddxplus#606`, arrived at stream position 1607)
+---
 
-**1. Retrieval** — memory search over past problems returned: `ddxplus#199`, `ddxplus#440`, `ddxplus#441`
+## DDXPlus (medical diagnosis) — `ddxplus#1386`
 
-**2. Student prompt** — this is everything the model saw when it was scored:
+**1. New question arrives** (stream position 3346, batch 334):
 
 ```text
-SYSTEM: You are an expert medical doctor making a differential diagnosis.
+Act as a medical doctor and diagnose the patient based on the following patient profile:
 
-USER      (past problem): patient profile: ""Sex: Male, Age: 56
-- I have been in contact with someone who has had pertussis (whooping cough).
-- I vomited after coughing.
-- I have intense coughing fits.
-- My vaccinations are up to date.""
-ASSISTANT (its own past verified answer): 48. Whooping cough
-
-USER      (past problem): patient profile: ""Sex: Female, Age: 22
-- I have been in contact with someone who has had pertussis (whooping cough).
-- I vomited after coughing.
-- My vaccinations are up to date.""
-ASSISTANT (its own past verified answer): 48. Whooping cough
-
-USER      (past problem): patient profile: ""Sex: Male, Age: 7
-- I have been in contact with someone who has had pertussis (whooping cough).
-- I have asthma or have used a bronchodilator in the past.
-- I vomited after coughing.
-- I have intense coughing fits.
-- My vaccinations are up to date.""
-ASSISTANT (its own past verified answer): 48. Whooping cough
-
-USER (the new problem): Act as a medical doctor and diagnose the patient based on the following patient profile:
-
-patient profile: ""Sex: Male, Age: 28
-- I vomited after coughing.
-- My vaccinations are up to date.""
-
-All possible diagnoses ... [list of 49 options: 0. Acute COPD exacerbation / infection; 1. Acute dystonic reactions; 2. Acute laryngitis; ... ] 
+patient profile: ""Sex: Female, Age: 19
+- I take corticosteroids.
+- I am currently using intravenous drugs.
+- I have diabetes.
+- I have a fever (either felt or measured with a thermometer).
+- I have had an involuntary weight loss over the last 3 months.
+- I have a cough.
+- My BMI is less than 18.5, or I am underweight.""
+[+ list of 49 diagnosis options]
 Now, directly provide the diagnosis for the patient in the following format: <number>. <diagnosis>
 ```
 
-**3. Oracle** — the model's answer was graded **CORRECT** → recorded, final.
-
-**4. Stored** — the model's own answer goes into memory:
+**2. ICL retrieval** — 3 most similar PAST problems from memory (ddxplus#315`, `ddxplus#511`, `ddxplus#1199), each shown with the model's own earlier verified answer:
 
 ```text
-48. Whooping cough
-```
+Q: patient profile: ""Sex: Female, Age: 25
+- I take corticosteroids.
+- I am currently using intravenous drugs.
+- I have diabetes.
+- I have a fever (either felt or measured with a thermometer).
+- I have had an involuntary weight loss over the last 3 mont [...]
+A (model's past answer): 44. Tuberculosis
 
-**5. Teacher prompt (training only)** — identical to the student prompt, plus:
+Q: patient profile: ""Sex: Female, Age: 21
+- I take corticosteroids.
+- I am currently using intravenous drugs.
+- I am experiencing shortness of breath or difficulty breathing in a significant way.
+- I have diabetes.
+- I have had an involuntary weight lo [...]
+A (model's past answer): 44. Tuberculosis
 
-```text
-ASSISTANT (hint = the stored self-answer): 48. Whooping cough
-USER: (the same problem, repeated)
-```
-
-The student never sees the hint; forward KL teaches it to match the teacher's
-hint-informed distribution. The hint is the model's own output from step 3-4 —
-not a dataset field.
-
-
-## HotpotQA — multi-hop QA  (`hotpotqa#400`, arrived at stream position 1191)
-
-**1. Retrieval** — memory search over past problems returned: `hotpotqa#107`, `hotpotqa#115`, `hotpotqa#179`
-
-**2. Student prompt** — this is everything the model saw when it was scored:
-
-```text
-SYSTEM: You are a careful assistant answering multi-hop questions with short, exact answers in JSON.
-
-USER      (past problem): Are Ferocactus and Silene both types of plant?
-ASSISTANT (its own past verified answer): {"answer": "Yes"}
-
-USER      (past problem): Are Pothos and Tibouchina Aubl both flowering genus of plants?
-ASSISTANT (its own past verified answer): {"answer": "Yes"}
-
-USER      (past problem): Both Sorbaria and Goldenrod are a genus of more than 50 flowering plants?
-ASSISTANT (its own past verified answer): {"answer": "No"}
-
-USER (the new problem): You are doing a question-answering task. You are given the following context, which might help you answer the question:
-Context: [2 Wikipedia paragraphs: Stapelianthus, Cistus, ...]
-Question: Cistus and Stapelianthus are both forms of what?
-Now, provide your answer in the following JSON format:
-{"answer": "<your answer text span>"}
-```
-
-**3. Oracle** — the model's answer was graded **CORRECT** → recorded, final.
-
-**4. Stored** — the model's own answer goes into memory:
-
-```text
-{"answer": "Flowering plants"}
-```
-
-**5. Teacher prompt (training only)** — identical to the student prompt, plus:
-
-```text
-ASSISTANT (hint = the stored self-answer): {"answer": "Flowering plants"}
-USER: (the same problem, repeated)
-```
-
-The student never sees the hint; forward KL teaches it to match the teacher's
-hint-informed distribution. The hint is the model's own output from step 3-4 —
-not a dataset field.
-
-
-## DS-1000 — data-science code  (`ds1000#537`, arrived at stream position 2891)
-
-**1. Retrieval** — memory search over past problems returned: `ds1000#581`, `ds1000#536`, `ds1000#636`
-
-**2. Student prompt** — this is everything the model saw when it was scored:
-
-```text
-SYSTEM: You are an expert Python programmer for data science. Solve the problem by writing correct Python code. Output ONLY the code in a ```python ... ``` block.
-
-USER      (past problem): import numpy as np
-import matplotlib.pyplot as plt
-
-
-H = np.random.randn(10, 10)
-
-# color plot of the 2d array H
-# SOLUTION START
-ASSISTANT (its own past verified answer): ```python
-
-plt.imshow(H)
-
-
-
+Q: patient profile: ""Sex: Female, Age: 52
+- I take corticosteroids.
+- I am currently using intravenous drugs.
+- I am experiencing shortness of breath or difficulty breathing in a significant way.
+- I have diabetes.
+- I drink alcohol excessively or I ha [...]
+A (model's past answer): 44. Tuberculosis
 
 ```
 
-USER      (past problem): import matplotlib.pyplot as plt
+**3. Model generates its answer** (greedy, from system + demos + question — nothing else):
+
+```text
+44. Tuberculosis
+```
+
+**4. Oracle evaluation** — string-match: predicted diagnosis == dataset's diagnosis label -> 1, else 0
+Result: **CORRECT (1)** -> written to the benchmark record. Final.
+
+**5. Stored in mem_bank** (reward filter passed): the answer above becomes this problem's entry —
+available as an ICL demo for future questions, and as the training hint:
+teacher prompt = the exact prompt from steps 1-2 + this answer appended as an assistant turn.
+The student trains to match the teacher's distribution WITHOUT seeing it.
+
+
+---
+
+## HotpotQA (multi-hop QA) — `hotpotqa#1193`
+
+**1. New question arrives** (stream position 3344, batch 334):
+
+```text
+You are doing a question-answering task. You are given the following context, which might help you answer the question:
+Context: [10 Wikipedia paragraphs: Martin Linnes, Leigh Broxham, Ibrahim Tall...]
+Question: In what year was the team that Luke Clark plays either right back or central midfielder for founded?
+```
+
+**2. ICL retrieval** — 3 most similar PAST problems from memory (hotpotqa#109`, `hotpotqa#679`, `hotpotqa#1051), each shown with the model's own earlier verified answer:
+
+```text
+Q: The 2011–12 Houston Rockets season began with the drafting of the player who now plays for what team?
+A (model's past answer): {"answer": "Boston Celtics"}
+
+Q: Jack Alfred Evans played with a football club team that is based in what city in Australia?
+A (model's past answer): {"answer": "Melbourne"}
+
+Q: What was the other Los Angeles team that the 1999 Clippers top draft pick played for and won two championships with?
+A (model's past answer): {"answer": "Los Angeles Lakers"}
+
+```
+
+**3. Model generates its answer** (greedy, from system + demos + question — nothing else):
+
+```text
+{"answer": "1963"}
+```
+
+**4. Oracle evaluation** — exact-match of the answer span vs the dataset's gold span -> 1, else 0
+Result: **CORRECT (1)** -> written to the benchmark record. Final.
+
+**5. Stored in mem_bank** (reward filter passed): the answer above becomes this problem's entry —
+available as an ICL demo for future questions, and as the training hint:
+teacher prompt = the exact prompt from steps 1-2 + this answer appended as an assistant turn.
+The student trains to match the teacher's distribution WITHOUT seeing it.
+
+
+---
+
+## DS-1000 (data-science code) — `ds1000#657`
+
+**1. New question arrives** (stream position 801, batch 80):
+
+```text
+Here is the user's requirements for solving a programming problem (enclosed in '''):
+'''
 import numpy as np
-
-data = np.random.random((10, 10))
-
-# plot the 2d matrix data with a colorbar
-# SOLUTION START
-ASSISTANT (its own past verified answer): ```python
-
-
-plt.imshow(data)
-plt.colorbar()
-
-
-
-
-
-
-```
-
-USER      (past problem): import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-x = np.random.rand(10)
-y = np.random.rand(10)
+x = np.arange(10)
+y = np.arange(10)
 
-# Make a histogram of x and show outline of each bar in the histogram
-# Make the outline of each bar has a line width of 1.2
+# plot y over x with label "y"
+# make the legend fontsize 8
 # SOLUTION START
-ASSISTANT (its own past verified answer): ```python
-
-
-
-plt.hist(x, edgecolor='black', linewidth=1.2)
-
-
-
+'''
+[+ boilerplate showing the exec-based test harness]
+Now, generate your code directly...
 ```
 
-USER (the new problem): Here is the user's requirements for solving a programming problem (enclosed in '''):
-'''
-import numpy as np
+**2. ICL retrieval** — 3 most similar PAST problems from memory (ds1000#664`, `ds1000#563`, `ds1000#579), each shown with the model's own earlier verified answer:
+
+```text
+Q: import numpy as np
+import pandas as pd
 import matplotlib.pyplot as plt
 
-H = np.random.randn(10, 10)
+x = np.arange(10)
+y = np.arange(10)
 
-# show the 2d array H in black and white
+# Plot y over x in a line chart and label the line "y over x"
+# Show legend of the plot and give the legend box a title
 # SOLUTION START
-'''
+A (model's past answer): ```python
 
-[... followed by boilerplate showing how the code will be tested (exec harness) ...]
 
-Now, generate your code directly in the following format:
-```python
-<your_code>
+
+plt.plot(x, y, label='y over x')
+plt.legend(title='Legend Box Title')
+
+
+
+
+
+
+
+
+
 ```
+
+Q: import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+x = np.arange(10)
+y = np.arange(10)
+
+# Plot y over x in a line chart and name axis with labels ("x" and "y")
+# Hide tick labels but keep axis labels
+# SOLUTION START
+A (model's past answer): ```python
+
+
+
+plt.xlabel('x')
+plt.ylabel('y')
+
+plt.xticks([])
+plt.yticks([])
+
+
+
+
+
+
 ```
 
-**3. Oracle** — the model's answer was graded **CORRECT** → recorded, final.
+Q: import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
 
-**4. Stored** — the model's own answer goes into memory:
+x = np.arange(10)
+y = np.arange(10)
+
+# Plot y over x
+# move the y axis ticks to the right
+# SOLUTION START
+A (model's past answer): ```python
+
+
+
+plt.gca().yaxis.tick_right()
+
+
+
+
+
+
+
+
+```
+
+```
+
+**3. Model generates its answer** (greedy, from system + demos + question — nothing else):
 
 ```text
 ```python
 
-plt.imshow(H, cmap='gray')
+plt.plot(x, y, label='y')
+plt.legend(fontsize=8)
 
 ```
 ```
 
-**5. Teacher prompt (training only)** — identical to the student prompt, plus:
+**4. Oracle evaluation** — EXECUTION: the code is run inside the problem's test harness; all assertions pass -> 1, else 0
+Result: **CORRECT (1)** -> written to the benchmark record. Final.
 
-```text
-ASSISTANT (hint = the stored self-answer): ```python
+**5. Stored in mem_bank** (reward filter passed): the answer above becomes this problem's entry —
+available as an ICL demo for future questions, and as the training hint:
+teacher prompt = the exact prompt from steps 1-2 + this answer appended as an assistant turn.
+The student trains to match the teacher's distribution WITHOUT seeing it.
 
-plt.imshow(H, cmap='gray')
 
-```
-USER: (the same problem, repeated)
-```
+---
 
-The student never sees the hint; forward KL teaches it to match the teacher's
-hint-informed distribution. The hint is the model's own output from step 3-4 —
-not a dataset field.
+## Counter-example: wrong answer -> nothing stored
+
+`hotpotqa#12` arrived at stream position 44, the model's answer was graded **WRONG (0)**.
+It was never stored in memory: it can never appear as a demo and never becomes a training
+hint (unless a later window re-eval solves it). Wrong answers are simply discarded —
+1297 of the 3360 problems so far are in this bucket.

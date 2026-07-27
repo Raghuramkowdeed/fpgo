@@ -27,7 +27,7 @@ patient profile: ""Sex: Female, Age: 19
 Now, directly provide the diagnosis for the patient in the following format: <number>. <diagnosis>
 ```
 
-**2. ICL retrieval** — 3 most similar PAST problems from memory (ddxplus#315`, `ddxplus#511`, `ddxplus#1199), each shown with the model's own earlier verified answer:
+**2. ICL retrieval** — 3 most similar PAST problems from memory (`ddxplus#315`, `ddxplus#511`, `ddxplus#1199`), each shown with the model's own earlier verified answer:
 
 ```text
 Q: patient profile: ""Sex: Female, Age: 25
@@ -83,7 +83,7 @@ Context: [10 Wikipedia paragraphs: Martin Linnes, Leigh Broxham, Ibrahim Tall...
 Question: In what year was the team that Luke Clark plays either right back or central midfielder for founded?
 ```
 
-**2. ICL retrieval** — 3 most similar PAST problems from memory (hotpotqa#109`, `hotpotqa#679`, `hotpotqa#1051), each shown with the model's own earlier verified answer:
+**2. ICL retrieval** — 3 most similar PAST problems from memory (`hotpotqa#109`, `hotpotqa#679`, `hotpotqa#1051`), each shown with the model's own earlier verified answer:
 
 ```text
 Q: The 2011–12 Houston Rockets season began with the drafting of the player who now plays for what team?
@@ -136,7 +136,7 @@ y = np.arange(10)
 Now, generate your code directly...
 ```
 
-**2. ICL retrieval** — 3 most similar PAST problems from memory (ds1000#664`, `ds1000#563`, `ds1000#579), each shown with the model's own earlier verified answer:
+**2. ICL retrieval** — 3 most similar PAST problems from memory (`ds1000#664`, `ds1000#563`, `ds1000#579`), each shown with the model's own earlier verified answer:
 
 ```text
 Q: import numpy as np

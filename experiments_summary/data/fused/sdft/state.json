@@ -1,0 +1,20 @@
+{
+  "last_completed_batch": 421,
+  "next_batch": 422,
+  "cumulative_regret": 1750.0,
+  "n_correct": 2469,
+  "corr_by_ds": {
+    "ds1000": [
+      436,
+      955
+    ],
+    "ddxplus": [
+      1193,
+      1764
+    ],
+    "hotpotqa": [
+      840,
+      1500
+    ]
+  }
+}

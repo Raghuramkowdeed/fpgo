@@ -1,48 +1,79 @@
 \section{Introduction}
 \label{sec:intro}
 
-Language models deployed as agents encounter their tasks as a \emph{stream}: one
-problem at a time, in an order they do not control, with feedback that is sparse
-but verifiable---a unit test passes, a SQL query returns the right rows, a
-diagnosis matches the record. Two families of methods exploit this signal today.
-\emph{Memory-based} approaches such as streaming in-context learning
-retrieve past verified successes as few-shot demonstrations; they adapt instantly
-but the model itself never improves, and gains vanish when memory is unavailable.
-\emph{Reinforcement learning} from verifiable rewards updates the weights, but a
-scalar reward per attempt is a thin learning signal, and---as we show---policy
-optimization can collapse catastrophically on long heterogeneous streams.
+A language model deployed as an agent meets its work as a stream: a coding
+assistant sees one issue after another, each resolved ticket confirming whether
+its patch passed the tests. The feedback is sparse---a single verified bit per
+attempt---but it is \emph{grounded}, and it arrives continuously. Yet today's
+deployed models are frozen: an error made on Monday is repeated on Friday,
+because nothing connects the stream of verified outcomes back to the weights.
 
-We study a third route: \textbf{online self-distillation}. When the model solves a
-streamed problem and the oracle verifies it, the model conditioned on its own
-verified answer becomes a \emph{teacher} for the same model without that answer.
-Matching the teacher's hint-informed next-token distribution moves the answer's
-information into the weights---a dense, token-level signal derived entirely from
-the model's own verified output. No gold labels, no external teacher, no preference
-pairs.
+Two research programs address pieces of this problem. The first improves models
+\emph{between} deployments: self-training methods sample from the model, keep
+outputs that pass a correctness check, and fine-tune on the survivors
+\citep{zelikman2022star, gulcehre2023rest, singh2024beyond, yuan2023scaling},
+with reinforcement learning from verifiable rewards scaling the same signal to
+emergent reasoning \citep{shao2024deepseekmath, guo2025deepseekr1}. These loops
+require the task corpus upfront and multiple generation-and-training sweeps over
+it---they cannot run \emph{while} the stream is being served. The second program
+adapts agents \emph{during} deployment but deliberately avoids touching weights:
+verified experiences are stored in buffers, skill libraries, and playbooks and
+retrieved into the prompt \citep{shinn2023reflexion, wang2024voyager,
+zhao2024expel, wang2025agent, madaan2022memprompt, zhang2025agentic}, a design
+StreamBench \citep{wu2024streambench} canonized for streaming evaluation. The
+model itself never improves: gains are capped by the frozen base, vanish without
+the memory, and---as we show---retrieval can even \emph{hurt} when neighbors
+mislead. Test-time training does update weights, but discards them after each
+instance \citep{sun2020ttt, akyurek2025surprising, hubotter2025sift}; and
+applying rollout-batch RL to the streaming bit is fragile---policy-gradient
+methods are entropy-collapse-prone on long horizons even offline
+\citep{cui2025entropy, liu2025prorl}, and we find a stability-engineered
+variant \citep{hu2025reinforcepp} collapses catastrophically on a long
+mixed-domain stream.
 
-Our method (\S\ref{sec:method}) couples this distillation step with a reward-filtered
-memory used for $k$NN in-context retrieval, and a \emph{forward-looking
-re-evaluation} pass: problems the model failed on arrival are periodically retried
-with the current, improved model; late successes enter memory and become training
-signal. This closes a flywheel---weight gains produce new verified data, which
-produces further weight gains---that pure memory methods and pure RL both lack.
-Scoring always precedes any use of a problem for training, so the streaming metric
-is strictly predict-then-train.
+The missing piece is a \emph{stable online learning rule} that converts each
+verified success, at the moment it happens, into a permanent weight update.
+Our key observation is that the model's own verified answer is exactly the
+dense supervision such a rule needs: \textbf{a model conditioned on its own
+oracle-verified answer is a teacher for the same model without it}, and
+matching the teacher's hint-informed next-token distribution---a forward KL
+against a \emph{frozen} base reference---moves the answer's information into
+the weights as a small, verified, drift-bounded step. Around this rule we build
+\method{}: verified answers enter a reward-filtered memory
+\citep{wu2024streambench} that serves both retrieval (demonstrations now) and
+distillation (weights forever); and because a single greedy pass would only ever
+train on what the model already solves, a \emph{forward re-evaluation} pass
+retries recent failures with the current, improved model---converting weight
+gains back into new verified data. Scoring always precedes any use of a problem
+for training, so the streaming metric remains strictly predict-then-train.
 
-\textbf{Contributions.}
+We evaluate on seven StreamBench tasks and two stress tests, and find:
 \begin{itemize}
-\item A simple online self-distillation recipe for streaming self-improvement from
-  verifiable 0/1 feedback only (\S\ref{sec:method}).
-\item State-of-the-art streaming accuracy on \textbf{all seven} StreamBench tasks
-  spanning code, SQL, medical diagnosis, multi-hop QA, and tool use, against
-  zero-shot, streaming-ICL, and REINFORCE++ baselines (\S\ref{sec:exp-bench}).
-\item \textbf{Robustness to distribution shift}: on a stream interleaving three
-  domains, one shared model matches or beats three per-domain specialists, with
-  positive cross-domain transfer to code; retrieval self-segregates by domain
-  (99.9\%), so the transfer is carried by the weights. The RL baseline collapses
-  on the same stream (\S\ref{sec:exp-fused}).
-\item \textbf{Online beats batch}: trained on identical problems with the same
-  loss and model, the online-trained model masters the source data better than
-  multi-epoch batch self-distillation (+5.5 points) \todo{and transfers better
-  to an unseen target stream} (\S\ref{sec:exp-transfer}).
+\item \textbf{Best on all seven streams} (\S\ref{sec:exp-bench},
+  Table~\ref{tab:bench}): against zero-shot, Self-StreamICL, and REINFORCE++ on
+  code, SQL, diagnosis, QA, and tool use---including tasks where retrieval-ICL
+  falls below zero-shot and our distillation channel still gains.
+\item \textbf{Robust where RL collapses} (\S\ref{sec:exp-fused},
+  Table~\ref{tab:fused}): on a 4{,}219-problem stream interleaving three
+  domains, one \method{} model matches or beats three per-domain specialists
+  with positive cross-domain transfer ($+3.4$ on code); retrieval
+  self-segregates (99.9\% same-domain), so the transfer is carried by weights.
+  REINFORCE++ diverges at ${\sim}2{,}000$ problems and never recovers.
+\item \textbf{The online schedule is itself a contribution}
+  (\S\ref{sec:exp-transfer}, Table~\ref{tab:mastery}): with loss, data, model,
+  and oracle held identical, streaming training beats four epochs of batch
+  self-distillation by $+5.5$ points on source mastery
+  \todo{and transfers better to an unseen domain (runs pending)}.
+\item \textbf{Ablations that locate the gains} (\S\ref{sec:exp-ablations}):
+  not oracle budget, not hint-conditioned generation, not sample count---the
+  verified-hint distillation channel and the streaming schedule carry the
+  effect.
 \end{itemize}
+To our knowledge, \method{} is the first method to perform verified,
+weight-updating self-distillation \emph{online} over a deployment stream:
+prior self-distillation densifies rewards inside rollout-batch RL
+\citep{hue2026sdpo} or protects the base distribution offline
+\citep{yang2024selfdistillation}; prior test-time weight updates are transient
+\citep{akyurek2025surprising} or driven by unverified consensus rewards
+\citep{zuo2025ttrl}. Code, per-problem logs, and a causal-ordering leakage
+audit are released.

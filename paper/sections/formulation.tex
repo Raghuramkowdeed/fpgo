@@ -35,7 +35,7 @@ of the stream, a risk realized dramatically by the RL baseline in
 \begin{table}[t]
 \centering
 \caption{Method taxonomy: what each method updates and what signal it consumes.
-Online SDFT is the only method that both updates weights and exploits a dense,
+\method{} is the only method that both updates weights and exploits a dense,
 token-level training signal derived from verified self-generated text.}
 \label{tab:taxonomy}
 \small
@@ -46,7 +46,7 @@ Method & Updates $M$ & Updates $\theta$ & Training signal & Signal density \\
 Zero-shot (Base) & -- & -- & -- & -- \\
 Self-StreamICL & \checkmark & -- & -- (retrieval only) & -- \\
 REINFORCE++ & -- & \checkmark & scalar reward & per sequence \\
-\textbf{Online SDFT (ours)} & \checkmark & \checkmark & verified self-output & per token \\
+\textbf{\method{} (ours)} & \checkmark & \checkmark & verified self-output & per token \\
 \bottomrule
 \end{tabular}
 \end{table}

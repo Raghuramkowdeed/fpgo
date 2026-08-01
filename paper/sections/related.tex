@@ -1,58 +1,74 @@
 \section{Related Work}
 \label{sec:related}
 
-\paragraph{Streaming adaptation and memory-based improvement.}
-StreamBench \citep{wu2024streambench} formalizes online LLM improvement under
-prequential evaluation with binary feedback and shows that
-\emph{Self-StreamICL}---storing only verified-correct self-outputs and retrieving
-them as demonstrations---is the strongest single-agent streaming strategy,
-with the correctness filter being essential (storing incorrect outputs, even
-labeled as such, does not help). Our ICL baseline is exactly this method, and
-our memory inherits its filter. MemPrompt \citep{madaan2022memprompt} pioneered
-deployment-time memory of user feedback for prompt editing; reflection-style
-agents \citep{shinn2023reflexion} accumulate verbal self-critiques. All of
-these adapt the \emph{context}; the model itself never improves, gains are
-bounded by the frozen model's ability, and they vanish without the memory. Our
-mastery evaluation (\S\ref{sec:exp-transfer}) makes this limitation concrete,
-and our method converts the same filtered memory into permanent weight gains.
+\paragraph{Self-training between deployments.}
+Filtering a model's own samples by a correctness signal and fine-tuning on the
+survivors is a proven recipe: STaR bootstraps rationales that yield correct
+answers---its ``rationalization'' step, generating with the answer as a hint,
+prefigures our hint-conditioned teacher \citep{zelikman2022star}; ReST and
+ReST-EM formalize the sample--filter--train loop as growing-batch RL and EM with
+binary verifiers \citep{gulcehre2023rest, singh2024beyond}; rejection-sampling
+fine-tuning applies it at scale \citep{yuan2023scaling}; SPIN and Self-Rewarding
+LMs replace the verifier with self-play or self-judgment \citep{chen2024spin,
+yuan2024selfrewarding}. Recent variants push toward autonomy---SEAL learns to
+emit its own fine-tuning data \citep{zweiger2025seal}, TTRL runs RL on unlabeled
+test sets with majority-vote pseudo-rewards \citep{zuo2025ttrl}, and Absolute
+Zero self-plays against an executor \citep{zhao2025absolute}. All of these
+require the task corpus upfront and multiple sweeps over it (several restart
+from the base model each round to control drift). \emph{Unlike them, \method{}
+improves during a single pass: each problem is seen once, and the model
+answering problem $t{+}1$ is permanently better than the one that answered
+problem $t$.}
 
-\paragraph{Self-distillation and distillation from self-generated data.}
-Offline SDFT \citep{yang2024selfdistillation} shows that fine-tuning on the
-model's \emph{own} rewrites of gold answers---rather than the gold text
-itself---preserves general capabilities by keeping training targets inside the
-model's output distribution; their mix-ratio analysis ties forgetting causally
-to target-distribution shift. Generalized knowledge distillation
-\citep{agarwal2024gkd} distills on-policy student samples against a teacher's
-distribution. SDPO \citep{hue2026sdpo} makes the model conditioned on
-environment feedback a \emph{self-teacher} inside policy optimization, showing
-the resulting gradient is a policy gradient with dense logit-level advantages,
-with strong results on rollout-batch RL for code. Our method transplants the
-self-teacher idea to the \emph{streaming} setting: the conditioning signal is a
-verified answer harvested online from the model's own past, the loss is anchored
-to a frozen reference (no moving teacher), and the surrounding machinery
-(reward-filtered memory, forward re-evaluation) exists precisely to keep minting
-such answers from a single pass over the data. Where SDPO and GKD are
-offline/rollout-batch, we show the online schedule is itself a source of
-gains (\S\ref{sec:exp-transfer}).
+\paragraph{Streaming adaptation without weight updates.}
+The dominant approach to deployment-time improvement stores what was learned
+\emph{outside} the model: reflection buffers \citep{shinn2023reflexion}, skill
+libraries \citep{wang2024voyager}, experiential insights \citep{zhao2024expel},
+induced workflows \citep{wang2025agent}, feedback memories
+\citep{madaan2022memprompt}, and evolving context playbooks---the last framed
+explicitly as an \emph{alternative} to parameter updates \citep{zhang2025agentic}.
+StreamBench \citep{wu2024streambench} canonized streaming evaluation and found
+Self-StreamICL---a reward-filtered memory retrieved as demonstrations---the
+strongest such baseline; it is our ICL baseline and the source of our memory's
+correctness filter. These methods are capped by the frozen model, lose
+everything without their memory, and can be misled by retrieved neighbors
+(\S\ref{sec:exp-bench}). \emph{Unlike them, \method{} uses the same filtered
+memory as a source of supervision, so gains persist in the weights---our
+mastery evaluation measures exactly this residue after all scaffolding is
+removed.}
 
-\paragraph{Reinforcement learning from verifiable rewards.}
-GRPO \citep{shao2024deepseekmath}, RLOO \citep{ahmadian2024rloo}, and
-REINFORCE++ \citep{hu2025reinforcepp} optimize scalar verifiable rewards and
-power modern reasoning models. The scalar signal is thin---one bit per
-attempt---and credit assignment is per-sequence. Our experiments show a faithful
-REINFORCE++ under the identical streaming skeleton is unstable on long
-heterogeneous streams (\S\ref{sec:exp-fused}); self-distillation extracts a
-per-token signal from the same oracle bit and remains stable.
+\paragraph{Test-time and continual weight adaptation.}
+Test-time training updates weights per instance and discards them
+\citep{sun2020ttt}, including LoRA-based variants for few-shot reasoning
+\citep{akyurek2025surprising} and active test-time fine-tuning on retrieved
+corpus data \citep{hubotter2025sift}. Continual-learning methods retain updates
+but assume task-segmented, labeled datasets \citep{shi2025continual,
+parisi2019continual}, and naive continual fine-tuning forgets
+\citep{luo2023empirical}. \emph{Unlike transient TTT, our updates are
+cumulative; unlike CL, our supervision is self-generated from a binary bit with
+no task boundaries; and the distribution-gap account of forgetting
+\citep{yang2024selfdistillation} explains why our self-generated targets update
+safely where gold-target fine-tuning would not.}
 
-\paragraph{Continual learning and test-time training.}
-Our setting is continual learning without task boundaries
-\citep{parisi2019continual}, sharing its central tension between plasticity and
-stability, but with verifiable feedback in place of supervised labels; the fused
-experiment is a task-incremental stress test in which our method exhibits
-transfer rather than interference. Test-time training \citep{sun2020ttt} adapts
-per-instance and discards the update; our updates are cumulative and permanent.
-Self-improvement via self-training on filtered generations
-\citep{zelikman2022star, gulcehre2023rest} is the offline, multi-epoch
-ancestor of our per-window updates---our online-vs-batch comparison
-(\S\ref{sec:exp-transfer}) isolates exactly what the streaming schedule adds
-over that recipe.
+\paragraph{Distillation and RL from verifiable rewards.}
+On-policy distillation trains the student on its own samples against a teacher's
+distribution \citep{agarwal2024gkd, gu2024minillm, xu2025skd, lu2025onpolicy}
+---but the teacher is an external, stronger, fixed model and training is
+offline. SDFT rewrites gold datasets into the model's own distribution before
+fine-tuning \citep{yang2024selfdistillation}---offline and gold-dependent. SDPO,
+closest to our objective, makes the feedback-conditioned model a self-teacher
+inside policy optimization \citep{hue2026sdpo}---but remains rollout-batch RL on
+a fixed prompt distribution with a \emph{moving} teacher. On the RL side, GRPO,
+RLOO, and REINFORCE++ optimize the scalar verifiable bit
+\citep{shao2024deepseekmath, ahmadian2024rloo, hu2025reinforcepp,
+ouyang2022instructgpt}, and entropy/policy collapse on long horizons is a
+documented failure mode requiring explicit KL control or reference resets
+\citep{cui2025entropy, liu2025prorl}. \emph{Unlike SDPO we distill against a
+frozen-base teacher---an always-on reference anchor rather than periodic
+resets---and unlike all of the above we do it online: to our knowledge no prior
+work performs verified, weight-updating self-distillation over a deployment
+stream (the nearest streaming weight-update systems are SFT-style without a
+self-teacher). Our experiments make the contrast operational: the same verified
+bit that collapses REINFORCE++ on a long mixed stream trains \method{} stably
+(\S\ref{sec:exp-fused}), and the same loss run as batch epochs underperforms
+the stream (\S\ref{sec:exp-transfer}).}

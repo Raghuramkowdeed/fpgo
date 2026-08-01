@@ -1,56 +1,88 @@
+% Verified against web sources Aug 2026 (see paper/notes/memo_{A,B,C}_*.md).
+
+% ── Streaming / benchmark ──────────────────────────────────────────────
 @inproceedings{wu2024streambench,
   title={StreamBench: Towards Benchmarking Continuous Improvement of Language Agents},
   author={Wu, Cheng-Kuang and Tam, Zhi Rui and Lin, Chieh-Yen and Chen, Yun-Nung and Lee, Hung-yi},
-  booktitle={NeurIPS Datasets and Benchmarks},
+  booktitle={Advances in Neural Information Processing Systems},
+  volume={37},
   year={2024}
 }
 
-@article{madaan2022memprompt,
+% ── Agent memory / context adaptation ──────────────────────────────────
+@inproceedings{madaan2022memprompt,
   title={Memory-assisted prompt editing to improve {GPT}-3 after deployment},
   author={Madaan, Aman and Tandon, Niket and Clark, Peter and Yang, Yiming},
-  journal={EMNLP},
+  booktitle={Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing},
+  pages={2833--2861},
   year={2022}
 }
 
-@article{yang2024selfdistillation,
-  title={Self-Distillation Bridges Distribution Gap in Language Model Fine-Tuning},
-  author={Yang, Zhaorui and Pang, Tianyu and Feng, Haozhe and Wang, Han and Chen, Wei and Zhu, Minfeng and Liu, Qian},
-  journal={ACL},
+@inproceedings{shinn2023reflexion,
+  title={Reflexion: Language Agents with Verbal Reinforcement Learning},
+  author={Shinn, Noah and Cassano, Federico and Berman, Edward and Gopinath, Ashwin and Narasimhan, Karthik and Yao, Shunyu},
+  booktitle={Advances in Neural Information Processing Systems},
+  volume={36},
+  year={2023}
+}
+
+@article{wang2024voyager,
+  title={Voyager: An Open-Ended Embodied Agent with Large Language Models},
+  author={Wang, Guanzhi and Xie, Yuqi and Jiang, Yunfan and Mandlekar, Ajay and Xiao, Chaowei and Zhu, Yuke and Fan, Linxi and Anandkumar, Anima},
+  journal={Transactions on Machine Learning Research},
   year={2024}
 }
 
-@article{agarwal2024gkd,
-  title={On-Policy Distillation of Language Models: Learning from Self-Generated Mistakes},
-  author={Agarwal, Rishabh and Vieillard, Nino and Zhou, Yongchao and Stanczyk, Piotr and Ramos, Sabela and Geist, Matthieu and Bachem, Olivier},
-  journal={ICLR},
+@inproceedings{zhao2024expel,
+  title={ExpeL: {LLM} Agents Are Experiential Learners},
+  author={Zhao, Andrew and Huang, Daniel and Xu, Quentin and Lin, Matthieu and Liu, Yong-Jin and Huang, Gao},
+  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume={38},
   year={2024}
 }
 
-@article{hue2026sdpo,
-  title={Reinforcement Learning via Self-Distillation ({SDPO})},
-  author={H{\"u}botter, Jonas and others},
-  journal={arXiv preprint arXiv:2601.20802},
-  year={2026}
+@inproceedings{wang2025agent,
+  title={Agent Workflow Memory},
+  author={Wang, Zora Zhiruo and Mao, Jiayuan and Fried, Daniel and Neubig, Graham},
+  booktitle={Proceedings of the 42nd International Conference on Machine Learning},
+  year={2025}
 }
 
-@article{shao2024deepseekmath,
-  title={DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models},
-  author={Shao, Zhihong and Wang, Peiyi and Zhu, Qihao and Xu, Runxin and Song, Junxiao and Bi, Xiao and others},
-  journal={arXiv preprint arXiv:2402.03300},
-  year={2024}
+@article{zhang2025agentic,
+  title={Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models},
+  author={Zhang, Qizheng and Hu, Changran and Upasani, Shubhangi and Ma, Boyuan and Hong, Fenglu and Kamanuru, Vamsidhar and Rainton, Jay and Wu, Chen and Ji, Mengmeng and Li, Hanchen and Thakker, Urmish and Zou, James and Olukotun, Kunle},
+  journal={arXiv preprint arXiv:2510.04618},
+  year={2025}
 }
 
-@article{ahmadian2024rloo,
-  title={Back to Basics: Revisiting {REINFORCE} Style Optimization for Learning from Human Feedback in {LLMs}},
-  author={Ahmadian, Arash and Cremer, Chris and Gall{\'e}, Matthias and Fadaee, Marzieh and Kreutzer, Julia and Pietquin, Olivier and {\"U}st{\"u}n, Ahmet and Hooker, Sara},
-  journal={ACL},
-  year={2024}
+% ── Test-time training / continual learning ────────────────────────────
+@inproceedings{sun2020ttt,
+  title={Test-Time Training with Self-Supervision for Generalization under Distribution Shifts},
+  author={Sun, Yu and Wang, Xiaolong and Liu, Zhuang and Miller, John and Efros, Alexei and Hardt, Moritz},
+  booktitle={Proceedings of the 37th International Conference on Machine Learning},
+  year={2020}
 }
 
-@article{hu2025reinforcepp,
-  title={{REINFORCE}++: A Simple and Efficient Approach for Aligning Large Language Models},
-  author={Hu, Jian},
-  journal={arXiv preprint arXiv:2501.03262},
+@inproceedings{akyurek2025surprising,
+  title={The Surprising Effectiveness of Test-Time Training for Few-Shot Learning},
+  author={Aky{\"u}rek, Ekin and Damani, Mehul and Zweiger, Adam and Qiu, Linlu and Guo, Han and Pari, Jyothish and Kim, Yoon and Andreas, Jacob},
+  booktitle={Proceedings of the 42nd International Conference on Machine Learning},
+  year={2025}
+}
+
+@inproceedings{hubotter2025sift,
+  title={Efficiently Learning at Test-Time: Active Fine-Tuning of {LLMs}},
+  author={H{\"u}botter, Jonas and Bongni, Sascha and Hakimi, Ido and Krause, Andreas},
+  booktitle={International Conference on Learning Representations},
+  year={2025}
+}
+
+@article{shi2025continual,
+  title={Continual Learning of Large Language Models: A Comprehensive Survey},
+  author={Shi, Haizhou and Xu, Zihao and Wang, Hengyi and Qin, Weiyi and Wang, Wenyuan and Wang, Yibin and Wang, Zifeng and Ebrahimi, Sayna and Wang, Hao},
+  journal={ACM Computing Surveys},
+  volume={58},
+  number={5},
   year={2025}
 }
 
@@ -58,65 +90,235 @@
   title={Continual lifelong learning with neural networks: A review},
   author={Parisi, German I and Kemker, Ronald and Part, Jose L and Kanan, Christopher and Wermter, Stefan},
   journal={Neural Networks},
+  volume={113},
+  pages={54--71},
   year={2019}
 }
 
-@inproceedings{sun2020ttt,
-  title={Test-Time Training with Self-Supervision for Generalization under Distribution Shifts},
-  author={Sun, Yu and Wang, Xiaolong and Liu, Zhuang and Miller, John and Efros, Alexei and Hardt, Moritz},
-  booktitle={ICML},
-  year={2020}
+@article{luo2023empirical,
+  title={An Empirical Study of Catastrophic Forgetting in Large Language Models During Continual Fine-tuning},
+  author={Luo, Yun and Yang, Zhen and Meng, Fandong and Li, Yafu and Zhou, Jie and Zhang, Yue},
+  journal={arXiv preprint arXiv:2308.08747},
+  year={2023}
 }
 
-@article{jain2024livecodebench,
+% ── Self-improvement / self-training ───────────────────────────────────
+@inproceedings{zelikman2022star,
+  title={{STaR}: Bootstrapping Reasoning With Reasoning},
+  author={Zelikman, Eric and Wu, Yuhuai and Mu, Jesse and Goodman, Noah D.},
+  booktitle={Advances in Neural Information Processing Systems},
+  volume={35},
+  year={2022}
+}
+
+@article{gulcehre2023rest,
+  title={Reinforced Self-Training ({ReST}) for Language Modeling},
+  author={Gulcehre, Caglar and Paine, Tom Le and Srinivasan, Srivatsan and Konyushkova, Ksenia and Weerts, Lotte and Sharma, Abhishek and Siddhant, Aditya and Ahern, Alex and Wang, Miaosen and Gu, Chenjie and Macherey, Wolfgang and Doucet, Arnaud and Firat, Orhan and de Freitas, Nando},
+  journal={arXiv preprint arXiv:2308.08998},
+  year={2023}
+}
+
+@article{singh2024beyond,
+  title={Beyond Human Data: Scaling Self-Training for Problem-Solving with Language Models},
+  author={Singh, Avi and Co-Reyes, John D. and Agarwal, Rishabh and Anand, Ankesh and Patil, Piyush and Garcia, Xavier and Liu, Peter J. and Harrison, James and Lee, Jaehoon and Xu, Kelvin and Parisi, Aaron and others},
+  journal={Transactions on Machine Learning Research},
+  year={2024}
+}
+
+@article{yuan2023scaling,
+  title={Scaling Relationship on Learning Mathematical Reasoning with Large Language Models},
+  author={Yuan, Zheng and Yuan, Hongyi and Li, Chengpeng and Dong, Guanting and Lu, Keming and Tan, Chuanqi and Zhou, Chang and Zhou, Jingren},
+  journal={arXiv preprint arXiv:2308.01825},
+  year={2023}
+}
+
+@inproceedings{chen2024spin,
+  title={Self-Play Fine-Tuning Converts Weak Language Models to Strong Language Models},
+  author={Chen, Zixiang and Deng, Yihe and Yuan, Huizhuo and Ji, Kaixuan and Gu, Quanquan},
+  booktitle={Proceedings of the 41st International Conference on Machine Learning},
+  year={2024}
+}
+
+@inproceedings{yuan2024selfrewarding,
+  title={Self-Rewarding Language Models},
+  author={Yuan, Weizhe and Pang, Richard Yuanzhe and Cho, Kyunghyun and Li, Xian and Sukhbaatar, Sainbayar and Xu, Jing and Weston, Jason},
+  booktitle={Proceedings of the 41st International Conference on Machine Learning},
+  year={2024}
+}
+
+@inproceedings{zweiger2025seal,
+  title={Self-Adapting Language Models},
+  author={Zweiger, Adam and Pari, Jyothish and Guo, Han and Aky{\"u}rek, Ekin and Kim, Yoon and Agrawal, Pulkit},
+  booktitle={Advances in Neural Information Processing Systems},
+  year={2025}
+}
+
+@inproceedings{zuo2025ttrl,
+  title={{TTRL}: Test-Time Reinforcement Learning},
+  author={Zuo, Yuxin and Zhang, Kaiyan and Sheng, Li and Qu, Shang and Cui, Ganqu and Zhu, Xuekai and Li, Haozhan and Zhang, Yuchen and Long, Xinwei and Hua, Ermo and Qi, Biqing and Sun, Youbang and Ma, Zhiyuan and Yuan, Lifan and Ding, Ning and Zhou, Bowen},
+  booktitle={Advances in Neural Information Processing Systems},
+  year={2025}
+}
+
+@inproceedings{zhao2025absolute,
+  title={Absolute Zero: Reinforced Self-play Reasoning with Zero Data},
+  author={Zhao, Andrew and Wu, Yiran and Yue, Yang and Wu, Tong and Xu, Quentin and Lin, Matthieu and Wang, Shenzhi and Wu, Qingyun and Zheng, Zilong and Huang, Gao},
+  booktitle={Advances in Neural Information Processing Systems},
+  year={2025}
+}
+
+% ── Distillation ───────────────────────────────────────────────────────
+@inproceedings{agarwal2024gkd,
+  title={On-Policy Distillation of Language Models: Learning from Self-Generated Mistakes},
+  author={Agarwal, Rishabh and Vieillard, Nino and Zhou, Yongchao and Stanczyk, Piotr and Ramos, Sabela and Geist, Matthieu and Bachem, Olivier},
+  booktitle={International Conference on Learning Representations},
+  year={2024}
+}
+
+@inproceedings{gu2024minillm,
+  title={{MiniLLM}: Knowledge Distillation of Large Language Models},
+  author={Gu, Yuxian and Dong, Li and Wei, Furu and Huang, Minlie},
+  booktitle={International Conference on Learning Representations},
+  year={2024}
+}
+
+@inproceedings{yang2024selfdistillation,
+  title={Self-Distillation Bridges Distribution Gap in Language Model Fine-Tuning},
+  author={Yang, Zhaorui and Pang, Tianyu and Feng, Haozhe and Wang, Han and Chen, Wei and Zhu, Minfeng and Liu, Qian},
+  booktitle={Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics},
+  pages={1028--1043},
+  year={2024}
+}
+
+@article{hue2026sdpo,
+  title={Reinforcement Learning via Self-Distillation},
+  author={H{\"u}botter, Jonas and L{\"u}beck, Frederike and Behric, Lejs and Baumann, Anton and Bagatella, Marco and Marta, Daniel and Hakimi, Ido and Shenfeld, Idan and Kleine Buening, Thomas and Guestrin, Carlos and Krause, Andreas},
+  journal={arXiv preprint arXiv:2601.20802},
+  year={2026}
+}
+
+@inproceedings{xu2025skd,
+  title={Speculative Knowledge Distillation: Bridging the Teacher-Student Gap Through Interleaved Sampling},
+  author={Xu, Wenda and Han, Rujun and Wang, Zifeng and Le, Long T. and Madeka, Dhruv and Li, Lei and Wang, William Yang and Agarwal, Rishabh and Lee, Chen-Yu and Pfister, Tomas},
+  booktitle={International Conference on Learning Representations},
+  year={2025}
+}
+
+@misc{lu2025onpolicy,
+  title={On-Policy Distillation},
+  author={Lu, Kevin},
+  howpublished={Thinking Machines Lab: Connectionism},
+  year={2025},
+  note={doi:10.64434/tml.20251026}
+}
+
+% ── RL from verifiable rewards ─────────────────────────────────────────
+@inproceedings{ouyang2022instructgpt,
+  title={Training Language Models to Follow Instructions with Human Feedback},
+  author={Ouyang, Long and Wu, Jeffrey and Jiang, Xu and Almeida, Diogo and Wainwright, Carroll and Mishkin, Pamela and Zhang, Chong and Agarwal, Sandhini and Slama, Katarina and Ray, Alex and others},
+  booktitle={Advances in Neural Information Processing Systems},
+  volume={35},
+  year={2022}
+}
+
+@article{shao2024deepseekmath,
+  title={{DeepSeekMath}: Pushing the Limits of Mathematical Reasoning in Open Language Models},
+  author={Shao, Zhihong and Wang, Peiyi and Zhu, Qihao and Xu, Runxin and Song, Junxiao and Bi, Xiao and Zhang, Haowei and Zhang, Mingchuan and Li, Y. K. and Wu, Y. and Guo, Daya},
+  journal={arXiv preprint arXiv:2402.03300},
+  year={2024}
+}
+
+@article{guo2025deepseekr1,
+  title={{DeepSeek-R1} incentivizes reasoning in {LLMs} through reinforcement learning},
+  author={Guo, Daya and Yang, Dejian and Zhang, Haowei and others},
+  journal={Nature},
+  volume={645},
+  pages={633--638},
+  year={2025}
+}
+
+@inproceedings{ahmadian2024rloo,
+  title={Back to Basics: Revisiting {REINFORCE}-Style Optimization for Learning from Human Feedback in {LLMs}},
+  author={Ahmadian, Arash and Cremer, Chris and Gall{\'e}, Matthias and Fadaee, Marzieh and Kreutzer, Julia and Pietquin, Olivier and {\"U}st{\"u}n, Ahmet and Hooker, Sara},
+  booktitle={Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics},
+  pages={12248--12267},
+  year={2024}
+}
+
+@article{hu2025reinforcepp,
+  title={{REINFORCE++}: Stabilizing Critic-Free Policy Optimization with Global Advantage Normalization},
+  author={Hu, Jian and Liu, Jason Klein and Xu, Haotian and Shen, Wei},
+  journal={arXiv preprint arXiv:2501.03262},
+  year={2025}
+}
+
+@article{cui2025entropy,
+  title={The Entropy Mechanism of Reinforcement Learning for Reasoning Language Models},
+  author={Cui, Ganqu and Zhang, Yuchen and Chen, Jiacheng and Yuan, Lifan and Wang, Zhi and others},
+  journal={arXiv preprint arXiv:2505.22617},
+  year={2025}
+}
+
+@inproceedings{liu2025prorl,
+  title={{ProRL}: Prolonged Reinforcement Learning Expands Reasoning Boundaries in Large Language Models},
+  author={Liu, Mingjie and Diao, Shizhe and Lu, Ximing and Hu, Jian and Dong, Xin and Choi, Yejin and Kautz, Jan and Dong, Yi},
+  booktitle={Advances in Neural Information Processing Systems},
+  year={2025}
+}
+
+% ── Benchmarks / datasets ──────────────────────────────────────────────
+@inproceedings{jain2024livecodebench,
   title={LiveCodeBench: Holistic and Contamination Free Evaluation of Large Language Models for Code},
   author={Jain, Naman and Han, King and Gu, Alex and Li, Wen-Ding and Yan, Fanjia and Zhang, Tianjun and Wang, Sida and Solar-Lezama, Armando and Sen, Koushik and Stoica, Ion},
-  journal={ICLR},
+  booktitle={International Conference on Learning Representations},
   year={2025}
 }
 
 @inproceedings{lai2023ds1000,
   title={{DS}-1000: A Natural and Reliable Benchmark for Data Science Code Generation},
   author={Lai, Yuhang and Li, Chengxi and Wang, Yiming and Zhang, Tianyi and Zhong, Ruiqi and Zettlemoyer, Luke and Yih, Wen-tau and Fried, Daniel and Wang, Sida and Yu, Tao},
-  booktitle={ICML},
+  booktitle={Proceedings of the 40th International Conference on Machine Learning},
   year={2023}
 }
 
 @inproceedings{yu2018spider,
   title={Spider: A Large-Scale Human-Labeled Dataset for Complex and Cross-Domain Semantic Parsing and Text-to-{SQL} Task},
   author={Yu, Tao and Zhang, Rui and Yang, Kai and Yasunaga, Michihiro and Wang, Dongxu and Li, Zifan and Ma, James and Li, Irene and Yao, Qingning and Roman, Shanelle and others},
-  booktitle={EMNLP},
+  booktitle={Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing},
   year={2018}
 }
 
 @article{li2023bird,
   title={Can {LLM} Already Serve as A Database Interface? A {BI}g Bench for Large-Scale Database Grounded Text-to-{SQL}s},
   author={Li, Jinyang and Hui, Binyuan and Qu, Ge and Yang, Jiaxi and Li, Binhua and Li, Bowen and Wang, Bailin and Qin, Bowen and Geng, Ruiying and Huo, Nan and others},
-  journal={NeurIPS},
+  journal={Advances in Neural Information Processing Systems},
+  volume={36},
   year={2023}
 }
 
 @article{fansi2022ddxplus,
   title={{DDXPlus}: A New Dataset For Automatic Medical Diagnosis},
   author={Fansi Tchango, Arsene and Goel, Rishab and Wen, Zhi and Martel, Julien and Ghosn, Joumana},
-  journal={NeurIPS Datasets and Benchmarks},
+  journal={Advances in Neural Information Processing Systems},
+  volume={35},
   year={2022}
 }
 
 @inproceedings{yang2018hotpotqa,
   title={{HotpotQA}: A Dataset for Diverse, Explainable Multi-hop Question Answering},
   author={Yang, Zhilin and Qi, Peng and Zhang, Saizheng and Bengio, Yoshua and Cohen, William W and Salakhutdinov, Ruslan and Manning, Christopher D},
-  booktitle={EMNLP},
+  booktitle={Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing},
   year={2018}
 }
 
 @article{wang2024ste,
   title={{LLM}s in the Imaginarium: Tool Learning through Simulated Trial and Error},
   author={Wang, Boshi and Fang, Hao and Eisner, Jason and Van Durme, Benjamin and Su, Yu},
-  journal={ACL},
+  journal={Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics},
   year={2024}
 }
 
+% ── Models / infrastructure ────────────────────────────────────────────
 @article{hui2024qwen25coder,
   title={{Qwen2.5-Coder} Technical Report},
   author={Hui, Binyuan and Yang, Jian and Cui, Zeyu and Yang, Jiaxi and Liu, Dayiheng and Zhang, Lei and Liu, Tianyu and Zhang, Jiajun and Yu, Bowen and Lu, Keming and others},
@@ -127,27 +329,6 @@
 @inproceedings{hu2022lora,
   title={{LoRA}: Low-Rank Adaptation of Large Language Models},
   author={Hu, Edward J and Shen, Yelong and Wallis, Phillip and Allen-Zhu, Zeyuan and Li, Yuanzhi and Wang, Shean and Chen, Weizhu},
-  booktitle={ICLR},
+  booktitle={International Conference on Learning Representations},
   year={2022}
-}
-
-@article{shinn2023reflexion,
-  title={Reflexion: Language Agents with Verbal Reinforcement Learning},
-  author={Shinn, Noah and Cassano, Federico and Gopinath, Ashwin and Narasimhan, Karthik and Yao, Shunyu},
-  journal={NeurIPS},
-  year={2023}
-}
-
-@article{zelikman2022star,
-  title={{STaR}: Bootstrapping Reasoning With Reasoning},
-  author={Zelikman, Eric and Wu, Yuhuai and Mu, Jesse and Goodman, Noah D},
-  journal={NeurIPS},
-  year={2022}
-}
-
-@article{gulcehre2023rest,
-  title={Reinforced Self-Training ({ReST}) for Language Modeling},
-  author={Gulcehre, Caglar and Paine, Tom Le and Srinivasan, Srivatsan and Konyushkova, Ksenia and Weerts, Lotte and Sharma, Abhishek and Siddhant, Aditya and Ahern, Alex and Wang, Miaosen and Gu, Chenjie and others},
-  journal={arXiv preprint arXiv:2308.08998},
-  year={2023}
 }

@@ -1,0 +1,52 @@
+\section{Problem Formulation}
+\label{sec:formulation}
+
+\paragraph{Streaming setting.} Following the online evaluation protocol of
+StreamBench \citep{wu2024streambench}, an agent faces an input--feedback sequence
+$(x_1, fb_1), (x_2, fb_2), \dots, (x_T, fb_T)$ drawn from a task distribution and
+presented in a fixed, seeded order. At step $t$ the agent produces
+\begin{equation}
+\hat y_t \;=\; f\!\big(p(x_t,\, r(M_t)) \,\big|\, \theta_t\big),
+\end{equation}
+where $\theta_t$ are the current model weights, $M_t$ is an external memory,
+$r(\cdot)$ a retriever, and $p(\cdot)$ a prompting template. The environment
+returns \emph{binary verifiable feedback}
+$fb_t = g(x_t, \hat y_t) \in \{0, 1\}$---execution of generated code against unit
+tests, execution-match of SQL, exact/label match for QA and diagnosis. Gold
+references exist only inside $g$; the agent observes the bit. After feedback, the
+agent may update any of $(p, r, M, \theta)$; the methods we study differ precisely
+in \emph{which} of these they update (Table~\ref{tab:taxonomy}).
+
+\paragraph{Evaluation.} Performance is \emph{prequential}: $\hat y_t$ is produced
+and scored before $x_t$ influences any component, and the stream is consumed once.
+We report final cumulative accuracy
+$\mathrm{Acc}_T = \tfrac{1}{T}\sum_{t=1}^{T} h(\hat y_t, y_t)$
+(each task's native metric $h$) and, equivalently, cumulative regret
+$R_T = \sum_{t=1}^{T} (1 - h(\hat y_t, y_t))$, which penalizes late learning.
+All methods on a given task see the identical stream order.
+
+\paragraph{Why this setting is hard.} The agent gets one attempt per problem, a
+single bit per attempt, no gold text ever, and no second pass over the stream.
+Improvements must therefore be bootstrapped from the agent's \emph{own} verified
+outputs---and any weight update risks destabilizing performance on the remainder
+of the stream, a risk realized dramatically by the RL baseline in
+\S\ref{sec:exp-fused}.
+
+\begin{table}[t]
+\centering
+\caption{Method taxonomy: what each method updates and what signal it consumes.
+Online SDFT is the only method that both updates weights and exploits a dense,
+token-level training signal derived from verified self-generated text.}
+\label{tab:taxonomy}
+\small
+\begin{tabular}{lcccc}
+\toprule
+Method & Updates $M$ & Updates $\theta$ & Training signal & Signal density \\
+\midrule
+Zero-shot (Base) & -- & -- & -- & -- \\
+Self-StreamICL & \checkmark & -- & -- (retrieval only) & -- \\
+REINFORCE++ & -- & \checkmark & scalar reward & per sequence \\
+\textbf{Online SDFT (ours)} & \checkmark & \checkmark & verified self-output & per token \\
+\bottomrule
+\end{tabular}
+\end{table}

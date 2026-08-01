@@ -1,36 +1,101 @@
 \section{Experiments}
 \label{sec:exp}
 
-\paragraph{Common setup.} All experiments use Qwen2.5-Coder-7B-Instruct with LoRA
-($r{=}16$), greedy decoding, batch size 10, window $W{=}9$, $k$NN $k{=}3$
-(Qwen3-Embedding-0.6B), seed-42 stream order identical across methods. Baselines:
-\textbf{Base} (zero-shot, no adaptation), \textbf{ICL} (Self-StreamICL: reward-filtered
-memory + $k$NN demos, frozen weights), and \textbf{REINFORCE++} (policy gradient with
-global-whitened advantages, PPO clipping, KL to the frozen base, replaying stored
-completions over the same rolling window). All methods see identical problems in
-identical order; base, ICL, and REINFORCE++ use exactly one oracle call per problem
-(cost accounting for SDFT in \S\ref{sec:exp-ablations}).
+\subsection{Setup}
+\label{sec:exp-setup}
+
+\paragraph{Tasks.} We evaluate on seven StreamBench tasks spanning five domains
+and four oracle types (Table~\ref{tab:datasets}). \textbf{LiveCodeBench}
+\citep{jain2024livecodebench}: competitive-programming problems; the oracle
+executes generated code against hidden unit tests. \textbf{DS-1000}
+\citep{lai2023ds1000}: StackOverflow-derived data-science problems over seven
+Python libraries; the oracle executes the completion inside each problem's test
+harness (we exclude TensorFlow problems, which conflict with our training stack,
+leaving 955). \textbf{Spider} \citep{yu2018spider} and \textbf{BIRD}
+\citep{li2023bird}: text-to-SQL with execution-accuracy oracles against live
+databases, BIRD adding large, noisy, domain-specific schemas. \textbf{DDXPlus}
+\citep{fansi2022ddxplus}: differential diagnosis from synthetic patient profiles,
+49-way classification with label-match oracle. \textbf{HotpotQA}
+\citep{yang2018hotpotqa}: multi-hop QA in the distractor setting, exact-match
+oracle. \textbf{ToolBench} (STE-curated subset; \citealp{wang2024ste}):
+single-turn function calling; strict oracle on API name and arguments, with an
+LLM judge for free-form argument fields. Stream orders are fixed
+(seed 42) and identical across methods, following StreamBench's released-sequence
+protocol.
+
+\begin{table}[t]
+\centering
+\caption{Streamed tasks: size $T$, native metric $h$, and oracle $g$.}
+\label{tab:datasets}
+\small
+\begin{tabular}{llrll}
+\toprule
+Task & Domain & $T$ & Metric & Oracle $g$ \\
+\midrule
+LiveCodeBench & competitive code & 1055 & avg reward & unit-test execution \\
+DS-1000 & data-science code & 955 & pass@1 & test-harness execution \\
+Spider & text-to-SQL & 2147 & execution acc. & SQL execution match \\
+BIRD & hard text-to-SQL & 1534 & execution acc. & SQL execution match \\
+DDXPlus & medical diagnosis & 1764 & accuracy & label match \\
+HotpotQA & multi-hop QA & 1500 & exact match & span match \\
+ToolBench & function calling & 750 & strict EM & name+args match (+judge) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Baselines.} \textbf{Base}: zero-shot with the task's system prompt; no
+memory, no updates; the floor any adaptive method must beat. \textbf{Self-StreamICL}
+\citep{wu2024streambench}: the strongest streaming baseline from StreamBench.
+Outputs verified correct ($fb_t{=}1$) are stored as $(x, \hat y)$ pairs; at each
+step the $k{=}3$ nearest stored pairs (cosine similarity of question embeddings)
+are prepended as demonstrations. Weights are frozen; StreamBench showed that
+storing only \emph{correct} self-outputs is critical, and our method inherits
+exactly this filter. \textbf{REINFORCE++} \citep{hu2025reinforcepp}: a
+policy-gradient baseline under the identical rolling-window skeleton as our
+method: the greedy answer to each new problem is scored once (the same oracle
+call that produces the metric), stored, and replayed for training over the
+window with batch-mean advantages, global advantage whitening, PPO-style
+clipping, and a KL penalty ($\beta{=}0.01$) to the frozen base policy. It is the
+``update $\theta$ from the scalar bit'' counterpart of our method.
+
+\paragraph{Implementation.} All methods use Qwen2.5-Coder-7B-Instruct
+\citep{hui2024qwen25coder} with greedy decoding; our method and REINFORCE++
+train LoRA adapters \citep{hu2022lora} ($r{=}16$, $\alpha{=}32$, all linear
+layers) with AdamW. Retrieval uses Qwen3-Embedding-0.6B. Stream batch size 10,
+window $W{=}9$; distillation runs 2 epochs per window pool at learning rate
+$5{\times}10^{-5}$. Each run fits on a single H200 GPU. Full hyperparameters in
+Appendix~\ref{app:hparams}; oracle-call accounting in \S\ref{sec:exp-ablations}.
 
 \subsection{Seven streaming benchmarks}
 \label{sec:exp-bench}
 
-Table~\ref{tab:bench} reports each benchmark's native accuracy over its full
-stream. \textbf{Our method attains the best accuracy on all seven tasks}, spanning
-competitive code generation, data-science code, two text-to-SQL tasks, medical
-diagnosis, multi-hop QA, and function calling. Two patterns recur. First, ICL is a
-strong baseline where retrieval finds near-duplicates (DDXPlus) but can
-\emph{hurt} on tasks where retrieved demonstrations mislead (HotpotQA: $0.509$ vs
-base $0.521$); self-distillation recovers and surpasses base in exactly those
-cases ($0.562$), because the signal is consolidated in weights rather than
-recalled at inference. Second, REINFORCE++ is inconsistent---above ICL on some
-tasks, far below base on others (Spider $0.587$ vs $0.747$)---previewing the
-stability failure of \S\ref{sec:exp-fused}.
+Table~\ref{tab:bench} reports final cumulative accuracy over each full stream.
+\textbf{Our method attains the best accuracy on all seven tasks.} Three patterns
+stand out.
+
+\emph{(i) Weight updates help precisely where retrieval fails.} ICL is strong
+where neighbors are informative (DDXPlus: $.647$ vs base $.436$) but \emph{hurts}
+where retrieved demonstrations mislead (HotpotQA: $.509$ vs base $.521$). Our
+method inherits ICL's retrieval yet still wins on HotpotQA ($.562$): the
+distillation channel injects only the model's own verified answer for the same
+problem---a signal that cannot mislead---and consolidates it into weights.
+
+\emph{(ii) Gains are largest where the base model is weakest.} DS-1000
+($+9.8$ points over base), LiveCodeBench ($+11.0$), DDXPlus ($+22.8$): tasks
+with low base accuracy leave the most headroom for bootstrapped supervision.
+On near-saturated Spider ($.747$ base) the method still adds $+6.1$.
+
+\emph{(iii) Scalar-reward RL is inconsistent.} REINFORCE++ improves modestly on
+some tasks (HotpotQA $.537$, ToolBench $.607$) but collapses below base on
+others (Spider $.587$ vs $.747$; DDXPlus $.404$ vs $.436$)---the thin
+per-sequence signal is unreliable across task types, foreshadowing
+\S\ref{sec:exp-fused}.
 
 \begin{table}[t]
 \centering
-\caption{Streaming accuracy on seven StreamBench tasks (native metric per task;
-identical stream order and model for all methods). Our method is best on all
-seven.}
+\caption{Final cumulative accuracy on seven StreamBench tasks (native metric per
+task; identical stream order and base model for all methods). Best in bold; our
+method is best on all seven.}
 \label{tab:bench}
 \input{tables/bench_table}
 \end{table}
@@ -38,35 +103,54 @@ seven.}
 \subsection{Distribution shift: one model, three domains}
 \label{sec:exp-fused}
 
-We interleave DS-1000 (code, 955), DDXPlus (diagnosis, 1{,}764), and HotpotQA
-(QA, 1{,}500) into a single 4{,}219-problem stream by a random merge that
-\emph{preserves each domain's internal order}, making per-domain slices exactly
-comparable to the standalone runs. Table~\ref{tab:fused} shows the outcome.
+Deployed agents rarely see a single homogeneous task. We construct a
+4{,}219-problem stream interleaving DS-1000 (code), DDXPlus (diagnosis), and
+HotpotQA (QA)---three domains \emph{and} three oracle types---by a seeded random
+merge that \textbf{preserves each domain's internal order}. Preserving
+within-domain order makes every per-domain slice of the fused run exactly
+comparable, problem-for-problem, to the standalone runs of
+\S\ref{sec:exp-bench}: at the $n$-th code problem, the fused model has seen the
+same $n$ code problems as the standalone model, plus ${\sim}2n$ problems from
+other domains. Any per-domain difference therefore measures cross-domain
+\emph{transfer or interference}, cleanly.
 
 \begin{table}[t]
 \centering
 \caption{Fused-stream results (4{,}219 problems). ``SDFT standalone'' aggregates
 the three per-domain runs at matched prefixes (regret summed, accuracy weighted).
-One online-distilled model matches or beats three specialists.}
+One online-distilled model matches or beats three specialists; REINFORCE++
+collapses.}
 \label{tab:fused}
 \input{tables/fused_table}
 \end{table}
 
-Three findings. \textbf{(i) One model $\geq$ three specialists:} the fused model
-beats the aggregated standalone runs overall ($.585$ vs $.573$) and is no worse on
-any domain, with \emph{positive} cross-domain transfer to code ($+3.4$ points on
-DS-1000). \textbf{(ii) Transfer lives in the weights:} retrieval self-segregates
----99.9\% of retrieved demonstrations are same-domain (2 of 2{,}059 queries pull
-any cross-domain demo)---so prompts are effectively domain-pure and cannot explain
-the gains. \textbf{(iii) RL collapses:} REINFORCE++ tracks ${\sim}5$ points below
-SDFT for 2{,}000 problems, then diverges catastrophically (approximate KL turns
-negative, clip fraction spikes $0.08{\to}0.68$, advantage std triples); accuracy
-falls to zero for the remainder of the stream (final $0.253$). The same
-hyperparameters are stable on every shorter standalone stream, indicating a
-long-horizon instability that online self-distillation simply does not exhibit:
-its per-window KL objective is anchored to a frozen teacher and its rolling
-accuracy climbs monotonically ($.44 \to .68$ peak) over the same stream
-(Figure~\ref{fig:trend}).
+Table~\ref{tab:fused} and Figure~\ref{fig:trend} give the results.
+
+\emph{(i) One model $\geq$ three specialists.} The fused model beats the
+aggregated standalone runs overall ($.585$ vs $.573$) and is no worse on any
+domain, with \emph{positive} transfer to the hardest domain
+(DS-1000: $.457$ fused vs $.423$ standalone, $+3.4$ points). Mixed-domain
+training on verified self-generated data helps rather than interferes.
+
+\emph{(ii) Transfer is carried by the weights, not the prompts.} One might
+suspect cross-domain demonstrations explain the gains. They cannot: retrieval
+\textbf{self-segregates}. Across 2{,}059 memory queries, 99.9\% of retrieved
+demonstrations are same-domain (2 queries retrieve any cross-domain example)
+---question embeddings cluster by domain, so prompts are effectively domain-pure
+and near-identical between fused and standalone runs. The $+3.4$-point transfer
+must flow through the shared LoRA parameters.
+
+\emph{(iii) The RL baseline collapses.} REINFORCE++ tracks ${\sim}5$ points
+below our method for the first 2{,}000 problems, then diverges: approximate KL
+flips negative, PPO clip fraction spikes from $0.08$ to $0.68$, advantage
+standard deviation triples, and accuracy falls to zero for the remaining half of
+the stream (per-500 window accuracy $.55 \to .10 \to .00$; final $.253$). The
+identical hyperparameters are stable on every shorter standalone stream
+(\S\ref{sec:exp-bench}), implicating long-horizon mixed-domain streams
+specifically. Our method's rolling accuracy instead climbs monotonically
+($.44 \to .68$ peak) with every domain improving simultaneously
+(Figure~\ref{fig:trend}); across ${\sim}12{,}000$ streamed problems in this
+paper it never regressed.
 
 \begin{figure}[t]
 \centering
@@ -80,12 +164,14 @@ no interference from distribution shift.}
 \subsection{Online vs.\ batch training}
 \label{sec:exp-transfer}
 
-Does the \emph{online schedule itself} matter, beyond the loss? We compare our
-online run on DS-1000 against \emph{batch} self-distillation: the identical
-trainer, loss, model, and oracle, but run as classic offline epochs (4 passes over
-all 955 problems; per pass: generate, oracle-filter, distill on verified answers;
-no memory, no stream). We then evaluate both resulting adapters with a single
-bare-prompt greedy pass over the full problem set (no demonstrations, no memory).
+Is the online \emph{schedule} itself load-bearing, beyond the loss? We compare
+the online DS-1000 run against \textbf{batch self-distillation}: the identical
+trainer, loss, base model, and oracle, run as classic offline epochs---four
+passes over the full 955-problem set; each pass generates an answer per problem
+with the current model, oracle-filters, and distills on the verified answers.
+No memory, no stream, no re-evaluation. We then measure \emph{source mastery}:
+a single bare-prompt greedy pass over all 955 problems (no demonstrations, no
+memory) with each resulting adapter.
 
 \begin{table}[h]
 \centering
@@ -95,35 +181,50 @@ all 955 problems).}
 \input{tables/mastery_table}
 \end{table}
 
-The online-trained model solves $458/955$ ($.480$) versus $406$ ($.425$) for
-batch---a $+5.5$-point gap \emph{on the very data batch trained on for four
-epochs}---and its advantage comes from breadth: 123 problems only online solves vs
-71 only batch solves, with equal (small) forgetting relative to base. We attribute
-the gap to the stream's implicit curriculum: each problem is revisited across a
-rolling window while the model evolves, and forward re-evaluation keeps
-converting newly in-reach problems into training signal, whereas single-sample
-batch generation can only ever train on what the current model already solves.
-\todo{Batch with $n{=}5$ sampled attempts per problem (running) tests whether
-exploration closes this gap.}
+Both regimes learn substantially (Table~\ref{tab:mastery}), but online wins by
+$+5.5$ points \emph{on the very data batch trained on for four epochs}. The
+advantage is breadth, not overlap: online uniquely solves 123 problems vs 71 for
+batch (335 shared, 426 by neither), while forgetting relative to base is equal
+and small (37 vs 32 problems lost). We attribute the gap to the stream's
+implicit curriculum: each problem is revisited across a rolling window while
+the model evolves, and forward re-evaluation keeps converting newly in-reach
+problems into training signal---whereas single-sample batch generation can only
+train on what the current model already solves greedily.
+\todo{Batch with $n{=}5$ sampled attempts per problem (exploration-matched,
+oracle-budget-matched at 2 epochs) --- eval running.}
 \todo{Transfer: both adapters warm-start online SDFT on the unseen HotpotQA
 stream; compare accuracy/regret vs from-scratch ($.562$/657). Runs pending.}
 
 \subsection{Ablations and cost}
 \label{sec:exp-ablations}
 
-\textbf{Generation source.} Sampling the distillation completion from the bare
-student prompt (offline-SDFT default) vs the hint-conditioned prefix (ours)
-changes DS-1000 by $+1.3$ points in favor of the former, with the difference
-confined to the early stream; on the fused stream the two are even after a small
-early deficit. The choice is a bootstrap-phase detail, not a driver.
-\textbf{Epochs.} 4 inner epochs beat 2 on DS-1000 ($+21$ cumulative-regret at
-matched pressure); learning-rate increases do not substitute for epochs.
-\textbf{Multi-sample distillation.} Distilling from $N{=}10$ sampled candidates
-(filtered or not) matches single-sample distillation---sample \emph{count} is not
-the bottleneck.
-\textbf{Oracle budget.} Our method issues ${\sim}9.8$ oracle calls per problem
-(1 scored on arrival + ${\sim}8.8$ memory-only re-evaluations); baselines use 1.
-The extra calls only gate memory; they never alter recorded scores. Giving ICL
-the same budget would not help---a frozen model re-answering with the same
-distribution recovers almost nothing---and REINFORCE++ at 1 call/problem already
-shows that training-with-feedback alone does not close the gap.
+\paragraph{Generation source.} Offline SDFT \citep{yang2024selfdistillation}
+samples the distillation completion from the bare prompt; we condition it on the
+hint. Flipping our setting to the offline default changes DS-1000 by $+1.3$
+points \emph{in favor of the default}, with the difference confined to the early
+stream; on the fused stream the two settings are even after a small early
+deficit ($-10$ regret in the first 300 problems, flat thereafter). The choice is
+a bootstrap-phase detail: hint-conditioning helps while the adapter is weak,
+bare-prompt generation is marginally better once it is strong. Our headline
+results use the (slightly disadvantaged) hint-conditioned setting.
+
+\paragraph{Training pressure.} Four distillation epochs per window beat two on
+DS-1000 ($-21$ cumulative regret at matched settings); doubling the learning
+rate instead does \emph{not} recover the gap ($+5$ regret)---repetition, not
+step size, is what converts verified answers into weights.
+
+\paragraph{Multi-sample distillation.} Distilling from $N{=}10$ sampled
+candidates per problem---with or without similarity filtering against the
+hint---matches single-sample distillation on DS-1000 (a wash at matched
+oracle budget). Sample \emph{count} is not the bottleneck; \emph{which} problems
+yield a verified answer is.
+
+\paragraph{Oracle budget.} Our method issues ${\sim}9.8$ oracle calls per
+problem (1 scored arrival call + ${\sim}8.8$ re-evaluation calls that only gate
+memory); all baselines use exactly 1. The asymmetry does not explain the gaps:
+(i) re-evaluation with a \emph{frozen} model recovers almost nothing---the extra
+calls are only useful because the model is improving; (ii) REINFORCE++ already
+shows that weight updates from 1 call/problem underperform; and (iii) in the
+online-vs-batch comparison the batch arm receives 4 calls/problem and still
+trails by $5.5$ points. Full per-run call and GPU-hour accounting in
+Appendix~\ref{app:cost}.

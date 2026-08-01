@@ -1,24 +1,82 @@
 \section{Leakage Audit}
 \label{app:leakage}
 We verify four causal-ordering invariants programmatically over the raw run logs
-of the fused experiment (script released with the code): (A) every problem is
-scored exactly once; (B) no memory entry predates its problem's scoring batch;
-(C) memory is append-only with respect to the stream, so retrieved demonstrations
-always come from strictly earlier batches; (D) aggregate counters match the
-per-problem log. All checks pass. Gold labels exist only inside the 0/1 oracle;
-the stored hint is always the model's own earlier oracle-passing output.
-\todo{Include example student/teacher prompt traces (available in the repo's
-leakage-audit folder).}
+of the fused experiment (audit script released with the code):
+\textbf{(A)} every problem is scored exactly once (after de-duplicating
+checkpoint-resume rows); \textbf{(B)} no memory entry predates its problem's
+scoring batch---the scored generation can never see its own hint; \textbf{(C)}
+memory is append-only with respect to the stream, so retrieved demonstrations
+always come from strictly earlier batches; \textbf{(D)} aggregate counters match
+the per-problem log exactly. All checks pass on the actual run artifacts. Gold
+labels exist only inside the 0/1 oracle; the stored hint is always the model's
+own earlier oracle-passing output, never a dataset field.
 
-\section{Hyperparameters and Reproducibility}
+\paragraph{Example trace.} For a streamed problem, the student prompt contains
+the system prompt, three retrieved (question, verified-answer) pairs from
+earlier problems, and the new question---nothing else. The teacher prompt is the
+identical message list plus one assistant turn containing the model's own stored
+answer and the question repeated. Full reconstructed traces (built by the
+training code itself from run artifacts) are released alongside the code.
+
+\section{Hyperparameters}
 \label{app:hparams}
-\todo{Full hyperparameter table (LoRA config, lengths, decoding, trainer
-settings), hardware (single H200 per run), and per-benchmark oracle definitions.
-All code, per-problem CSVs, and analysis scripts are in the released repository.}
 
-\section{Additional Ablations}
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{ll}
+\toprule
+Base model & Qwen2.5-Coder-7B-Instruct (bf16) \\
+Adapter & LoRA $r{=}16$, $\alpha{=}32$, dropout 0, all linear layers \\
+Optimizer & AdamW, lr $5{\times}10^{-5}$, constant schedule, grad-norm clip 1.0 \\
+Distillation & forward KL ($\alpha{=}0$), $\beta{=}0$, skip first 3 tokens, temp 1.0 \\
+Inner epochs / chunk & 2 / grad-accum $\le$ 50 pairs \\
+Stream & batch 10, window $W{=}9$, seed 42 \\
+Retrieval & Qwen3-Embedding-0.6B, cosine, $k{=}3$, correct-only memory \\
+Decoding & greedy, max 512--1024 new tokens, max sequence 4096 \\
+Teacher & frozen base model (never synced) \\
+REINFORCE++ & lr $5{\times}10^{-5}$, $\beta_{\mathrm{KL}}{=}0.01$, PPO clip, whitened adv. \\
+Hardware & 1$\times$ NVIDIA H200 per run \\
+\bottomrule
+\end{tabular}
+\caption{Hyperparameters shared across all experiments.}
+\label{tab:hparams}
+\end{table}
+
+\section{Cost Accounting}
+\label{app:cost}
+Per problem, our method spends 1 scored oracle call plus ${\sim}8.8$
+re-evaluation calls (window re-answers whose only effect is memory update);
+measured on the fused run: 24{,}450 total calls for 2{,}490 problems at the
+point of measurement (${\sim}9.8$/problem). Base, ICL, and REINFORCE++ use
+exactly 1 call per problem; batch SDFT uses 1 per problem per epoch. Wall-clock
+on one H200: standalone streams ${\sim}$8--14\,h; the fused 4{,}219-problem run
+${\sim}$30\,h of compute (checkpoint-resumable in preemptible 4\,h slices);
+batch SDFT (4 epochs) ${\sim}$3.5\,h; a bare-prompt evaluation pass
+${\sim}$40\,min. \todo{Finalize GPU-hour table per run.}
+
+\section{Additional Ablation Detail}
 \label{app:ablations}
-\todo{Full ablation tables: generate-from-teacher (standalone + fused),
-epoch/learning-rate grid, multi-sample distillation (filtered and unfiltered
-$N{=}10$), REINFORCE++ collapse diagnostics (KL/clip-fraction/advantage-std
-trajectories).}
+\paragraph{Generation source.} DS-1000 standalone, full 955: bare-prompt
+generation (offline-SDFT default) $.436$ acc / 539 regret vs hint-conditioned
+$.423$ / 551; the gap accumulates in the last third of the stream. Fused stream
+(stopped at 1{,}820 of 4{,}219 by design): bare-prompt loses ${\sim}10$ regret
+in the first 300 problems, then tracks even for 1{,}500 problems.
+\paragraph{Epochs and learning rate.} DS-1000, matched settings: 4 epochs
+$-21$ cumulative regret vs 2 epochs; 2 epochs at doubled lr $+5$ regret vs
+2 epochs---epochs do what lr cannot.
+\paragraph{Multi-sample distillation.} $N{=}10$ teacher-conditioned samples per
+problem, similarity-filtered ($\mathrm{sim} \ge 0.5$ to hint) or unfiltered:
+both statistically indistinguishable from $N{=}1$ on DS-1000 (filtered: 186 vs
+188 regret at 300 problems; unfiltered: mildly negative over 520 problems).
+\paragraph{REINFORCE++ collapse diagnostics.} Batch-level metrics around the
+collapse (fused stream, batch ${\sim}205$--210): approximate KL $0.22 \to -0.63$,
+PPO clip fraction $0.08 \to 0.68$, advantage std $0.38 \to 1.37$ within 10
+batches; running accuracy $.503 \to .253$ by stream end.
+\todo{Add full trajectory figures for the collapse diagnostics.}
+
+\section{Per-Task Prompts}
+\label{app:prompts}
+\todo{Verbatim system prompts and generation templates for all seven tasks, and
+the student/teacher message structure (available in the released repository;
+port into figures here).}

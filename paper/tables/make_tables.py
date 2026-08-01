@@ -54,12 +54,14 @@ with open(os.path.join(HERE, "fused_table.tex"), "w") as f:
 # ── Table 3: mastery (from eval CSVs) ──
 on = pd.read_csv(f"{SB}/results/ds1000_eval_online/eval_per_problem.csv")
 bt = pd.read_csv(f"{SB}/results/ds1000_eval_batch/eval_per_problem.csv")
+b5 = pd.read_csv(f"{SB}/results/ds1000_eval_batch_n5/eval_per_problem.csv")
 bs = pd.read_csv(f"{SB}/results/ds1000_base/per_problem.csv").drop_duplicates("problem_id", keep="last")
 with open(os.path.join(HERE, "mastery_table.tex"), "w") as f:
     f.write("\\begin{tabular}{lrr}\n\\toprule\n")
     f.write("Model & Acc & Solved / 955 \\\\\n\\midrule\n")
     f.write(f"Base & {bs.correct.mean():.3f} & {int(bs.correct.sum())} \\\\\n")
-    f.write(f"Batch SDFT (4 epochs) & {bt.correct.mean():.3f} & {int(bt.correct.sum())} \\\\\n")
+    f.write(f"Batch SDFT ($n{{=}}1$, 4 epochs) & {bt.correct.mean():.3f} & {int(bt.correct.sum())} \\\\\n")
+    f.write(f"Batch SDFT ($n{{=}}5$, 2 epochs) & {b5.correct.mean():.3f} & {int(b5.correct.sum())} \\\\\n")
     f.write(f"\\textbf{{Online SDFT (ours)}} & \\textbf{{{on.correct.mean():.3f}}} & \\textbf{{{int(on.correct.sum())}}} \\\\\n")
     f.write("\\bottomrule\n\\end{tabular}\n")
 

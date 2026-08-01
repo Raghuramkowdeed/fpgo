@@ -181,19 +181,29 @@ all 955 problems).}
 \input{tables/mastery_table}
 \end{table}
 
-Both regimes learn substantially (Table~\ref{tab:mastery}), but online wins by
-$+5.5$ points \emph{on the very data batch trained on for four epochs}. The
-advantage is breadth, not overlap: online uniquely solves 123 problems vs 71 for
-batch (335 shared, 426 by neither), while forgetting relative to base is equal
-and small (37 vs 32 problems lost). We attribute the gap to the stream's
-implicit curriculum: each problem is revisited across a rolling window while
-the model evolves, and forward re-evaluation keeps converting newly in-reach
-problems into training signal---whereas single-sample batch generation can only
-train on what the current model already solves greedily.
-\todo{Batch with $n{=}5$ sampled attempts per problem (exploration-matched,
-oracle-budget-matched at 2 epochs) --- eval running.}
-\todo{Transfer: both adapters warm-start \method{} on the unseen HotpotQA
-stream; compare accuracy/regret vs from-scratch ($.562$/657). Runs pending.}
+Single-sample batch training trails online by $+5.5$ points ($.425$ vs $.480$)
+\emph{on the very data it trained on for four epochs}, and the gap is breadth:
+123 problems only online solves vs 71 only batch solves (335 shared, 426 by
+neither), with equally small forgetting (37 vs 32 problems lost vs base). The
+proximate cause is \emph{coverage}: greedy batch generation can only train on
+problems the current model already solves deterministically (verified coverage
+$38.5\% \to 41.8\%$ over four epochs), while the stream's re-evaluation
+flywheel ended with verified answers for $53.5\%$ of problems.
+
+\emph{Is the gap just exploration?} We give batch an exploration channel:
+$n{=}5$ sampled attempts per problem (temperature $0.7$), first verified sample
+as the distillation target, two epochs---matching the online arm's total oracle
+budget (${\sim}10$ calls/problem). Exploration closes most of the mastery gap
+(Table~\ref{tab:mastery}): coverage jumps to $56.5\%$ and mastery to $.472$,
+within $0.8$ points of online (451 vs 458 problems; 92 online-only vs 85
+batch-only). Source mastery, then, is chiefly a coverage story, and exploration
+can buy coverage. What exploration cannot buy is the stream's \emph{schedule}
+---training always at the current model's frontier, revisiting each problem as
+the model evolves---and whether that schedule matters for \emph{generalization}
+is the decisive question:
+\todo{both adapters (online and budget-matched batch-$n{=}5$) warm-start
+\method{} on the unseen HotpotQA stream; compare accuracy/regret vs
+from-scratch ($.562$/657). Runs in progress.}
 
 \subsection{Ablations and cost}
 \label{sec:exp-ablations}

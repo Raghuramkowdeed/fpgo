@@ -1,42 +1,44 @@
 \section{Discussion, Limitations, and Conclusion}
 \label{sec:conclusion}
 
-\paragraph{Discussion.} Our results argue that the two prevailing programs for
-deployment-time improvement---accumulating experience outside the model and
-optimizing the scalar feedback bit with policy gradients---leave value on the
-table that a third route captures: internalizing each verified experience into
-the weights through anchored self-distillation. The streaming schedule is not an
-obstacle to engineer around but an asset: it supplies an emergent curriculum and
-a data flywheel that batch training on the same data cannot reproduce.
+\paragraph{Discussion.} Most current approaches to deployment-time improvement
+either accumulate experience outside the model or apply policy gradients to the
+scalar feedback bit. Our results suggest a third option is viable and often
+preferable: distilling each verified success into the weights as it happens.
+The streaming schedule turned out to matter more than we initially expected.
+It supplies training examples at the model's current frontier, and the
+re-evaluation step converts weight improvements into additional verified data.
+Batch training on the same data with the same objective recovers most of the
+source-task accuracy when given an exploration budget, but we do not yet know
+whether it matches the stream on generalization; that comparison is running.
 
-\paragraph{Limitations.} Our experiments use a single 7B code-centric model with
-LoRA adapters and one stream order per task (StreamBench's released sequences);
-multi-seed variance is not characterized. Feedback is binary---richer textual
-feedback \citep{hue2026sdpo} is unexplored in our setting. Our method spends
-${\sim}10\times$ more oracle calls than the baselines (on memory maintenance,
-not scoring), a real cost where verification is expensive. General-capability
-retention beyond the streamed tasks (e.g., on knowledge benchmarks) is not yet
-measured. \todo{Transfer-to-unseen-domain runs and the exploration-matched batch
-arm are pending.}
+\paragraph{Limitations.} All experiments use one 7B code-centric model with
+LoRA adapters and a single stream order per task, so variance across seeds is
+not characterized. Feedback is binary; richer textual feedback
+\citep{hue2026sdpo} may carry more signal per interaction and is untested in
+our setting. Our method issues roughly ten times more oracle calls than the
+baselines. The extra calls maintain memory rather than affect scoring, but they
+are a real cost wherever verification is expensive. We also have not measured
+retention of general capabilities outside the streamed tasks.
+\todo{Transfer runs to an unseen domain are in progress.}
 
-\paragraph{Conclusion.} We presented \method{}, to our knowledge the first
-method to perform verified, weight-updating self-distillation online over a
-deployment stream: verified self-generated answers feed a reward-filtered
-memory that serves retrieval today and distillation forever, with forward
-re-evaluation converting weight gains back into training data. \method{} is
-best on all seven StreamBench tasks, absorbs a three-domain distribution shift
-that collapses a stability-engineered RL baseline---with one model beating
-per-domain specialists through weight-borne transfer---and outperforms batch
-training with the identical objective on identical data. Deployed models need
-not be frozen: a single pass of grounded feedback is enough to learn from.
+\paragraph{Conclusion.} We described \method{}, a method that updates model
+weights during a single pass over a problem stream using only binary verifiable
+feedback. Verified answers are stored in a filtered memory, retrieved as
+demonstrations, and used as hints for a frozen-base self-teacher whose
+next-token distribution the model learns to match. On seven StreamBench tasks
+the method reaches the highest streaming accuracy of all baselines we tested.
+On a three-domain stream it improves all domains at once and exceeds the
+aggregate of three per-domain models, while a REINFORCE++ baseline diverges.
+We are not aware of prior work that performs verified self-distillation online
+over a deployment stream.
 
 \subsection*{Reproducibility Statement}
 All benchmarks are public (StreamBench and its constituent datasets;
 Table~\ref{tab:datasets} lists sources), and all methods use an open-weights
-model (Qwen2.5-Coder-7B-Instruct) with fixed released stream orders (seed 42),
-making every run exactly repeatable. Complete hyperparameters appear in
-Appendix~\ref{app:hparams}, prompt templates in Appendix~\ref{app:prompts}, and
-oracle definitions in \S\ref{sec:exp-setup}. Our released repository contains
-all training and evaluation code, per-problem logs for every run in every
-table, the table-generation scripts that produce the paper's numbers directly
+model (Qwen2.5-Coder-7B-Instruct) with fixed released stream orders (seed 42).
+Complete hyperparameters appear in Appendix~\ref{app:hparams}, prompt templates
+in Appendix~\ref{app:prompts}, and oracle definitions in \S\ref{sec:exp-setup}.
+Our repository contains the training and evaluation code, per-problem logs for
+every run in every table, the scripts that generate the paper's tables directly
 from those logs, and the causal-ordering audit of Appendix~\ref{app:leakage}.

@@ -4,10 +4,10 @@
 We organize the analysis around four mechanism questions.
 
 \paragraph{Q1: Where do the gains live---prompts or weights?}
-Two independent probes give the same answer. First, in the fused experiment,
+Two observations point the same way. First, in the fused experiment,
 retrieval self-segregates by domain (99.9\% same-domain demonstrations), yet the
-fused model still transfers across domains ($+3.4$ on code)---prompts cannot
-carry that signal, weights must. Second, the source-mastery evaluation strips
+fused model still transfers across domains ($+3.4$ on code). Prompts cannot carry that
+signal, so the weights must. Second, the source-mastery evaluation strips
 \emph{all} scaffolding (no demonstrations, no memory) and the trained adapter
 retains a $+16.7$-point gain over base ($.480$ vs $.313$): the improvement
 survives removal of the entire prompting apparatus. ICL's gains, by
@@ -21,8 +21,8 @@ method could never harvest, since re-answering with an unchanged model
 reproduces the same failure. Recovery concentrates early (most recoverable
 problems are caught within their window), after which re-evaluation's remaining
 role is refreshing stored answers into the current model's phrasing, keeping
-distillation targets near on-policy. This is the flywheel: updates improve the
-model; the improved model mints new verified data; new data drives updates.
+distillation targets near on-policy. Updates improve the model, the improved model recovers problems it
+previously failed, and the recovered problems become training data.
 
 \paragraph{Q3: Why is self-distillation stable where RL is not?}
 The collapse signature of REINFORCE++ on the fused stream (negative approximate
@@ -32,9 +32,9 @@ advantage estimate, an instability documented for RLVR at scale---entropy
 collapse is intrinsic to the policy gradient \citep{cui2025entropy}, and even
 successful long-horizon RLVR requires explicit KL control and periodic
 reference-policy resets \citep{liu2025prorl}. The distillation objective (Eq.~\ref{eq:kl}) has none of
-these moving parts---its target distribution comes from a \emph{frozen} teacher,
-its targets are oracle-verified text, and disagreement between student and
-teacher is bounded by the hint's information content. Empirically, per-batch KL
+these moving parts. Its target distribution comes from a frozen teacher, its targets are
+oracle-verified text, and the disagreement between student and teacher is
+bounded by the information in the hint. Empirically, per-batch KL
 loss stays in $[10^{-3}, 10^{-1}]$ across all runs, and no run among
 ${\sim}12{,}000$ streamed problems ever regressed catastrophically. Our frozen-base teacher acts as an always-on
 reference anchor---the safeguard ProRL adds by periodic resets, built into the

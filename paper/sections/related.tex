@@ -25,8 +25,8 @@ The dominant approach to deployment-time improvement stores what was learned
 \emph{outside} the model: reflection buffers \citep{shinn2023reflexion}, skill
 libraries \citep{wang2024voyager}, experiential insights \citep{zhao2024expel},
 induced workflows \citep{wang2025agent}, feedback memories
-\citep{madaan2022memprompt}, and evolving context playbooks---the last framed
-explicitly as an \emph{alternative} to parameter updates \citep{zhang2025agentic}.
+\citep{madaan2022memprompt}, and evolving context playbooks; the last of these is framed explicitly as an alternative to parameter
+updates \citep{zhang2025agentic}.
 StreamBench \citep{wu2024streambench} canonized streaming evaluation and found
 Self-StreamICL---a reward-filtered memory retrieved as demonstrations---the
 strongest such baseline; it is our ICL baseline and the source of our memory's
@@ -53,12 +53,12 @@ safely where gold-target fine-tuning would not.}
 \paragraph{Distillation and RL from verifiable rewards.}
 On-policy distillation trains the student on its own samples against a teacher's
 distribution \citep{agarwal2024gkd, gu2024minillm, xu2025skd, lu2025onpolicy}
----but the teacher is an external, stronger, fixed model and training is
+, but the teacher is an external, stronger, fixed model and training is
 offline. SDFT rewrites gold datasets into the model's own distribution before
-fine-tuning \citep{yang2024selfdistillation}---offline and gold-dependent. SDPO,
+fine-tuning \citep{yang2024selfdistillation}, offline and gold-dependent. SDPO,
 closest to our objective, makes the feedback-conditioned model a self-teacher
-inside policy optimization \citep{hue2026sdpo}---but remains rollout-batch RL on
-a fixed prompt distribution with a \emph{moving} teacher. On the RL side, GRPO,
+inside policy optimization \citep{hue2026sdpo}, but remains rollout-batch RL on a fixed prompt distribution with a moving
+teacher. On the RL side, GRPO,
 RLOO, and REINFORCE++ optimize the scalar verifiable bit
 \citep{shao2024deepseekmath, ahmadian2024rloo, hu2025reinforcepp,
 ouyang2022instructgpt}, and entropy/policy collapse on long horizons is a

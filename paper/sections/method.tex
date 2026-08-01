@@ -11,6 +11,23 @@ of the base model $\pi_{\text{ref}}$, and a memory
 $M : x \mapsto (y^\star, e)$ storing each problem's latest \emph{verified} answer
 and an embedding of its question.
 
+\paragraph{Memory bank.} $M$ is a key--value store mapping each problem to a
+single entry
+$M[x] = \big(y^\star,\, e(x),\, t_{\text{stored}}\big)$:
+the \emph{latest oracle-verified} answer for $x$, a normalized embedding of the
+question text (Qwen3-Embedding-0.6B), and the batch index of the last update.
+Three invariants define it. \emph{Reward filter}: only answers with
+$r(x, y){=}1$ ever enter---incorrect outputs are discarded, following the
+finding that only verified examples help \citep{wu2024streambench}.
+\emph{One slot per problem}: a new verified answer overwrites the old one
+(latest-correct, not best-of-$N$; all stored answers are equally ``correct''
+under the binary oracle, and the most recent one is closest to the current
+policy, making it the better distillation target). \emph{Append-only w.r.t.\ the
+stream}: entries exist only for problems already scored, so retrieval can only
+surface the past. $M$ serves two consumers: $k$NN retrieval of
+demonstrations (cosine similarity over $e(\cdot)$, always excluding the query
+problem itself) and the hint $y^\star$ for the self-distillation teacher.
+
 \paragraph{Per-batch loop.} Each stream batch triggers three phases
 (Algorithm~\ref{alg:method}):
 
@@ -42,6 +59,26 @@ teacher's hint-informed distribution \emph{without} the hint, compressing the
 verified answer into the weights. We use 2 epochs per window pool, LoRA
 ($r{=}16$, $\alpha{=}32$, all linear layers), learning rate $5{\times}10^{-5}$,
 and skip the first 3 completion tokens.
+
+\paragraph{Prompt structure.} Concretely, for a problem $x$ with demonstrations
+$\{(x_i, y_i^\star)\}_{i=1}^{k}$ retrieved from $M$:
+\begin{center}
+\small
+\begin{tabular}{ll}
+\toprule
+\textbf{Student prompt} $P(x)$ & \textbf{Teacher prompt} $P^{+}(x)$ \\
+\midrule
+\texttt{[system]} task instruction & (identical to student prompt, then:) \\
+\texttt{[user]} $x_1$ \quad \texttt{[assistant]} $y_1^\star$ & \texttt{[assistant]} $y^\star$ \;(hint = own verified answer) \\
+\;\;\vdots & \texttt{[user]} $x$ \;(question repeated) \\
+\texttt{[user]} $x_k$ \quad \texttt{[assistant]} $y_k^\star$ & \\
+\texttt{[user]} $x$ & \\
+\bottomrule
+\end{tabular}
+\end{center}
+The two prompts differ by exactly two turns; every answer text appearing anywhere
+is model-generated and oracle-verified. Verbatim per-task templates are in
+Appendix~\ref{app:prompts}.
 
 \paragraph{Why no leakage.} The hint is always the model's own earlier
 oracle-passing output, never a dataset field; demos always come from strictly

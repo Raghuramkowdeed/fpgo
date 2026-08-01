@@ -1,0 +1,45 @@
+\documentclass{article} % For LaTeX2e
+% ICLR 2026 style as scaffold — swap to iclr2027_conference when the kit is released.
+\usepackage{iclr2026_conference,times}
+
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{url}
+\input{math_commands}
+
+% TODO markers — grep \todo before submission; nothing pending ships silently.
+\newcommand{\todo}[1]{\textcolor{red}{[TODO: #1]}}
+
+\title{Streaming Self-Improvement of Language Models\\via Online Self-Distillation from Verifiable Feedback}
+
+\author{Anonymous authors\\
+Paper under double-blind review}
+
+\newcommand{\fix}{\marginpar{FIX}}
+\newcommand{\new}{\marginpar{NEW}}
+
+\iclrfinalcopy % camera-ready style for readable drafts; comment out for submission
+\begin{document}
+
+\maketitle
+
+\input{sections/abstract}
+\input{sections/intro}
+\input{sections/method}
+\input{sections/experiments}
+\input{sections/analysis}
+\input{sections/related}
+\input{sections/conclusion}
+
+\bibliography{refs}
+\bibliographystyle{iclr2026_conference}
+
+\appendix
+\input{sections/appendix}
+
+\end{document}

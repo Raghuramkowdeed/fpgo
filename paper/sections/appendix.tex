@@ -1,0 +1,24 @@
+\section{Leakage Audit}
+\label{app:leakage}
+We verify four causal-ordering invariants programmatically over the raw run logs
+of the fused experiment (script released with the code): (A) every problem is
+scored exactly once; (B) no memory entry predates its problem's scoring batch;
+(C) memory is append-only with respect to the stream, so retrieved demonstrations
+always come from strictly earlier batches; (D) aggregate counters match the
+per-problem log. All checks pass. Gold labels exist only inside the 0/1 oracle;
+the stored hint is always the model's own earlier oracle-passing output.
+\todo{Include example student/teacher prompt traces (available in the repo's
+leakage-audit folder).}
+
+\section{Hyperparameters and Reproducibility}
+\label{app:hparams}
+\todo{Full hyperparameter table (LoRA config, lengths, decoding, trainer
+settings), hardware (single H200 per run), and per-benchmark oracle definitions.
+All code, per-problem CSVs, and analysis scripts are in the released repository.}
+
+\section{Additional Ablations}
+\label{app:ablations}
+\todo{Full ablation tables: generate-from-teacher (standalone + fused),
+epoch/learning-rate grid, multi-sample distillation (filtered and unfiltered
+$N{=}10$), REINFORCE++ collapse diagnostics (KL/clip-fraction/advantage-std
+trajectories).}

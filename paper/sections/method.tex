@@ -1,0 +1,75 @@
+\section{Method: Online Self-Distillation from Verifiable Feedback}
+\label{sec:method}
+
+\paragraph{Setting.} Problems $x_1, x_2, \dots$ arrive in a fixed stream in
+batches of $B{=}10$. For each problem the environment provides a binary oracle
+$r(x, y) \in \{0, 1\}$ (test execution, exact match, label equality). Gold answers
+exist only \emph{inside} the oracle; only the bit leaves it. The streaming metric
+is prequential: every problem is answered and scored \emph{before} any update that
+involves it. We maintain a policy $\pi_\theta$ (base model + LoRA), a frozen copy
+of the base model $\pi_{\text{ref}}$, and a memory
+$M : x \mapsto (y^\star, e)$ storing each problem's latest \emph{verified} answer
+and an embedding of its question.
+
+\paragraph{Per-batch loop.} Each stream batch triggers three phases
+(Algorithm~\ref{alg:method}):
+
+\textbf{(1) Score.} For each new $x$: retrieve the $k{=}3$ nearest past problems
+from $M$ (embedding $k$NN, excluding $x$) as in-context demonstrations, generate
+greedily, and query the oracle. The result is recorded---permanently---and, if
+correct, the answer is stored in $M$ (reward filter).
+
+\textbf{(2) Forward re-evaluation.} Problems from the last $W{=}9$ batches are
+re-answered with the \emph{current} model and re-scored. Successes update $M$:
+failures recovered by the improved model enter memory late, and existing entries
+are refreshed into the current model's phrasing (keeping distillation targets
+near on-policy). Re-evaluation never touches recorded scores.
+
+\textbf{(3) Self-distillation.} For each window problem $x$ with $M(x) = y^\star$:
+the \emph{student} sees prompt $P(x)$ = system + demos + $x$; the \emph{teacher}
+sees $P(x)$ followed by $y^\star$ as an assistant turn and $x$ repeated. A
+completion $\hat y$ is generated from the teacher prefix, and we minimize the
+token-level forward KL
+\begin{equation}
+\mathcal{L}(\theta) \;=\; \sum_t \mathrm{KL}\!\left(
+  \pi_{\text{ref}}(\cdot \mid P^{+}(x), \hat y_{<t}) \;\big\|\;
+  \pi_\theta(\cdot \mid P(x), \hat y_{<t}) \right),
+\label{eq:kl}
+\end{equation}
+where $P^{+}$ denotes the hint-augmented prompt. The teacher is the \emph{frozen
+base} model---the only asymmetry is the hint. The student learns to produce the
+teacher's hint-informed distribution \emph{without} the hint, compressing the
+verified answer into the weights. We use 2 epochs per window pool, LoRA
+($r{=}16$, $\alpha{=}32$, all linear layers), learning rate $5{\times}10^{-5}$,
+and skip the first 3 completion tokens.
+
+\paragraph{Why no leakage.} The hint is always the model's own earlier
+oracle-passing output, never a dataset field; demos always come from strictly
+earlier batches; and a problem's score is final before it can enter $M$. We audit
+these causal-ordering invariants programmatically over the actual run logs
+(Appendix~\ref{app:leakage}).
+
+\paragraph{Generation source.} Conditioning the generated completion $\hat y$ on
+the hint (vs.\ sampling it from the bare student prompt, as in offline
+self-distillation) turns out to be a minor, bootstrap-phase choice: the two
+settings differ by ${\sim}1$ point and only early in the stream
+(\S\ref{sec:exp-ablations}), so our results do not hinge on it.
+
+\begin{algorithm}[t]
+\caption{Online SDFT (one stream batch)}
+\label{alg:method}
+\begin{algorithmic}[1]
+\FOR{each new problem $x$ in batch $B_t$}
+  \STATE $y \leftarrow \pi_\theta(\,\text{system} + \text{kNN}_3(M, x) + x\,)$ \hfill (greedy)
+  \STATE record $r(x,y)$ \hfill (prequential metric; final)
+  \IF{$r(x,y)=1$} \STATE $M[x] \leftarrow y$ \ENDIF
+\ENDFOR
+\FOR{each $x$ in last $W$ batches}
+  \STATE $y' \leftarrow \pi_\theta(\,\text{system} + \text{kNN}_3(M, x) + x\,)$
+  \IF{$r(x,y')=1$} \STATE $M[x] \leftarrow y'$ \hfill (recover / refresh) \ENDIF
+\ENDFOR
+\FOR{each $x$ in window pool with $M[x]=y^\star$}
+  \STATE $\hat y \sim \pi_\theta(P^{+}(x))$;\quad update $\theta$ by Eq.~\ref{eq:kl}
+\ENDFOR
+\end{algorithmic}
+\end{algorithm}

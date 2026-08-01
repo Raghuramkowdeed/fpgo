@@ -1,0 +1,11 @@
+\begin{tabular}{lrrrrr}
+\toprule
+Method & Acc & Cum.\ regret & DS-1000 & DDXPlus & HotpotQA \\
+\midrule
+Base & 0.439 & 2365 & 0.318 & 0.436 & 0.521 \\
+ICL $k{=}3$ & 0.533 & 1971 & 0.358 & 0.647 & 0.509 \\
+REINFORCE++ (fused) & 0.253 & 3153 & 0.213 & 0.262 & 0.267 \\
+SDFT standalone ($3\times$) & 0.573 & 1800 & 0.423 & 0.664 & \textbf{0.562} \\
+\textbf{SDFT fused (ours)} & \textbf{0.585} & \textbf{1750} & \textbf{0.457} & \textbf{0.676} & 0.560 \\
+\bottomrule
+\end{tabular}

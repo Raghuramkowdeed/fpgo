@@ -1,0 +1,30 @@
+\section{Related Work}
+\label{sec:related}
+
+\paragraph{Streaming adaptation and memory.} StreamBench \citep{wu2024streambench}
+formalizes online LLM improvement under prequential evaluation and shows
+Self-StreamICL---reward-filtered memory retrieved as demonstrations---is a strong
+baseline; our ICL baseline is exactly this method. Memory-augmented agents more
+broadly (e.g., \citealp{madaan2022memprompt}) adapt behavior without weight
+updates and thus remain bounded by the frozen model's ability.
+
+\paragraph{Self-distillation for LLMs.} Distilling a model conditioned on
+privileged information into itself without that information underlies
+self-distillation fine-tuning \citep{yang2024selfdistillation} and generalized
+knowledge distillation \citep{agarwal2024gkd}; SDPO \citep{hue2026sdpo} brings
+feedback-conditioned self-teachers into policy optimization. These methods are
+offline or rollout-batch; our contribution is the \emph{online} instantiation---
+verified-answer hints harvested from a stream, coupled with memory and forward
+re-evaluation---and the finding that the online schedule itself improves both
+mastery and \todo{transfer}.
+
+\paragraph{RL from verifiable rewards.} GRPO/RLOO/REINFORCE++
+\citep{shao2024deepseekmath, ahmadian2024rloo, hu2025reinforcepp} optimize scalar
+verifiable rewards and power modern reasoning models, but operate on thin
+per-attempt signal; our experiments show a faithful REINFORCE++ implementation is
+unstable on long heterogeneous streams where self-distillation is not.
+
+\paragraph{Continual and test-time learning.} Our setting is continual learning
+without task boundaries \citep{parisi2019continual} combined with test-time
+training \citep{sun2020ttt}; unlike classic CL we assume verifiable feedback, and
+unlike TTT the adaptation is permanent and cumulative.

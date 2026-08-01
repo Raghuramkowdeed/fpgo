@@ -1,0 +1,48 @@
+\section{Introduction}
+\label{sec:intro}
+
+Language models deployed as agents encounter their tasks as a \emph{stream}: one
+problem at a time, in an order they do not control, with feedback that is sparse
+but verifiable---a unit test passes, a SQL query returns the right rows, a
+diagnosis matches the record. Two families of methods exploit this signal today.
+\emph{Memory-based} approaches such as streaming in-context learning
+retrieve past verified successes as few-shot demonstrations; they adapt instantly
+but the model itself never improves, and gains vanish when memory is unavailable.
+\emph{Reinforcement learning} from verifiable rewards updates the weights, but a
+scalar reward per attempt is a thin learning signal, and---as we show---policy
+optimization can collapse catastrophically on long heterogeneous streams.
+
+We study a third route: \textbf{online self-distillation}. When the model solves a
+streamed problem and the oracle verifies it, the model conditioned on its own
+verified answer becomes a \emph{teacher} for the same model without that answer.
+Matching the teacher's hint-informed next-token distribution moves the answer's
+information into the weights---a dense, token-level signal derived entirely from
+the model's own verified output. No gold labels, no external teacher, no preference
+pairs.
+
+Our method (\S\ref{sec:method}) couples this distillation step with a reward-filtered
+memory used for $k$NN in-context retrieval, and a \emph{forward-looking
+re-evaluation} pass: problems the model failed on arrival are periodically retried
+with the current, improved model; late successes enter memory and become training
+signal. This closes a flywheel---weight gains produce new verified data, which
+produces further weight gains---that pure memory methods and pure RL both lack.
+Scoring always precedes any use of a problem for training, so the streaming metric
+is strictly predict-then-train.
+
+\textbf{Contributions.}
+\begin{itemize}
+\item A simple online self-distillation recipe for streaming self-improvement from
+  verifiable 0/1 feedback only (\S\ref{sec:method}).
+\item State-of-the-art streaming accuracy on \textbf{all seven} StreamBench tasks
+  spanning code, SQL, medical diagnosis, multi-hop QA, and tool use, against
+  zero-shot, streaming-ICL, and REINFORCE++ baselines (\S\ref{sec:exp-bench}).
+\item \textbf{Robustness to distribution shift}: on a stream interleaving three
+  domains, one shared model matches or beats three per-domain specialists, with
+  positive cross-domain transfer to code; retrieval self-segregates by domain
+  (99.9\%), so the transfer is carried by the weights. The RL baseline collapses
+  on the same stream (\S\ref{sec:exp-fused}).
+\item \textbf{Online beats batch}: trained on identical problems with the same
+  loss and model, the online-trained model masters the source data better than
+  multi-epoch batch self-distillation (+5.5 points) \todo{and transfers better
+  to an unseen target stream} (\S\ref{sec:exp-transfer}).
+\end{itemize}

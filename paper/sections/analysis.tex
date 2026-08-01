@@ -1,0 +1,32 @@
+\section{Analysis: Why Online Self-Distillation Works}
+\label{sec:analysis}
+
+\paragraph{The flywheel.} The method's components are individually simple but
+mutually reinforcing: weight updates improve the model; forward re-evaluation lets
+the improved model recover problems it failed on arrival ($84$ of $1{,}463$
+memory entries in the fused run entered late this way); recovered problems become
+demonstrations and distillation targets; and fresher targets keep the KL objective
+near on-policy. A frozen-weights method (ICL) receives none of this---re-answering
+with an unchanged model recovers almost nothing---and pure RL receives the reward
+but not the dense token-level signal.
+
+\paragraph{Distillation as supervision, memory as scaffolding.} Wherever ICL
+hurts (HotpotQA, misleading neighbors), self-distillation still helps: the hint
+channel injects only the model's own \emph{verified} answer for the \emph{same}
+problem, a signal that cannot mislead. Conversely, wherever ICL is strong
+(DDXPlus), consolidation into weights preserves the gains while freeing the
+context window.
+
+\paragraph{Stability.} The distillation loss (Eq.~\ref{eq:kl}) is anchored to a
+frozen reference teacher and its targets are always oracle-verified text. There
+is no advantage estimate, no clipped ratio, no moving critic---the failure
+surfaces that destroyed REINFORCE++ on the long fused stream simply do not exist.
+Across ${\sim}12{,}000$ streamed problems in this paper, online SDFT never
+regressed catastrophically.
+
+\paragraph{Predict-then-train integrity.} Because every reported number is
+produced by a model that had never seen that problem---scored before storage,
+demonstrations strictly from the past, hints strictly self-generated---the
+streaming metric doubles as a continual-generalization measure. We release a
+causal-ordering audit that verifies these invariants over the raw run logs
+(Appendix~\ref{app:leakage}).

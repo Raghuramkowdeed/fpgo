@@ -1,25 +1,24 @@
 \begin{abstract}
-Deployed language-model agents face a stream of tasks and receive only sparse,
-verifiable feedback---a unit test passes, an answer matches, a query executes.
-We study how a model can \emph{permanently} improve from this signal alone, online,
-without ground-truth labels or a stronger teacher.
-We propose an online self-distillation method: each incoming problem is answered
-and scored \emph{before} any update; verified successes enter a memory that serves
-both retrieval-based in-context learning and, crucially, self-distillation---the
-model conditioned on its own verified answer acts as teacher for the same model
-without it, distilling the answer's information into the weights.
-A forward-looking re-evaluation pass lets the improving model recover previously
-failed problems, converting weight gains back into training data.
-On seven diverse StreamBench tasks (code, SQL, diagnosis, QA, tool use), our method
-beats zero-shot, streaming-ICL, and REINFORCE++ baselines on every task.
-Under distribution shift---three domains interleaved into one stream---a single
-online-distilled model matches or beats three per-domain specialists, with positive
-cross-domain transfer to code (+3.4 points), while retrieval self-segregates
-(99.9\% same-domain), showing the transfer lives in the weights; the RL baseline
-collapses on the same stream.
-Finally, comparing online training to multi-epoch batch self-distillation on
-identical data, the online-trained model masters the source data better
-(+5.5 points) \todo{and transfers better to an unseen domain (results pending)}.
-Together these results position online self-distillation as a simple, stable
-recipe for continual self-improvement from verifiable feedback.
+Language models deployed as agents receive a stream of verifiable feedback, one
+bit per attempt, yet their weights stay frozen: current approaches either store
+experience in external memory without improving the model, or apply
+reinforcement learning to the scalar bit, which we find unstable on long
+streams. We introduce \method{}, an online learning rule that converts each
+verified success into a permanent weight update. When the model answers a
+streamed problem correctly, the answer is stored in a reward-filtered memory
+and used in two ways: retrieved as a demonstration for later problems, and
+appended as a hint that turns the frozen base model into a teacher whose
+next-token distribution the current model learns to match. A re-evaluation step
+retries recent failures with the improving model, converting weight gains into
+new training data. On seven StreamBench tasks spanning code, SQL, diagnosis,
+QA, and tool use, \method{} reaches the highest streaming accuracy of all
+methods tested, improving over the strongest memory baseline by up to 5.6
+points and over the base model by up to 22.8. On a 4{,}219-problem stream that
+interleaves three domains, a single \method{} model exceeds the aggregate of
+three per-domain specialists while a REINFORCE++ baseline collapses; retrieval
+stays within-domain for 99.9\% of queries, so the cross-domain gains reside in
+the weights. Trained on identical data with an identical objective, the
+streaming schedule also outperforms multi-epoch batch self-distillation on
+source-task mastery. Code, logs, and a causal-ordering leakage audit are
+released.
 \end{abstract}

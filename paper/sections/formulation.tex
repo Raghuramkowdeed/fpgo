@@ -11,8 +11,8 @@ presented in a fixed, seeded order. At step $t$ the agent produces
 where $\theta_t$ are the current model weights, $M_t$ is an external memory,
 $r(\cdot)$ a retriever, and $p(\cdot)$ a prompting template. The environment
 returns \emph{binary verifiable feedback}
-$fb_t = g(x_t, \hat y_t) \in \{0, 1\}$---execution of generated code against unit
-tests, execution-match of SQL, exact/label match for QA and diagnosis. Gold
+$fb_t = g(x_t, \hat y_t) \in \{0, 1\}$: execution of generated code against unit
+tests, execution-match of SQL, or exact/label match for QA and diagnosis. Gold
 references exist only inside $g$; the agent observes the bit. After feedback, the
 agent may update any of $(p, r, M, \theta)$; the methods we study differ precisely
 in \emph{which} of these they update (Table~\ref{tab:taxonomy}).
@@ -25,12 +25,11 @@ $\mathrm{Acc}_T = \tfrac{1}{T}\sum_{t=1}^{T} h(\hat y_t, y_t)$
 $R_T = \sum_{t=1}^{T} (1 - h(\hat y_t, y_t))$, which penalizes late learning.
 All methods on a given task see the identical stream order.
 
-\paragraph{Why this setting is hard.} The agent gets one attempt per problem, a
-single bit per attempt, no gold text ever, and no second pass over the stream.
-Improvements must therefore be bootstrapped from the agent's \emph{own} verified
-outputs---and any weight update risks destabilizing performance on the remainder
-of the stream, a risk realized dramatically by the RL baseline in
-\S\ref{sec:exp-fused}.
+\paragraph{Why this setting is hard.} The agent gets one attempt per problem, a single bit per attempt, no gold
+text, and no second pass over the stream.
+Improvements must be bootstrapped from the agent's own verified outputs, and
+any weight update risks destabilizing the remainder of the stream. The RL
+baseline in \S\ref{sec:exp-fused} realizes this risk.
 
 \begin{table}[t]
 \centering

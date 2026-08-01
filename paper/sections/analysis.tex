@@ -13,6 +13,8 @@ retains a $+16.7$-point gain over base ($.480$ vs $.313$): the improvement
 survives removal of the entire prompting apparatus. ICL's gains, by
 construction, do not.
 
+\takeaway{The improvement survives removal of all prompting scaffolding and crosses domain boundaries that retrieval never crosses: it lives in the weights.}
+
 \paragraph{Q2: What does forward re-evaluation buy?}
 Re-evaluation converts weight improvements back into training data. In the fused
 run, 84 of 1{,}463 memory entries (${\sim}6\%$) came from problems \emph{failed}
@@ -43,6 +45,8 @@ self-generated targets minimize distributional drift
 \citep{yang2024selfdistillation}: our stored answers are
 by construction near the model's own distribution, so each update is a small,
 verified step.
+
+\takeaway{Stability comes from the objective, not from tuning: a frozen teacher and verified targets remove every moving part that destabilizes policy gradients.}
 
 \paragraph{Q4: Why does the online schedule beat batch epochs on identical data?}
 Three ingredients of the stream are absent in batch training. \emph{Curriculum}:

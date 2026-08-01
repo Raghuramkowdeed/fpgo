@@ -105,3 +105,10 @@ explanation of H1/H5.
 - Negative results get their own visibility (H7) — they are evidence of rigor.
 - Never claim beyond the design: single-seed → "in our runs"; one model → "for a
   7B code-centric model".
+
+## Addendum (2026-08-01): solution-set divergence at matched mastery
+Per-question correctness correlations (955q): online vs batch-n5 r=.63 (81.5%
+agreement) despite .480 vs .472 aggregate — 92 online-only vs 85 batch-only
+solves. batch-n1 correlates most with base (.66) = least departure. Sentence for
+analysis: "matched aggregate mastery conceals divergent solution sets"; sets up
+the transfer experiment (different knowledge → possibly different generalization).

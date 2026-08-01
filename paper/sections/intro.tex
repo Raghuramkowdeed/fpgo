@@ -1,6 +1,17 @@
 \section{Introduction}
 \label{sec:intro}
 
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{figures/fig1.pdf}
+\caption{\textbf{Left:} final streaming accuracy on seven StreamBench tasks;
+\method{} (blue) exceeds the strongest baseline (zero-shot, Self-StreamICL, or
+REINFORCE++, gray) on every task. \textbf{Right:} rolling accuracy on a
+4{,}219-problem stream interleaving three domains; \method{} improves throughout
+while REINFORCE++ collapses after roughly 2{,}000 problems.}
+\label{fig:headline}
+\end{figure}
+
 A language model deployed as an agent meets its work as a stream. A coding
 assistant sees one issue after another, and each resolved ticket reveals whether
 its patch passed the tests. The feedback is sparse, a single verified bit per

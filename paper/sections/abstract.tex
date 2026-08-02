@@ -1,24 +1,25 @@
 \begin{abstract}
-Language models deployed as agents receive a stream of verifiable feedback, one
-bit per attempt, yet their weights stay frozen: current approaches either store
-experience in external memory without improving the model, or apply
-reinforcement learning to the scalar bit, which we find unstable on long
-streams. We introduce \method{}, an online learning rule that converts each
-verified success into a permanent weight update. When the model answers a
-streamed problem correctly, the answer is stored in a reward-filtered memory
-and used in two ways: retrieved as a demonstration for later problems, and
-appended as a hint that turns the frozen base model into a teacher whose
-next-token distribution the current model learns to match. A re-evaluation step
-retries recent failures with the improving model, converting weight gains into
-new training data. On seven StreamBench tasks spanning code, SQL, diagnosis,
-QA, and tool use, \method{} reaches the highest streaming accuracy of all
-methods tested, improving over the strongest memory baseline by up to 5.6
-points and over the base model by up to 22.8. On a 4{,}219-problem stream that
-interleaves three domains, a single \method{} model exceeds the aggregate of
-three per-domain specialists while a REINFORCE++ baseline collapses; retrieval
-stays within-domain for 99.9\% of queries, so the cross-domain gains reside in
-the weights. Trained on identical data with an identical objective, the
-streaming schedule also outperforms multi-epoch batch self-distillation on
-source-task mastery. Code, logs, and a causal-ordering leakage audit are
-released.
+Language models deployed as agents produce a continual stream of interactions
+whose outcomes can often be verified automatically, yet this experience is
+typically discarded: weights are frozen at deployment, and the model repeats
+its mistakes. Existing approaches to learning from deployment experience
+either accumulate it in external memory, leaving the model itself unchanged,
+or optimize the sparse outcome reward with reinforcement learning, which is
+difficult to stabilize on long, heterogeneous interaction streams. We propose
+\method{} (online self-distillation fine-tuning), which converts each verified
+success into a weight update as it occurs. Concretely, verified outputs are
+stored in a retrieval memory; the frozen base model, conditioned on a
+problem's own verified answer as a hint, then serves as a teacher for the
+deployed model, and its hint-conditioned token distribution is distilled into
+LoRA adapters with a forward KL objective. The method requires no ground-truth
+labels, no stronger teacher model, and no feedback beyond binary verification.
+\method{} attains the best score on all seven StreamBench tasks, outperforming
+retrieval-based in-context learning and REINFORCE-style baselines. On a fused
+stream of 4{,}219 problems spanning three domains, a single continually
+trained model outperforms three per-domain specialist models ($+3.4$ points on
+code generation), whereas REINFORCE++ collapses under the induced distribution
+shift. Moreover, at matched data and oracle budget, single-pass online updates
+outperform multi-epoch offline training on the same experience. These results
+suggest that verified deployment experience can serve directly as supervision
+for continual model improvement.
 \end{abstract}

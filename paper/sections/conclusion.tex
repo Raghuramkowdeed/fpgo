@@ -8,9 +8,10 @@ preferable: distilling each verified success into the weights as it happens.
 The streaming schedule turned out to matter more than we initially expected.
 It supplies training examples at the model's current frontier, and the
 re-evaluation step converts weight improvements into additional verified data.
-Batch training on the same data with the same objective recovers most of the
-source-task accuracy when given an exploration budget, but we do not yet know
-whether it matches the stream on generalization; that comparison is running.
+Batch training on the same data with the same objective recovers the
+stream's source-task accuracy when given an exploration budget, and transfers
+comparably to an unseen domain; the stream's distinct value is reaching that
+quality in a single pass, without the corpus in advance.
 
 \paragraph{Limitations.} All experiments use one 7B code-centric model with
 LoRA adapters and a single stream order per task, so variance across seeds is
@@ -19,8 +20,8 @@ not characterized. Feedback is binary; richer textual feedback
 our setting. Our method issues roughly ten times more oracle calls than the
 baselines. The extra calls maintain memory rather than affect scoring, but they
 are a real cost wherever verification is expensive. We also have not measured
-retention of general capabilities outside the streamed tasks.
-\todo{Transfer runs to an unseen domain are in progress.}
+retention of general capabilities outside the streamed tasks, and the
+transfer comparison rests on a single seed.
 
 \paragraph{Conclusion.} We described \method{}, a method that updates model
 weights during a single pass over a problem stream using only binary verifiable

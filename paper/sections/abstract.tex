@@ -18,8 +18,9 @@ retrieval-based in-context learning and REINFORCE-style baselines. On a fused
 stream of 4{,}219 problems spanning three domains, a single continually
 trained model outperforms three per-domain specialist models ($+3.4$ points on
 code generation), whereas REINFORCE++ collapses under the induced distribution
-shift. Moreover, at matched data and oracle budget, single-pass online updates
-outperform multi-epoch offline training on the same experience. These results
+shift. Moreover, a single online pass over the data matches multi-epoch offline
+training with an equal oracle budget on both source-task mastery and transfer
+to an unseen domain, while requiring no task corpus in advance. These results
 suggest that verified deployment experience can serve directly as supervision
 for continual model improvement.
 \end{abstract}

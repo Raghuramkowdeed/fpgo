@@ -49,11 +49,25 @@ Per problem, our method spends 1 scored oracle call plus ${\sim}8.8$
 re-evaluation calls (window re-answers whose only effect is memory update);
 measured on the fused run: 24{,}450 total calls for 2{,}490 problems at the
 point of measurement (${\sim}9.8$/problem). Base, ICL, and REINFORCE++ use
-exactly 1 call per problem; batch SDFT uses 1 per problem per epoch. Wall-clock
-on one H200: standalone streams ${\sim}$8--14\,h; the fused 4{,}219-problem run
-${\sim}$30\,h of compute (checkpoint-resumable in preemptible 4\,h slices);
-batch SDFT (4 epochs) ${\sim}$3.5\,h; a bare-prompt evaluation pass
-${\sim}$40\,min. \todo{Finalize GPU-hour table per run.}
+exactly 1 call per problem; batch SDFT uses 1 per problem per epoch. Approximate wall-clock per run on a single H200 (all runs
+checkpoint-resumable and executed in preemptible 2--4\,h slices):
+
+\begin{center}
+\small
+\begin{tabular}{lr}
+\toprule
+Run & GPU-hours \\
+\midrule
+Standalone stream (\method{}), per task & 8--14 \\
+Fused 4{,}219-problem stream (\method{}) & ${\sim}30$ \\
+Fused stream (REINFORCE++) & ${\sim}3$ \\
+Batch SDFT, $n{=}1$, 4 epochs & ${\sim}3.5$ \\
+Batch SDFT, $n{=}5$, 2 epochs & ${\sim}5$ \\
+Warm-started transfer stream, per arm & ${\sim}5$ \\
+Bare-prompt mastery evaluation & ${\sim}0.7$ \\
+\bottomrule
+\end{tabular}
+\end{center}
 
 \section{Additional Ablation Detail}
 \label{app:ablations}

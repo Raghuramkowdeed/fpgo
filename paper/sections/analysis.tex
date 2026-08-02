@@ -57,10 +57,11 @@ model evolves, each pass distilling against a slightly different student.
 generation with a single greedy sample per epoch can only ever train on what the
 current model already solves deterministically; its coverage grew from $38.5\%$
 to $41.8\%$ across four epochs while the online run ended with verified answers
-for $53.5\%$ of problems. The mastery gap ($.480$ vs $.425$) tracks this
-coverage gap. \todo{The $n{=}5$ exploration-matched batch arm tests whether
-sampling closes the coverage gap---and whether closing coverage also closes
-mastery and transfer.}
+for $53.5\%$ of problems. The mastery gap ($.480$ vs.\ $.425$) tracks this coverage gap, and the
+exploration-matched arm confirms the account: sampling restores coverage
+($56.5\%$), mastery ($.472$), and transfer ($.574$ vs.\ $.567$ on the unseen
+stream). Coverage of verified successes, however obtained, is the quantity
+that matters; the stream is the mechanism that obtains it in one pass.
 
 \paragraph{Integrity of the streaming metric.}
 Because every reported number is produced by a model that had never seen that

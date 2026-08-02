@@ -202,13 +202,18 @@ budget (${\sim}10$ calls/problem). Exploration closes most of the mastery gap
 (Table~\ref{tab:mastery}): coverage jumps to $56.5\%$ and mastery to $.472$,
 within $0.8$ points of online (451 vs 458 problems; 92 online-only vs 85
 batch-only). Source mastery, then, is chiefly a coverage story, and exploration
-can buy coverage. What exploration cannot buy is the stream's \emph{schedule}
----training always at the current model's frontier, revisiting each problem as
-the model evolves---and whether that schedule matters for \emph{generalization}
-is the decisive question:
-\todo{both adapters (online and budget-matched batch-$n{=}5$) warm-start
-\method{} on the unseen HotpotQA stream; compare accuracy/regret vs
-from-scratch ($.562$/657). Runs in progress.}
+can buy coverage. Does the schedule matter for \emph{generalization}? We warm-start
+\method{} on the unseen HotpotQA stream (1{,}500 problems, fresh memory) from
+each adapter and compare against training from scratch. Both warm starts
+transfer positively but modestly: from-scratch reaches $.562$ (regret 657),
+the online-warmed model $.567$ (650), and the batch-$n{=}5$-warmed model
+$.574$ (639), with the ordering emerging in the final third of the stream.
+The differences span eleven problems out of 1{,}500 in a single-seed run, so
+we read this as parity: \textbf{with exploration matched, batch training
+transfers as well as the stream.} The schedule's value is therefore not a
+generalization advantage but a feasibility one---a single online pass attains
+what multi-epoch batch training attains, without requiring the task corpus
+upfront, and it is the only option while a stream is being served.
 
 \subsection{Ablations and cost}
 \label{sec:exp-ablations}

@@ -70,11 +70,11 @@ We evaluate on seven StreamBench tasks and two stress tests.
   transfer is carried by the weights. REINFORCE++ diverges after roughly
   2{,}000 problems on the same stream.
 \item \textbf{Online vs.\ batch} (\S\ref{sec:exp-transfer}): with loss, data,
-  model, and oracle budget held fixed, streaming training beats batch
-  self-distillation on source mastery; an exploration-augmented batch variant
-  narrows the gap, isolating coverage as the main mechanism
-  \todo{and transfer to an unseen domain as the remaining open comparison
-  (runs in progress)}.
+  model, and oracle budget held fixed, a single streaming pass matches
+  multi-epoch batch self-distillation on both source mastery and transfer to
+  an unseen domain; without matched exploration, batch trails by $5.5$
+  points. Coverage, not the schedule itself, is the operative mechanism---and
+  the stream achieves it in one pass, without the corpus upfront.
 \item \textbf{Ablations} (\S\ref{sec:exp-ablations}): the gains are not
   explained by oracle budget, hint-conditioned generation, or sample count.
 \end{itemize}

@@ -69,16 +69,18 @@ Appendix~\ref{app:hparams}; oracle-call accounting in \S\ref{sec:exp-ablations}.
 \subsection{Seven streaming benchmarks}
 \label{sec:exp-bench}
 
-Table~\ref{tab:bench} reports final cumulative accuracy over each full stream.
-\method{} attains the best accuracy on all seven tasks. Three patterns stand
-out.
+This experiment tests whether a model's own verified outputs are sufficient
+training signal for streaming improvement, with no gold labels and no external
+teacher. Results are shown in Table~\ref{tab:bench}. \method{} attains the
+best accuracy on all seven tasks. Three patterns stand out.
 
-\emph{(i) Weight updates help precisely where retrieval fails.} ICL is strong
-where neighbors are informative (DDXPlus: $.647$ vs base $.436$) but \emph{hurts}
-where retrieved demonstrations mislead (HotpotQA: $.509$ vs base $.521$). Our
-method inherits ICL's retrieval yet still wins on HotpotQA ($.562$): the
-distillation channel injects only the model's own verified answer for the same
-problem, a signal that cannot mislead, and consolidates it into weights.
+\emph{(i) Weight updates help where retrieval fails.} ICL is strong where
+neighbors are informative (DDXPlus: $.647$ vs.\ $.436$ for base) but hurts
+where retrieved demonstrations mislead (HotpotQA: $.509$ vs.\ $.521$ for
+base). Notably, \method{} inherits the same retrieval yet reaches $.562$ on
+HotpotQA, above both---the distillation hint is the model's own verified answer
+to the same problem, a signal that cannot mislead, and its effect persists in
+the weights.
 
 \emph{(ii) Gains are largest where the base model is weakest.} DS-1000
 ($+9.8$ points over base), LiveCodeBench ($+11.0$), DDXPlus ($+22.8$): tasks
@@ -123,7 +125,10 @@ collapses.}
 \input{tables/fused_table}
 \end{table}
 
-Table~\ref{tab:fused} and Figure~\ref{fig:trend} give the results.
+This experiment tests whether one continually trained model can absorb a
+heterogeneous stream without interference, and where any cross-domain effect
+resides. Results are shown in Table~\ref{tab:fused} and
+Figure~\ref{fig:trend}.
 
 \emph{(i) One model $\geq$ three specialists.} The fused model beats the
 aggregated standalone runs overall ($.585$ vs $.573$) and is no worse on any
@@ -163,7 +168,8 @@ no interference from distribution shift.}
 \subsection{Online vs.\ batch training}
 \label{sec:exp-transfer}
 
-Is the online \emph{schedule} itself load-bearing, beyond the loss? We compare
+This experiment tests whether the streaming schedule itself contributes,
+beyond the objective. We compare
 the online DS-1000 run against \textbf{batch self-distillation}: the identical
 trainer, loss, base model, and oracle, run as classic offline epochs---four
 passes over the full 955-problem set; each pass generates an answer per problem

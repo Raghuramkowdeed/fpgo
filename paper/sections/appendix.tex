@@ -69,14 +69,50 @@ $-21$ cumulative regret vs 2 epochs; 2 epochs at doubled lr $+5$ regret vs
 problem, similarity-filtered ($\mathrm{sim} \ge 0.5$ to hint) or unfiltered:
 both statistically indistinguishable from $N{=}1$ on DS-1000 (filtered: 186 vs
 188 regret at 300 problems; unfiltered: mildly negative over 520 problems).
-\paragraph{REINFORCE++ collapse diagnostics.} Batch-level metrics around the
-collapse (fused stream, batch ${\sim}205$--210): approximate KL $0.22 \to -0.63$,
-PPO clip fraction $0.08 \to 0.68$, advantage std $0.38 \to 1.37$ within 10
-batches; running accuracy $.503 \to .253$ by stream end.
-\todo{Add full trajectory figures for the collapse diagnostics.}
+\paragraph{REINFORCE++ collapse diagnostics.} Batch-level metrics on the fused
+stream around the divergence point:
+
+\begin{center}
+\small
+\begin{tabular}{lrrrr}
+\toprule
+Batch & Running acc & Approx.\ KL & Clip fraction & Adv.\ std \\
+\midrule
+150 & .497 & $0.20$ & .08 & .38 \\
+190 & .502 & $0.22$ & .11 & .34 \\
+205 & .500 & $0.06$ & .17 & .80 \\
+210 & .494 & $-0.22$ & .68 & 1.23 \\
+215 & .487 & $-0.56$ & .42 & 1.37 \\
+422 (end) & .253 & -- & -- & -- \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The approximate-KL estimator turning negative indicates the policy has moved far
+off the sampling distribution; the clip-fraction spike and advantage-variance
+explosion follow within five batches, after which per-window accuracy falls to
+zero for the remainder of the stream.
 
 \section{Per-Task Prompts}
 \label{app:prompts}
-\todo{Verbatim system prompts and generation templates for all seven tasks, and
-the student/teacher message structure (available in the released repository;
-port into figures here).}
+Every task uses the same message structure (\S\ref{sec:method}); only the
+system prompt and question formatting differ. Representative system prompts:
+
+\begin{itemize}
+\item \textbf{DS-1000 / code}: \emph{``You are an expert Python programmer for
+data science. Solve the problem by writing correct Python code. Output ONLY the
+code in a \texttt{```python ...```} block.''}
+\item \textbf{DDXPlus}: \emph{``You are an expert medical doctor making a
+differential diagnosis.''} The question presents a patient profile and the
+49-option diagnosis list; the answer format is \texttt{<number>. <diagnosis>}.
+\item \textbf{HotpotQA}: \emph{``You are a careful assistant answering
+multi-hop questions with short, exact answers in JSON.''} The question includes
+the 10-paragraph distractor context; the answer format is
+\texttt{\{"answer": "<span>"\}}.
+\end{itemize}
+
+A complete worked trace (retrieval, student prompt, generated answer, oracle
+grade, storage, and the teacher prompt's two additional turns) for one problem
+per dataset is included in the released repository, reconstructed by the
+training code itself from the run artifacts. SQL and tool-use templates follow
+StreamBench's released prompts.

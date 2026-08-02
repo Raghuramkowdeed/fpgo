@@ -4,14 +4,13 @@
 We organize the analysis around four mechanism questions.
 
 \paragraph{Q1: Where do the gains live---prompts or weights?}
-Two observations point the same way. First, in the fused experiment,
-retrieval self-segregates by domain (99.9\% same-domain demonstrations), yet the
-fused model still transfers across domains ($+3.4$ on code). Prompts cannot carry that
-signal, so the weights must. Second, the source-mastery evaluation strips
-\emph{all} scaffolding (no demonstrations, no memory) and the trained adapter
-retains a $+16.7$-point gain over base ($.480$ vs $.313$): the improvement
-survives removal of the entire prompting apparatus. ICL's gains, by
-construction, do not.
+Two observations point the same way. The first is the self-segregation
+result of \S\ref{sec:exp-fused}: cross-domain transfer occurs while prompts
+remain domain-pure, so the signal must travel through the weights. The second
+is the source-mastery evaluation, which strips all scaffolding (no
+demonstrations, no memory): the trained adapter alone retains a $+16.7$-point
+gain over base ($.480$ vs.\ $.313$). ICL's gains, by construction, do not
+survive this test.
 
 \takeaway{The improvement survives removal of all prompting scaffolding and crosses domain boundaries that retrieval never crosses: it lives in the weights.}
 
